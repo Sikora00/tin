@@ -42,6 +42,10 @@
           {
             "sourceTag": "domain:auth",
             "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared"]
+          },
+          {
+            "sourceTag": "domain:debt",
+            "onlyDependOnLibsWithTags": ["domain:debt", "domain:shared"]
           }
         ]
       }

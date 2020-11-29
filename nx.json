@@ -47,6 +47,15 @@
     },
     "shared-ui": {
       "tags": ["domain:shared", "type:ui"]
+    },
+    "debt-domain": {
+      "tags": ["domain:debt", "type:domain-logic"]
+    },
+    "debt-feature-list": {
+      "tags": ["domain:debt", "type:feature"]
+    },
+    "debt-shell": {
+      "tags": ["domain:debt", "type:shell"]
     }
   }
 }

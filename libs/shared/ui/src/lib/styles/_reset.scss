@@ -2,11 +2,16 @@
 
 html {
   font-size: 10px;
+  height: 100%;
   color: $font-color;
 }
-
 body {
   font-size: 16px;
   margin: 0;
+  height: 100%;
   background-color: $background;
+}
+
+a {
+  text-decoration: none;
 }

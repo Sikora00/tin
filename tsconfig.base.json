@@ -20,7 +20,10 @@
       "@tin/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@tin/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
       "@tin/auth/shell": ["libs/auth/shell/src/index.ts"],
-      "@tin/shared/ui": ["libs/shared/ui/src/index.ts"]
+      "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@tin/debt/domain": ["libs/debt/domain/src/index.ts"],
+      "@tin/debt/feature-list": ["libs/debt/feature-list/src/index.ts"],
+      "@tin/debt/shell": ["libs/debt/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

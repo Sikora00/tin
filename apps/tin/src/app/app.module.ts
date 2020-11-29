@@ -6,8 +6,20 @@ import { AppCoreModule } from './app-core.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [AppCoreModule, AuthShellModule],
-  providers: [],
+  imports: [
+    AppCoreModule,
+    AuthShellModule,
+    RouterModule.forRoot(
+      [
+        {
+          path: 'debt',
+          loadChildren: () =>
+            import('@tin/debt/shell').then((m) => m.DebtShellModule),
+        },
+      ],
+      { enableTracing: true }
+    ),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
