@@ -1,0 +1,32 @@
+@import 'colors';
+.btn {
+  position: relative;
+
+  display: block;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  background-color: $primary;
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background-color: $primary-dark;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 1.2rem 2.4rem;
+}

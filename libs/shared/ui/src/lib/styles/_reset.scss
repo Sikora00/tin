@@ -1,0 +1,12 @@
+@import 'colors.scss';
+
+html {
+  font-size: 10px;
+  color: $font-color;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  background-color: $background;
+}

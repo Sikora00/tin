@@ -35,6 +35,18 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "auth-domain": {
+      "tags": ["domain:auth", "type:domain-logic"]
+    },
+    "auth-feature-login": {
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "auth-shell": {
+      "tags": ["domain:auth", "type:shell"]
+    },
+    "shared-ui": {
+      "tags": ["domain:shared", "type:ui"]
     }
   }
 }

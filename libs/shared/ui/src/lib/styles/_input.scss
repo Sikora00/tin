@@ -1,0 +1,32 @@
+@import 'colors.scss';
+
+input {
+  background-color: $background-secondary;
+  border: 1px #000;
+  color: $font-color;
+  border-style: none none solid none;
+  line-height: 3rem;
+  outline: none;
+  padding: 0.5rem;
+}
+
+input,
+label {
+  display: block;
+}
+
+label span {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba($font-color, 0.5);
+  opacity: 1; /* Firefox */
+}
+
+.input-full {
+  width: 100%;
+  box-sizing: border-box;
+}
