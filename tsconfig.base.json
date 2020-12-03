@@ -23,7 +23,10 @@
       "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@tin/debt/domain": ["libs/debt/domain/src/index.ts"],
       "@tin/debt/feature-list": ["libs/debt/feature-list/src/index.ts"],
-      "@tin/debt/shell": ["libs/debt/shell/src/index.ts"]
+      "@tin/debt/shell": ["libs/debt/shell/src/index.ts"],
+      "@tin/debt/feature-add-debt": ["libs/debt/feature-add-debt/src/index.ts"],
+      "@tin/debt/feature-preview": ["libs/debt/feature-preview/src/index.ts"],
+      "@tin/debt/feature-edit": ["libs/debt/feature-edit/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

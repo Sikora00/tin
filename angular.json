@@ -370,6 +370,84 @@
           "style": "scss"
         }
       }
+    },
+    "debt-feature-add-debt": {
+      "projectType": "library",
+      "root": "libs/debt/feature-add-debt",
+      "sourceRoot": "libs/debt/feature-add-debt/src",
+      "prefix": "debt",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/debt/feature-add-debt/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/debt/feature-add-debt/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "debt-feature-preview": {
+      "projectType": "library",
+      "root": "libs/debt/feature-preview",
+      "sourceRoot": "libs/debt/feature-preview/src",
+      "prefix": "debt",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/debt/feature-preview/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/debt/feature-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "debt-feature-edit": {
+      "projectType": "library",
+      "root": "libs/debt/feature-edit",
+      "sourceRoot": "libs/debt/feature-edit/src",
+      "prefix": "debt",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/debt/feature-edit/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/debt/feature-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

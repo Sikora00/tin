@@ -1,0 +1,29 @@
+<h1 class="add-debt-header">Edytuj dług</h1>
+<form class="add-debt-form">
+  <label>
+    <span>Tytuł</span>
+    <input class="input-full" [placeholder]="'Tytuł'" />
+  </label>
+  <label>
+    <span>Opis</span>
+    <textarea class="input-full" [placeholder]="'Opis'"></textarea>
+  </label>
+  <label>
+    <span>Dłużnik</span>
+    <div class="debtor-container"><select class="input-full" id="debtor">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="opel">Opel</option>
+      <option value="audi">Audi</option>
+    </select>
+      <span class="add-debtor-button">&#43;</span>
+    </div>
+  </label>
+  <label>
+    <span>Kwota</span>
+    <input type="number" min="1" class="input-full" [placeholder]="'Kwota'" />
+  </label>
+  <a [routerLink]="['/debt']"
+  ><button class="btn btn-full"><span>Zapisz</span></button></a
+  >
+</form>

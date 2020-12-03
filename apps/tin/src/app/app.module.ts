@@ -16,6 +16,7 @@ import { AppCoreModule } from './app-core.module';
           loadChildren: () =>
             import('@tin/debt/shell').then((m) => m.DebtShellModule),
         },
+        {path: '', pathMatch: 'full', redirectTo: 'login'}
       ],
       { enableTracing: true }
     ),

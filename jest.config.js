@@ -10,5 +10,8 @@ module.exports = {
     '<rootDir>/libs/debt/domain',
     '<rootDir>/libs/debt/feature-list',
     '<rootDir>/libs/debt/shell',
+    '<rootDir>/libs/debt/feature-add-debt',
+    '<rootDir>/libs/debt/feature-preview',
+    '<rootDir>/libs/debt/feature-edit',
   ],
 };

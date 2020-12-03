@@ -18,6 +18,27 @@ import { DebtComponent } from './debt/debt.component';
                 (m) => m.DebtFeatureListModule
               ),
           },
+          {
+            path: 'add',
+            loadChildren: () =>
+              import('@tin/debt/feature-add-debt').then(
+                (m) => m.DebtFeatureAddDebtModule
+              ),
+          },
+          {
+            path: ':id',
+            loadChildren: () =>
+              import('@tin/debt/feature-preview').then(
+                (m) => m.DebtFeaturePreviewModule
+              ),
+          },
+          {
+            path: ':id/edit',
+            loadChildren: () =>
+              import('@tin/debt/feature-edit').then(
+                (m) => m.DebtFeatureEditModule
+              ),
+          }
         ],
       },
     ]),

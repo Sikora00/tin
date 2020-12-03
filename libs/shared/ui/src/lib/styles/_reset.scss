@@ -15,3 +15,8 @@ body {
 a {
   text-decoration: none;
 }
+
+a:-webkit-any-link {
+  color: $font-color;
+  cursor: pointer;
+}

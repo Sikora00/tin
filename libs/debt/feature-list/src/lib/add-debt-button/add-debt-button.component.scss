@@ -1,0 +1,16 @@
+@import "colors";
+:host {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.add-debt-button {
+  background-color: $primary;
+  border-radius: 50%;
+  font-size: 4rem;
+}
+
+.add-debt-button:hover {
+  background-color: $primary-dark;
+}

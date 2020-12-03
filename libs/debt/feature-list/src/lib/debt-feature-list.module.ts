@@ -4,6 +4,7 @@ import { DebtDomainModule } from '@tin/debt/domain';
 import { ListComponent } from './list.component';
 import { RouterModule } from '@angular/router';
 import { DebtCardComponent } from './debt-card/debt-card.component';
+import { AddDebtButtonComponent } from './add-debt-button/add-debt-button.component';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { DebtCardComponent } from './debt-card/debt-card.component';
     DebtDomainModule,
     RouterModule.forChild([{ path: '', component: ListComponent }]),
   ],
-  declarations: [ListComponent, DebtCardComponent],
+  declarations: [ListComponent, DebtCardComponent, AddDebtButtonComponent],
 })
 export class DebtFeatureListModule {}

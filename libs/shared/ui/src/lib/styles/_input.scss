@@ -1,6 +1,6 @@
 @import 'colors.scss';
 
-input {
+textarea, select, input {
   background-color: $background-secondary;
   border: 1px #000;
   color: $font-color;
@@ -8,6 +8,10 @@ input {
   line-height: 3rem;
   outline: none;
   padding: 0.5rem;
+}
+
+select {
+  height: 4rem;
 }
 
 input,

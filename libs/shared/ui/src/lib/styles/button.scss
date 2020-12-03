@@ -31,6 +31,18 @@
   padding: 1.2rem 2.4rem;
 }
 
+.btn-circle {
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-circle span {
+  display: inline;
+  text-align: center;
+}
+
 .btn-full {
   width: 100%;
 }

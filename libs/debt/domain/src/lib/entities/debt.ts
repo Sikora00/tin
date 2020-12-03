@@ -1,6 +1,11 @@
+import {Debtor} from "./debtor";
+import {Payment} from "./payment";
+
 export interface Debt {
   id: number;
-  name: string;
+  title: string;
   description: string;
   summaryAmount: number;
+  debtors: Debtor[];
+  payments: Payment[]
 }
