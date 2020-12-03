@@ -38,7 +38,7 @@ import { DebtComponent } from './debt/debt.component';
               import('@tin/debt/feature-edit').then(
                 (m) => m.DebtFeatureEditModule
               ),
-          }
+          },
         ],
       },
     ]),

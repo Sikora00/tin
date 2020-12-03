@@ -8,9 +8,8 @@ describe('AddDebtButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddDebtButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [AddDebtButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

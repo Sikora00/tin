@@ -1,0 +1,15 @@
+@import 'colors';
+:host {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.add-button {
+  background-color: $primary;
+  font-size: 4rem;
+}
+
+.add-button:hover {
+  background-color: $primary-dark;
+}

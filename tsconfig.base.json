@@ -26,7 +26,27 @@
       "@tin/debt/shell": ["libs/debt/shell/src/index.ts"],
       "@tin/debt/feature-add-debt": ["libs/debt/feature-add-debt/src/index.ts"],
       "@tin/debt/feature-preview": ["libs/debt/feature-preview/src/index.ts"],
-      "@tin/debt/feature-edit": ["libs/debt/feature-edit/src/index.ts"]
+      "@tin/debt/feature-edit": ["libs/debt/feature-edit/src/index.ts"],
+      "@tin/film-database/domain": ["libs/film-database/domain/src/index.ts"],
+      "@tin/film-database/feature-film-list": [
+        "libs/film-database/feature-film-list/src/index.ts"
+      ],
+      "@tin/film-database/feature-film-preview": [
+        "libs/film-database/feature-film-preview/src/index.ts"
+      ],
+      "@tin/film-database/feature-film-add": [
+        "libs/film-database/feature-film-add/src/index.ts"
+      ],
+      "@tin/film-database/feature-film-edit": [
+        "libs/film-database/feature-film-edit/src/index.ts"
+      ],
+      "@tin/film-database/shell": ["libs/film-database/shell/src/index.ts"],
+      "@tin/film-database/ui-components": [
+        "libs/film-database/ui-components/src/index.ts"
+      ],
+      "@tin/film-database/feature-actor-list": [
+        "libs/film-database/feature-actor-list/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

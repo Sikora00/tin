@@ -1,5 +1,5 @@
-import {Debtor} from "./debtor";
-import {Payment} from "./payment";
+import { Debtor } from './debtor';
+import { Payment } from './payment';
 
 export interface Debt {
   id: number;
@@ -7,5 +7,5 @@ export interface Debt {
   description: string;
   summaryAmount: number;
   debtors: Debtor[];
-  payments: Payment[]
+  payments: Payment[];
 }

@@ -65,6 +65,30 @@
     },
     "debt-feature-edit": {
       "tags": ["domain:debt", "type:feature"]
+    },
+    "film-database-domain": {
+      "tags": ["domain:film-database", "type:domain-logic"]
+    },
+    "film-database-feature-film-list": {
+      "tags": ["domain:film-database", "type:feature"]
+    },
+    "film-database-feature-film-preview": {
+      "tags": ["domain:film-database", "type:feature"]
+    },
+    "film-database-feature-film-add": {
+      "tags": ["domain:film-database", "type:feature"]
+    },
+    "film-database-feature-film-edit": {
+      "tags": ["domain:film-database", "type:feature"]
+    },
+    "film-database-shell": {
+      "tags": ["domain:film-database", "type:shell"]
+    },
+    "film-database-ui-components": {
+      "tags": ["domain:film-database", "type:ui"]
+    },
+    "film-database-feature-actor-list": {
+      "tags": ["domain:film-database", "type:feature"]
     }
   }
 }

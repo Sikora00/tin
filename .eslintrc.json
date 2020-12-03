@@ -46,6 +46,13 @@
           {
             "sourceTag": "domain:debt",
             "onlyDependOnLibsWithTags": ["domain:debt", "domain:shared"]
+          },
+          {
+            "sourceTag": "domain:film-database",
+            "onlyDependOnLibsWithTags": [
+              "domain:film-database",
+              "domain:shared"
+            ]
           }
         ]
       }

@@ -8,9 +8,8 @@ describe('EditDebtButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditDebtButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [EditDebtButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

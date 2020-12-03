@@ -448,6 +448,224 @@
           "style": "scss"
         }
       }
+    },
+    "film-database-domain": {
+      "projectType": "library",
+      "root": "libs/film-database/domain",
+      "sourceRoot": "libs/film-database/domain/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/film-database/domain/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-feature-film-list": {
+      "projectType": "library",
+      "root": "libs/film-database/feature-film-list",
+      "sourceRoot": "libs/film-database/feature-film-list/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/film-database/feature-film-list/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/feature-film-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-feature-film-preview": {
+      "projectType": "library",
+      "root": "libs/film-database/feature-film-preview",
+      "sourceRoot": "libs/film-database/feature-film-preview/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/film-database/feature-film-preview/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/feature-film-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-feature-film-add": {
+      "projectType": "library",
+      "root": "libs/film-database/feature-film-add",
+      "sourceRoot": "libs/film-database/feature-film-add/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/film-database/feature-film-add/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/feature-film-add/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-feature-film-edit": {
+      "projectType": "library",
+      "root": "libs/film-database/feature-film-edit",
+      "sourceRoot": "libs/film-database/feature-film-edit/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/film-database/feature-film-edit/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/feature-film-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-shell": {
+      "projectType": "library",
+      "root": "libs/film-database/shell",
+      "sourceRoot": "libs/film-database/shell/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/film-database/shell/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-ui-components": {
+      "projectType": "library",
+      "root": "libs/film-database/ui-components",
+      "sourceRoot": "libs/film-database/ui-components/src",
+      "prefix": "components",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/film-database/ui-components/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/ui-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "film-database-feature-actor-list": {
+      "projectType": "library",
+      "root": "libs/film-database/feature-actor-list",
+      "sourceRoot": "libs/film-database/feature-actor-list/src",
+      "prefix": "film-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/film-database/feature-actor-list/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/film-database/feature-actor-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

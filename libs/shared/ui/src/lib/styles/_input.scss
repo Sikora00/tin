@@ -1,6 +1,8 @@
 @import 'colors.scss';
 
-textarea, select, input {
+textarea,
+select,
+input {
   background-color: $background-secondary;
   border: 1px #000;
   color: $font-color;

@@ -2,7 +2,7 @@
 <form class="add-debt-form">
   <label>
     <span>Tytuł</span>
-    <input class="input-full" [placeholder]="'Tytuł'"/>
+    <input class="input-full" [placeholder]="'Tytuł'" />
   </label>
   <label>
     <span>Opis</span>
@@ -20,13 +20,11 @@
     </label>
     <label>
       <span>Kwota</span>
-      <input type="number" min="1" class="input-full" [placeholder]="'Kwota'"/>
+      <input type="number" min="1" class="input-full" [placeholder]="'Kwota'" />
     </label>
   </div>
   <span class="add-debtor-button">&#43;</span>
-  <a [routerLink]="['/debt']"
-  >
+  <a [routerLink]="['/debt']">
     <button class="btn btn-full"><span>Zapisz</span></button>
-  </a
-  >
+  </a>
 </form>

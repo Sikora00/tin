@@ -13,5 +13,13 @@ module.exports = {
     '<rootDir>/libs/debt/feature-add-debt',
     '<rootDir>/libs/debt/feature-preview',
     '<rootDir>/libs/debt/feature-edit',
+    '<rootDir>/libs/film-database/domain',
+    '<rootDir>/libs/film-database/feature-film-list',
+    '<rootDir>/libs/film-database/feature-film-preview',
+    '<rootDir>/libs/film-database/feature-film-add',
+    '<rootDir>/libs/film-database/feature-film-edit',
+    '<rootDir>/libs/film-database/shell',
+    '<rootDir>/libs/film-database/ui-components',
+    '<rootDir>/libs/film-database/feature-actor-list',
   ],
 };

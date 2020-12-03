@@ -12,11 +12,13 @@ import { AppCoreModule } from './app-core.module';
     RouterModule.forRoot(
       [
         {
-          path: 'debt',
+          path: 'film-database',
           loadChildren: () =>
-            import('@tin/debt/shell').then((m) => m.DebtShellModule),
+            import('@tin/film-database/shell').then(
+              (m) => m.FilmDatabaseShellModule
+            ),
         },
-        {path: '', pathMatch: 'full', redirectTo: 'login'}
+        { path: '', pathMatch: 'full', redirectTo: 'login' },
       ],
       { enableTracing: true }
     ),
