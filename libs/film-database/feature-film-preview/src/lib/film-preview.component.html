@@ -7,9 +7,7 @@
         class="film-thumbnail"
       />
       <div>
-        <a [routerLink]="[film.id]"
-          ><h1>{{ film.title }}</h1></a
-        >
+        <h1>{{ film.title }}</h1>
         <div class="film-detail">
           <strong>Data produkcji:</strong> {{ film.releaseDate | date }}
         </div>

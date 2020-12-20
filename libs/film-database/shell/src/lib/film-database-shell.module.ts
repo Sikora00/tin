@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FilmDatabaseComponent } from './film-database/film-database.component';
+import { NavbarComponent } from './film-database/navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { FilmDatabaseComponent } from './film-database/film-database.component';
       },
     ]),
   ],
-  declarations: [FilmDatabaseComponent],
+  declarations: [FilmDatabaseComponent, NavbarComponent],
 })
 export class FilmDatabaseShellModule {}

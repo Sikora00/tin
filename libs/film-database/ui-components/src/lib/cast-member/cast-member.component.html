@@ -1,5 +1,5 @@
-<img class="cast-member-thumbnail" [src]="castMember.actor.thumbnail" />
+<img class="cast-member-thumbnail" [src]="castMember.actor.thumbnail"/>
 <p>
-  <strong>{{ castMember.actor.name }}</strong>
+  <a [routerLink]="['film-database', 'actor', castMember.actor.id]"><strong>{{ castMember.actor.name }}</strong></a>
 </p>
 <p>{{ castMember.role }}</p>
