@@ -1,0 +1,28 @@
+@import 'colors';
+
+.movie-card {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-thumbnail {
+  height: 20rem;
+  max-width: 14rem;
+}
+
+.movie-detail {
+  margin-bottom: 1rem;
+}
+
+.remove-button {
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}

@@ -1,0 +1,63 @@
+<div class="add-movie-container">
+  <h1 class="add-debt-header">Dodaj Film</h1>
+  <form class="add-debt-form">
+    <label>
+      <span>Tytuł</span>
+      <input class="input-full" [placeholder]="'Tytuł'" />
+    </label>
+    <label>
+      <span>Adres ikony</span>
+      <input
+        class="input-full"
+        [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
+      />
+    </label>
+    <label>
+      <span>Data produkcji</span>
+      <input type="date" class="input-full" />
+    </label>
+    <label>
+      <span>Opis</span>
+      <textarea class="input-full" [placeholder]="'Opis'"></textarea>
+    </label>
+    <h2>Obsada</h2>
+    <div class="add-movie-cast">
+      <div class="actor-container">
+        <label>
+          <span>Aktor</span>
+          <select class="input-full" id="actor">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+        </label>
+        <label>
+          <span>Rola</span>
+          <input class="input-full" [placeholder]="'Rola'" />
+        </label>
+        <span class="remove-actor-button">&#8722;</span>
+      </div>
+      <div class="actor-container">
+        <label>
+          <span>Aktor</span>
+          <select class="input-full" id="actor">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+        </label>
+        <label>
+          <span>Rola</span>
+          <input class="input-full" [placeholder]="'Rola'" />
+        </label>
+        <span class="remove-actor-button">&#8722;</span>
+      </div>
+    </div>
+    <span class="add-actor-button">&#43;</span>
+    <a [routerLink]="['/movie-database/movie']">
+      <button class="btn btn-full"><span>Zapisz</span></button>
+    </a>
+  </form>
+</div>

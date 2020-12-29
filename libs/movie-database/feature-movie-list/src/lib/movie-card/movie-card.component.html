@@ -1,0 +1,17 @@
+<div class="card movie-card">
+  <i class="remove-button gg-trash"></i>
+  <img
+    [src]="movie.thumbnailUrl"
+    [alt]="'Movie thumbnail'"
+    class="movie-thumbnail"
+  />
+  <div class="container">
+    <a [routerLink]="[movie.id]">
+      <h3>{{ movie.title }}</h3>
+    </a>
+    <div class="movie-detail">
+      <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+    </div>
+    <div class="movie-detail"><strong>Opis:</strong> {{ movie.description }}</div>
+  </div>
+</div>

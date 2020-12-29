@@ -1,0 +1,9 @@
+<h1>Aktorzy</h1>
+
+<table class="table">
+  <tr *ngFor="let actor of actorList$ | async">
+    <td>{{ actor.id }}</td>
+    <td>{{ actor.name }}</td>
+    <td>{{ actor.description }}</td>
+  </tr>
+</table>

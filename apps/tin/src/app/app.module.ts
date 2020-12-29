@@ -12,10 +12,10 @@ import { AppCoreModule } from './app-core.module';
     RouterModule.forRoot(
       [
         {
-          path: 'film-database',
+          path: 'movie-database',
           loadChildren: () =>
-            import('@tin/film-database/shell').then(
-              (m) => m.FilmDatabaseShellModule
+            import('@tin/movie-database/shell').then(
+              (m) => m.MovieDatabaseShellModule
             ),
         },
         { path: '', pathMatch: 'full', redirectTo: 'login' },

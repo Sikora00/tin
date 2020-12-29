@@ -18,7 +18,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -28,7 +33,9 @@
     },
     "tin-e2e": {
       "tags": [],
-      "implicitDependencies": ["tin"]
+      "implicitDependencies": [
+        "tin"
+      ]
     },
     "api": {
       "tags": []
@@ -37,58 +44,112 @@
       "tags": []
     },
     "auth-domain": {
-      "tags": ["domain:auth", "type:domain-logic"]
+      "tags": [
+        "domain:auth",
+        "type:domain-logic"
+      ]
     },
     "auth-feature-login": {
-      "tags": ["domain:auth", "type:feature"]
+      "tags": [
+        "domain:auth",
+        "type:feature"
+      ]
     },
     "auth-shell": {
-      "tags": ["domain:auth", "type:shell"]
+      "tags": [
+        "domain:auth",
+        "type:shell"
+      ]
     },
     "shared-ui": {
-      "tags": ["domain:shared", "type:ui"]
+      "tags": [
+        "domain:shared",
+        "type:ui"
+      ]
     },
     "debt-domain": {
-      "tags": ["domain:debt", "type:domain-logic"]
+      "tags": [
+        "domain:debt",
+        "type:domain-logic"
+      ]
     },
     "debt-feature-list": {
-      "tags": ["domain:debt", "type:feature"]
+      "tags": [
+        "domain:debt",
+        "type:feature"
+      ]
     },
     "debt-shell": {
-      "tags": ["domain:debt", "type:shell"]
+      "tags": [
+        "domain:debt",
+        "type:shell"
+      ]
     },
     "debt-feature-add-debt": {
-      "tags": ["domain:debt", "type:feature"]
+      "tags": [
+        "domain:debt",
+        "type:feature"
+      ]
     },
     "debt-feature-preview": {
-      "tags": ["domain:debt", "type:feature"]
+      "tags": [
+        "domain:debt",
+        "type:feature"
+      ]
     },
     "debt-feature-edit": {
-      "tags": ["domain:debt", "type:feature"]
+      "tags": [
+        "domain:debt",
+        "type:feature"
+      ]
     },
-    "film-database-domain": {
-      "tags": ["domain:film-database", "type:domain-logic"]
+    "movie-database-domain": {
+      "tags": [
+        "domain:movie-database",
+        "type:domain-logic"
+      ]
     },
-    "film-database-feature-film-list": {
-      "tags": ["domain:film-database", "type:feature"]
+    "movie-database-feature-actor-list": {
+      "tags": [
+        "domain:movie-database",
+        "type:feature"
+      ]
     },
-    "film-database-feature-film-preview": {
-      "tags": ["domain:film-database", "type:feature"]
+    "movie-database-feature-movie-add": {
+      "tags": [
+        "domain:movie-database",
+        "type:feature"
+      ]
     },
-    "film-database-feature-film-add": {
-      "tags": ["domain:film-database", "type:feature"]
+    "movie-database-feature-movie-edit": {
+      "tags": [
+        "domain:movie-database",
+        "type:feature"
+      ]
     },
-    "film-database-feature-film-edit": {
-      "tags": ["domain:film-database", "type:feature"]
+    "movie-database-feature-movie-list": {
+      "tags": [
+        "domain:movie-database",
+        "type:feature"
+      ]
     },
-    "film-database-shell": {
-      "tags": ["domain:film-database", "type:shell"]
+    "movie-database-feature-movie-preview": {
+      "tags": [
+        "domain:movie-database",
+        "type:feature"
+      ]
     },
-    "film-database-ui-components": {
-      "tags": ["domain:film-database", "type:ui"]
+    "movie-database-shell": {
+      "tags": [
+        "domain:movie-database",
+        "type:shell"
+      ]
     },
-    "film-database-feature-actor-list": {
-      "tags": ["domain:film-database", "type:feature"]
+    "movie-database-ui-components": {
+      "tags": [
+        "domain:movie-database",
+        "type:ui"
+      ]
     }
   }
 }

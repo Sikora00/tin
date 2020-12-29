@@ -1,8 +1,0 @@
-<div class="film-list-container">
-  <div *ngFor="let film of filmList$ | async" class="film-card">
-    <film-database-film-card [film]="film"></film-database-film-card>
-  </div>
-</div>
-<a [routerLink]="['add']">
-  <tin-add-button></tin-add-button>
-</a>
