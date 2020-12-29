@@ -10,53 +10,24 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tin/api-interfaces": [
-        "libs/api-interfaces/src/index.ts"
-      ],
-      "@tin/auth/domain": [
-        "libs/auth/domain/src/index.ts"
-      ],
-      "@tin/auth/feature-login": [
-        "libs/auth/feature-login/src/index.ts"
-      ],
-      "@tin/auth/shell": [
-        "libs/auth/shell/src/index.ts"
-      ],
-      "@tin/shared/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
-      "@tin/debt/domain": [
-        "libs/debt/domain/src/index.ts"
-      ],
-      "@tin/debt/feature-list": [
-        "libs/debt/feature-list/src/index.ts"
-      ],
-      "@tin/debt/shell": [
-        "libs/debt/shell/src/index.ts"
-      ],
-      "@tin/debt/feature-add-debt": [
-        "libs/debt/feature-add-debt/src/index.ts"
-      ],
-      "@tin/debt/feature-preview": [
-        "libs/debt/feature-preview/src/index.ts"
-      ],
-      "@tin/debt/feature-edit": [
-        "libs/debt/feature-edit/src/index.ts"
-      ],
-      "@tin/movie-database/domain": [
-        "libs/movie-database/domain/src/index.ts"
-      ],
+      "@tin/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@tin/auth/domain": ["libs/auth/domain/src/index.ts"],
+      "@tin/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
+      "@tin/auth/shell": ["libs/auth/shell/src/index.ts"],
+      "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@tin/debt/domain": ["libs/debt/domain/src/index.ts"],
+      "@tin/debt/feature-list": ["libs/debt/feature-list/src/index.ts"],
+      "@tin/debt/shell": ["libs/debt/shell/src/index.ts"],
+      "@tin/debt/feature-add-debt": ["libs/debt/feature-add-debt/src/index.ts"],
+      "@tin/debt/feature-preview": ["libs/debt/feature-preview/src/index.ts"],
+      "@tin/debt/feature-edit": ["libs/debt/feature-edit/src/index.ts"],
+      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"],
       "@tin/movie-database/feature-actor-list": [
         "libs/movie-database/feature-actor-list/src/index.ts"
       ],
@@ -72,16 +43,17 @@
       "@tin/movie-database/feature-movie-preview": [
         "libs/movie-database/feature-movie-preview/src/index.ts"
       ],
-      "@tin/movie-database/shell": [
-        "libs/movie-database/shell/src/index.ts"
+      "@tin/movie-database/shell": ["libs/movie-database/shell/src/index.ts"],
+      "@tin/movie-database/feature-actor-add": [
+        "libs/movie-database/feature-actor-add/src/index.ts"
       ],
-      "@tin/movie-database/ui-components": [
-        "libs/movie-database/ui-components/src/index.ts"
+      "@tin/movie-database/feature-actor-edit": [
+        "libs/movie-database/feature-actor-edit/src/index.ts"
+      ],
+      "@tin/movie-database/feature-actor-preview": [
+        "libs/movie-database/feature-actor-preview/src/index.ts"
       ]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

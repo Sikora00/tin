@@ -1,5 +1,7 @@
 export interface Actor {
   id: number;
   name: string;
-  thumbnail: string;
+  biography: string;
+  thumbnailUrl: string;
+  movies: number[];
 }

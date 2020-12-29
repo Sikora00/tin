@@ -21,17 +21,10 @@
             "polyfills": "apps/tin/src/polyfills.ts",
             "tsConfig": "apps/tin/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/tin/src/favicon.ico",
-              "apps/tin/src/assets"
-            ],
-            "styles": [
-              "apps/tin/src/styles.scss"
-            ],
+            "assets": ["apps/tin/src/favicon.ico", "apps/tin/src/assets"],
+            "styles": ["apps/tin/src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/ui/src/lib/styles"
-              ]
+              "includePaths": ["libs/shared/ui/src/lib/styles"]
             },
             "scripts": []
           },
@@ -87,9 +80,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/tin/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/tin/src/**/*.ts"]
           }
         },
         "test": {
@@ -122,9 +113,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/tin-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/tin-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -142,9 +131,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -169,9 +156,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
@@ -192,9 +177,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/api-interfaces/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
           }
         },
         "test": {
@@ -215,9 +198,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/auth/domain/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/auth/domain/src/**/*.ts"]
           }
         },
         "test": {
@@ -243,9 +224,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/auth/feature-login/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/auth/feature-login/src/**/*.ts"]
           }
         },
         "test": {
@@ -271,9 +250,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/auth/shell/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/auth/shell/src/**/*.ts"]
           }
         },
         "test": {
@@ -299,9 +276,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/ui/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/ui/src/**/*.ts"]
           }
         },
         "test": {
@@ -327,9 +302,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/domain/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/domain/src/**/*.ts"]
           }
         },
         "test": {
@@ -355,9 +328,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/feature-list/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/feature-list/src/**/*.ts"]
           }
         },
         "test": {
@@ -383,9 +354,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/shell/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/shell/src/**/*.ts"]
           }
         },
         "test": {
@@ -411,9 +380,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/feature-add-debt/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/feature-add-debt/src/**/*.ts"]
           }
         },
         "test": {
@@ -439,9 +406,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/feature-preview/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/feature-preview/src/**/*.ts"]
           }
         },
         "test": {
@@ -467,9 +432,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/debt/feature-edit/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/debt/feature-edit/src/**/*.ts"]
           }
         },
         "test": {
@@ -495,9 +458,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/domain/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/movie-database/domain/src/**/*.ts"]
           }
         },
         "test": {
@@ -663,9 +624,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/shell/src/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/movie-database/shell/src/**/*.ts"]
           }
         },
         "test": {
@@ -682,24 +641,116 @@
         }
       }
     },
-    "movie-database-ui-components": {
+    "movie-database-feature-actor-add": {
       "projectType": "library",
-      "root": "libs/movie-database/ui-components",
-      "sourceRoot": "libs/movie-database/ui-components/src",
-      "prefix": "components",
+      "root": "libs/movie-database/feature-actor-add",
+      "sourceRoot": "libs/movie-database/feature-actor-add/src",
+      "prefix": "movie-database",
       "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/feature-actor-add/tsconfig.lib.json",
+            "project": "libs/movie-database/feature-actor-add/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/feature-actor-add/tsconfig.lib.prod.json"
+            }
+          }
+        },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/movie-database/ui-components/src/**/*.ts"
+              "libs/movie-database/feature-actor-add/src/**/*.ts"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/movie-database/ui-components/jest.config.js",
+            "jestConfig": "libs/movie-database/feature-actor-add/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-feature-actor-edit": {
+      "projectType": "library",
+      "root": "libs/movie-database/feature-actor-edit",
+      "sourceRoot": "libs/movie-database/feature-actor-edit/src",
+      "prefix": "movie-database",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/feature-actor-edit/tsconfig.lib.json",
+            "project": "libs/movie-database/feature-actor-edit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/feature-actor-edit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/feature-actor-edit/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/feature-actor-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-feature-actor-preview": {
+      "projectType": "library",
+      "root": "libs/movie-database/feature-actor-preview",
+      "sourceRoot": "libs/movie-database/feature-actor-preview/src",
+      "prefix": "movie-database",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/feature-actor-preview/tsconfig.lib.json",
+            "project": "libs/movie-database/feature-actor-preview/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/feature-actor-preview/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/feature-actor-preview/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/feature-actor-preview/jest.config.js",
             "passWithNoTests": true
           }
         }

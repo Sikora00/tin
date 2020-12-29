@@ -19,7 +19,7 @@ export class MovieDataService {
     return of([
       {
         id: 1,
-        cast: [],
+        castMemberIds: [],
         thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
         releaseDate: new Date(),
         title: 'Lorem ipsum',
@@ -27,7 +27,7 @@ export class MovieDataService {
       },
       {
         id: 2,
-        cast: [],
+        castMemberIds: [],
         thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
         releaseDate: new Date(),
         title: 'At vero eos',
@@ -35,7 +35,7 @@ export class MovieDataService {
       },
       {
         id: 3,
-        cast: [],
+        castMemberIds: [],
         thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
         releaseDate: new Date(),
         title: 'Duis autem',

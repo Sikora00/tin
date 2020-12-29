@@ -1,9 +1,8 @@
-<h1>Aktorzy</h1>
-
-<table class="table">
-  <tr *ngFor="let actor of actorList$ | async">
-    <td>{{ actor.id }}</td>
-    <td>{{ actor.name }}</td>
-    <td>{{ actor.description }}</td>
-  </tr>
-</table>
+<div class="actor-list-container">
+  <div *ngFor="let actor of actorList$ | async" class="actor-card">
+    <movie-database-actor-card [actor]="actor"></movie-database-actor-card>
+  </div>
+</div>
+<a [routerLink]="['add']">
+  <tin-add-button></tin-add-button>
+</a>

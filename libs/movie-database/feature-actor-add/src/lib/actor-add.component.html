@@ -1,0 +1,23 @@
+<div class="add-actor-container">
+  <h1 class="add-actor-header">Dodaj Aktora</h1>
+  <form class="add-debt-form">
+    <label>
+      <span>Imię i Nazwisko</span>
+      <input class="input-full" [placeholder]="'Imię i nazwisko'" />
+    </label>
+    <label>
+      <span>Adres ikony</span>
+      <input
+        class="input-full"
+        [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
+      />
+    </label>
+    <label>
+      <span>Biografia</span>
+      <textarea class="input-full" [placeholder]="'biografia'"></textarea>
+    </label>
+    <a [routerLink]="['/movie-database/actor']">
+      <button class="btn btn-full"><span>Zapisz</span></button>
+    </a>
+  </form>
+</div>

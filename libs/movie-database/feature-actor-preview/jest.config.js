@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'movie-database-ui-components',
+  displayName: 'movie-database-feature-actor-preview',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,8 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/movie-database/ui-components',
+  coverageDirectory:
+    '../../../coverage/libs/movie-database/feature-actor-preview',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

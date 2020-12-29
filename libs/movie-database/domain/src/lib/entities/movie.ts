@@ -1,8 +1,6 @@
-import { CastMember } from './cast-member';
-
 export interface Movie {
   id: number;
-  cast: CastMember[];
+  castMemberIds: number[];
   description: string;
   releaseDate: Date;
   thumbnailUrl: string;

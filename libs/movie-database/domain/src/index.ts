@@ -20,3 +20,9 @@ export * from './lib/infrastructure/actor.data.service';
 export * from './lib/+state/actor/actor.actions';
 
 export * from './lib/application/actor-list.facade';
+
+export * from './lib/application/actor-add.facade';
+
+export * from './lib/application/actor-edit.facade';
+
+export * from './lib/application/actor-preview.facade';

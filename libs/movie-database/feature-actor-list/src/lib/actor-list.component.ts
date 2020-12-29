@@ -5,6 +5,7 @@ import { ActorListFacade, loadActor } from '@tin/movie-database/domain';
   selector: 'movie-database-actor-list',
   templateUrl: './actor-list.component.html',
   styleUrls: ['./actor-list.component.scss'],
+  host: { class: 'feature-host' },
 })
 export class ActorListComponent implements OnInit {
   actorList$ = this.actorListFacade.actorList$;

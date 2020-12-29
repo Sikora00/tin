@@ -19,21 +19,30 @@ export class ActorDataService {
     return of([
       {
         id: 1,
-        name: 'Lorem ipsum',
+        name: 'Leonardo DiCaprio',
         description: 'Lorem ipsum dolor sit amet',
-        thumbnail: '',
+        biography:
+          'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
+        thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
+        movies: [],
       },
       {
         id: 2,
         name: 'At vero eos',
         description: 'At vero eos et accusam et justo duo dolores',
-        thumbnail: '',
+        biography:
+          'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
+        thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
+        movies: [],
       },
       {
         id: 3,
         name: 'Duis autem',
         description: 'Duis autem vel eum iriure dolor in hendrerit',
-        thumbnail: '',
+        biography:
+          'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
+        thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
+        movies: [],
       },
     ]);
   }

@@ -1,0 +1,36 @@
+<div class="card actor-card">
+  <div class="container">
+    <div class="actor-header">
+      <img
+        [src]="actor.thumbnailUrl"
+        [alt]="'Movie thumbnail'"
+        class="actor-thumbnail"
+      />
+      <div>
+        <h1>{{ actor.name }}</h1>
+      </div>
+    </div>
+    <div class="actor-detail">
+      <h2>Biografia:</h2>
+      <p>{{ actor.biography }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="card actor-card">
+  <div class="container">
+    <div class="actor-cast">
+      <h2>Filmy</h2>
+      <p class="actor-cast-list">
+        <movie-database-actor-movie
+          [actorMovie]="movie"
+          *ngFor="let movie of actor.movies"
+          class="actor-cast-member"
+        ></movie-database-actor-movie>
+      </p>
+    </div>
+  </div>
+</div>
+<a [routerLink]="['edit']">
+  <tin-edit-button></tin-edit-button>
+</a>

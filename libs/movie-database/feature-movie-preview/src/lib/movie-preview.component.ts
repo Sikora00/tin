@@ -1,5 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Movie, MoviePreviewFacade } from '@tin/movie-database/domain';
+import {
+  Actor,
+  Movie,
+  MoviePreview,
+  MoviePreviewFacade,
+} from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-preview',
@@ -9,7 +14,7 @@ import { Movie, MoviePreviewFacade } from '@tin/movie-database/domain';
   host: { class: 'feature-host' },
 })
 export class MoviePreviewComponent {
-  movie: Movie = {
+  movie: MoviePreview = {
     id: 1,
     thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
     releaseDate: new Date(),
@@ -18,59 +23,66 @@ export class MoviePreviewComponent {
     cast: [
       {
         role: 'Tadeusz Norek',
+        id: 1,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 2,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 3,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 3,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 3,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 3,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
       {
         role: 'Tadeusz Norek',
+        id: 3,
         actor: {
           id: 1,
           name: 'Artur Barciś',
-          thumbnail: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        },
+          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
+        } as Actor,
       },
     ],
   };

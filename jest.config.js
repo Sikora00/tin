@@ -21,5 +21,8 @@ module.exports = {
     '<rootDir>/libs/movie-database/shell',
     '<rootDir>/libs/movie-database/ui-components',
     '<rootDir>/libs/movie-database/feature-actor-list',
+    '<rootDir>/libs/movie-database/feature-actor-add',
+    '<rootDir>/libs/movie-database/feature-actor-edit',
+    '<rootDir>/libs/movie-database/feature-actor-preview',
   ],
 };

@@ -1,0 +1,7 @@
+<img class="cast-member-thumbnail" [src]="actorMovie.movie.thumbnailUrl" />
+<p>
+  <a [routerLink]="['movie-database', 'movie', actorMovie.movie.id]"
+    ><strong>{{ actorMovie.movie.title }}</strong></a
+  >
+</p>
+<p>{{ actorMovie.role }}</p>

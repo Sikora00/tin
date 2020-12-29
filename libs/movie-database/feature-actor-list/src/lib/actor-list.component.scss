@@ -1,4 +1,10 @@
-.table td {
-  border: 1px solid;
-  padding: 10px;
+:host {
+  align-items: center;
+}
+.actor-list-container {
+  width: 50%;
+}
+
+.actor-card {
+  margin-bottom: 1rem;
 }
