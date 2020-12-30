@@ -1,24 +1,31 @@
-import { Component } from '@angular/core';
-import { ActorAddFacade } from '@tin/movie-database/domain';
-import { AddActorCommand } from '../../../domain/src/lib/application/commands/add-actor/add-actor.command';
+import { Component, OnInit } from '@angular/core';
+import {
+  ActorAddFacade,
+  ActorAddPresenterInterface,
+  AddActorForm,
+} from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-actor-add',
   templateUrl: './actor-add.component.html',
   styleUrls: ['./actor-add.component.scss'],
   host: { class: 'feature-host' },
+  providers: [ActorAddFacade],
 })
-export class ActorAddComponent {
-  form = this.actorAddFacade.getForm();
+export class ActorAddComponent implements OnInit, ActorAddPresenterInterface {
+  form: AddActorForm;
 
   constructor(private actorAddFacade: ActorAddFacade) {}
 
+  ngOnInit(): void {
+    this.actorAddFacade.init(this);
+  }
+
   onSubmit(): void {
-    if (this.form.valid) {
-      const { name, surname, biography, thumbnailUrl } = this.form.value;
-      this.actorAddFacade.addActor(
-        new AddActorCommand(name, surname, thumbnailUrl, biography)
-      );
-    }
+    this.actorAddFacade.onFormSubmit(this.form);
+  }
+
+  displayForm(form: AddActorForm): void {
+    this.form = form;
   }
 }

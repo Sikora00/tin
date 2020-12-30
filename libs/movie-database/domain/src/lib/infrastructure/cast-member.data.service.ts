@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Movie } from '../domain/entities/movie';
 import { CastMember } from '@tin/movie-database/domain';
 import { CastMemberId } from '../domain/value-objects/cast-member-id.value-object';
+import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class CastMemberDataService {
@@ -25,7 +26,7 @@ export class CastMemberDataService {
         actor: 1,
         movie: 1,
       },
-    ]);
+    ]).pipe(delay(2000));
   }
 
   loadSingle(movieId: CastMemberId) {
@@ -34,6 +35,6 @@ export class CastMemberDataService {
       role: 'Arnold Boczek',
       actor: 1,
       movie: 1,
-    });
+    }).pipe(delay(2000));
   }
 }

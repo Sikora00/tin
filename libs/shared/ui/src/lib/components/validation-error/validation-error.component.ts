@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, ControlContainer, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'tin-validation-error',
@@ -23,6 +23,7 @@ export class ValidationErrorComponent implements OnInit {
     const form: FormGroup = this.controlContainer.control as FormGroup;
     this.formControl = form.get(this.controlName);
     this.errors$ = form.valueChanges.pipe(
+      startWith(''),
       map(() =>
         Object.keys(this.formControl.errors || {}).map(
           (key) => this.errorMessages[key] || key

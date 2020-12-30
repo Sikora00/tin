@@ -1,20 +1,18 @@
-import { CommandHandler, ICommandHandler } from '@valueadd/ng-cqrs';
-import { AddActorCommand } from './add-actor.command';
+import { AddActorPayload } from './add-actor.payload';
 import { ActorStore } from '../../../+state/actor/actor.store';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actor } from '@tin/movie-database/domain';
 
 @Injectable({ providedIn: 'root' })
-@CommandHandler(AddActorCommand)
-export class AddActorHandler implements ICommandHandler<AddActorCommand> {
+export class AddActorService {
   constructor(private store: ActorStore, private router: Router) {}
-  async handle({
+  async execute({
     name,
     surname,
     biography,
     thumbnailUrl,
-  }: AddActorCommand): Promise<void> {
+  }: AddActorPayload): Promise<void> {
     const actor: Actor = {
       id: this.store.getValue().ids.length + 1,
       name,

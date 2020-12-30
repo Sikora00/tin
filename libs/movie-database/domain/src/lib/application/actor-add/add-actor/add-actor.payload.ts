@@ -1,4 +1,4 @@
-export class AddActorCommand {
+export class AddActorPayload {
   constructor(
     public name: string,
     public surname: string,

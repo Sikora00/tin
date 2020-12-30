@@ -47,7 +47,6 @@
     "@ngrx/store": "10.0.0",
     "@ngrx/store-devtools": "10.0.0",
     "@nrwl/angular": "10.4.4",
-    "@valueadd/ng-cqrs": "file:./deps/valueadd-ng-cqrs-0.0.0.tgz",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Movie } from '../domain/entities/movie';
 import { MovieId } from '../domain/value-objects/movie-id.value-object';
 import { Dictionary } from '@ngrx/entity';
+import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class MovieDataService {
@@ -45,10 +46,10 @@ export class MovieDataService {
         return this.http.get<Film[]>(url, {params, headers});
         */
 
-    return of(Object.values(this.entities));
+    return of(Object.values(this.entities)).pipe(delay(2000));
   }
 
   loadSinge(movieId: MovieId): Observable<Movie> {
-    return of(this.entities[movieId]);
+    return of(this.entities[movieId]).pipe(delay(2000));
   }
 }

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Actor } from '../domain/entities/actor';
 import { ActorId } from '../domain/value-objects/actor-id.value-object';
+import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class ActorDataService {
@@ -50,10 +51,10 @@ export class ActorDataService {
         return this.http.get<Actor[]>(url, {params, headers});
         */
 
-    return of(Object.values(this.entities));
+    return of(Object.values(this.entities)).pipe(delay(2000));
   }
 
   loadSingle(id: ActorId): Observable<Actor> {
-    return of(this.entities[id]);
+    return of(this.entities[id]).pipe(delay(2000));
   }
 }

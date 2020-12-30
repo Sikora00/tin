@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 import { MovieDatabaseDomainModule } from '@tin/movie-database/domain';
 import { ActorEditComponent } from './actor-edit.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedUiModule } from '@tin/shared/ui';
 
 @NgModule({
   imports: [
     CommonModule,
     MovieDatabaseDomainModule,
     RouterModule.forChild([{ path: '', component: ActorEditComponent }]),
+    ReactiveFormsModule,
+    SharedUiModule,
   ],
   declarations: [ActorEditComponent],
   exports: [ActorEditComponent],

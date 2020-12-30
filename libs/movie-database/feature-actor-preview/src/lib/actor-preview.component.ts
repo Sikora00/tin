@@ -1,34 +1,50 @@
-import { Component, OnInit } from '@angular/core';
 import {
-  Actor,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import {
   ActorPreview,
   ActorPreviewFacade,
+  PreviewActorPresenterInterface,
 } from '@tin/movie-database/domain';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PreviewActorCommand } from '../../../domain/src/lib/application/commands/preview-actor/preview-actor.command';
 
 @Component({
   selector: 'movie-database-actor-preview',
   templateUrl: './actor-preview.component.html',
   styleUrls: ['./actor-preview.component.scss'],
   host: { class: 'feature-host' },
+  providers: [ActorPreviewFacade],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ActorPreviewComponent implements OnInit {
-  actor$: Observable<ActorPreview> = this.actorPreviewFacade.selectedActor$;
+export class ActorPreviewComponent
+  implements OnInit, PreviewActorPresenterInterface {
+  actor$: Observable<ActorPreview>;
+  loading: boolean;
 
   constructor(
     private actorPreviewFacade: ActorPreviewFacade,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private cdR: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.actorPreviewFacade.previewActor(
-      new PreviewActorCommand(+this.activatedRoute.snapshot.paramMap.get('id'))
+    this.actorPreviewFacade.init(
+      this,
+      +this.activatedRoute.snapshot.paramMap.get('id')
     );
+  }
+
+  displayActorData(data: Observable<ActorPreview>): void {
+    this.actor$ = data;
+    this.loading = false;
+    this.cdR.markForCheck();
+  }
+
+  displayLoading(): void {
+    this.loading = true;
   }
 }
