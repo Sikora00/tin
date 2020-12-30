@@ -2,7 +2,7 @@ import { createReducer, on, Action } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
 import * as MovieActions from './movie.actions';
-import { Movie } from '../../entities/movie';
+import { Movie } from '../../domain/entities/movie';
 
 export const MOVIE_FEATURE_KEY = 'movie';
 

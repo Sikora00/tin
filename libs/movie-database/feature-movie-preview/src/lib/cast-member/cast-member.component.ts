@@ -1,5 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { CastMember } from '@tin/movie-database/domain';
+import { Actor, CastMember } from '@tin/movie-database/domain';
+
+interface UiCastMember extends Omit<CastMember, 'actor'> {
+  actor: Actor;
+}
 
 @Component({
   selector: 'movie-database-cast-member',
@@ -8,5 +12,5 @@ import { CastMember } from '@tin/movie-database/domain';
 })
 export class CastMemberComponent {
   @Input()
-  castMember: CastMember;
+  castMember: UiCastMember;
 }

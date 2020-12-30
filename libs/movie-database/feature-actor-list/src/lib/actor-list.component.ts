@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActorListFacade, loadActor } from '@tin/movie-database/domain';
+import { ActorListFacade } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-actor-list',
@@ -17,6 +17,6 @@ export class ActorListComponent implements OnInit {
   }
 
   load(): void {
-    this.actorListFacade.dispatch(loadActor());
+    this.actorListFacade.loadActors();
   }
 }

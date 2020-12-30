@@ -1,0 +1,3 @@
+<ng-container *ngIf="formControl.touched || formControl.dirty">
+  <p *ngFor="let error of errors$ | async">{{ error }}</p>
+</ng-container>

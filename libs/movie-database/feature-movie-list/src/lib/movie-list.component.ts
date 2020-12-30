@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MovieListFacade, loadMovie } from '@tin/movie-database/domain';
+import { MovieListFacade } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-list',
@@ -18,6 +18,6 @@ export class MovieListComponent implements OnInit {
   }
 
   load(): void {
-    this.movieListFacade.dispatch(loadMovie());
+    this.movieListFacade.loadMovies();
   }
 }

@@ -1,23 +1,42 @@
 <div class="add-actor-container">
   <h1 class="add-actor-header">Dodaj Aktora</h1>
-  <form class="add-debt-form">
+  <form [formGroup]="form" class="add-debt-form">
     <label>
-      <span>Imię i Nazwisko</span>
-      <input class="input-full" [placeholder]="'Imię i nazwisko'" />
+      <span>Imię</span>
+      <input formControlName="name" class="input-full" [placeholder]="'Imię'" />
+      <tin-validation-error [controlName]="'name'"></tin-validation-error>
+    </label>
+    <label>
+      <span>Nazwisko</span>
+      <input
+        formControlName="surname"
+        class="input-full"
+        [placeholder]="'Nazwisko'"
+      />
+      <tin-validation-error [controlName]="'surname'"></tin-validation-error>
     </label>
     <label>
       <span>Adres ikony</span>
       <input
         class="input-full"
+        formControlName="thumbnailUrl"
         [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
       />
+      <tin-validation-error
+        [controlName]="'thumbnailUrl'"
+      ></tin-validation-error>
     </label>
     <label>
       <span>Biografia</span>
-      <textarea class="input-full" [placeholder]="'biografia'"></textarea>
+      <textarea
+        formControlName="biography"
+        class="input-full"
+        [placeholder]="'biografia'"
+      ></textarea>
+      <tin-validation-error [controlName]="'biography'"></tin-validation-error>
     </label>
-    <a [routerLink]="['/movie-database/actor']">
-      <button class="btn btn-full"><span>Zapisz</span></button>
-    </a>
+    <button (click)="onSubmit()" class="btn btn-full">
+      <span>Zapisz</span>
+    </button>
   </form>
 </div>

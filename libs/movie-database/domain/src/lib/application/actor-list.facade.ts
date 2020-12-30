@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-
-import { select, Store, Action } from '@ngrx/store';
-
-import * as fromActor from '../+state/actor/actor.reducer';
-import * as ActorSelectors from '../+state/actor/actor.selectors';
+import { ActorQuery } from '../+state/actor/actor.query';
+import { QueryBus } from '@valueadd/ng-cqrs';
+import { LoadActorsQuery } from './queries/load-actors/load-actors.query';
 
 @Injectable({ providedIn: 'root' })
 export class ActorListFacade {
-  loaded$ = this.store.pipe(select(ActorSelectors.getActorLoaded));
-  actorList$ = this.store.pipe(select(ActorSelectors.getAllActor));
-  selectedActor$ = this.store.pipe(select(ActorSelectors.getSelected));
+  actorList$ = this.query.actors$;
 
-  constructor(private store: Store<fromActor.ActorPartialState>) {}
+  constructor(private query: ActorQuery, private queryBus: QueryBus) {}
 
-  dispatch(action: Action) {
-    this.store.dispatch(action);
+  loadActors(): Promise<unknown> {
+    return this.queryBus.execute(new LoadActorsQuery());
   }
 }

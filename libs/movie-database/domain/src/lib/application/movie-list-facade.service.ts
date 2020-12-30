@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { select, Store, Action } from '@ngrx/store';
+import { loadMovie } from '../+state/movie/movie.actions';
 
 import * as fromMovie from '../+state/movie/movie.reducer';
 import * as MovieSelectors from '../+state/movie/movie.selectors';
@@ -13,7 +14,7 @@ export class MovieListFacade {
 
   constructor(private store: Store<fromMovie.MoviePartialState>) {}
 
-  dispatch(action: Action) {
-    this.store.dispatch(action);
+  loadMovies() {
+    this.store.dispatch(loadMovie());
   }
 }

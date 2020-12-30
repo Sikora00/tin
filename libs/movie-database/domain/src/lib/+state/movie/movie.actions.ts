@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Movie } from '../../entities/movie';
+import { Movie } from '../../domain/entities/movie';
 
 export const loadMovie = createAction('[Movie] Load Movie');
 

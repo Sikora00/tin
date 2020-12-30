@@ -4,6 +4,13 @@ import {
   ActorPreview,
   ActorPreviewFacade,
 } from '@tin/movie-database/domain';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+} from '@angular/router';
+import { Observable } from 'rxjs';
+import { PreviewActorCommand } from '../../../domain/src/lib/application/commands/preview-actor/preview-actor.command';
 
 @Component({
   selector: 'movie-database-actor-preview',
@@ -12,26 +19,16 @@ import {
   host: { class: 'feature-host' },
 })
 export class ActorPreviewComponent implements OnInit {
-  actor: ActorPreview = {
-    id: 1,
-    name: 'Artur Barciś',
-    thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-    biography:
-      'Loerm Ipsum. Loerm Ipsum, Loerm Ipsum, Loerm Ipsum. Loerm Ipsum. Loerm Ipsum, Loerm Ipsum, Loerm Ipsum.',
-    movies: [
-      {
-        id: 1,
-        movie: {
-          id: 1,
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-          releaseDate: new Date(),
-          title: 'Lorem ipsum',
-          description: 'Lorem ipsum dolor sit amet',
-        },
-      },
-    ],
-  };
-  constructor(private actorPreviewFacade: ActorPreviewFacade) {}
+  actor$: Observable<ActorPreview> = this.actorPreviewFacade.selectedActor$;
 
-  ngOnInit() {}
+  constructor(
+    private actorPreviewFacade: ActorPreviewFacade,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.actorPreviewFacade.previewActor(
+      new PreviewActorCommand(+this.activatedRoute.snapshot.paramMap.get('id'))
+    );
+  }
 }
