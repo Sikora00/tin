@@ -33,9 +33,6 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
-      "tags": []
-    },
     "auth-domain": {
       "tags": ["domain:auth", "type:domain-logic"]
     },
@@ -47,24 +44,6 @@
     },
     "shared-ui": {
       "tags": ["domain:shared", "type:ui"]
-    },
-    "debt-domain": {
-      "tags": ["domain:debt", "type:domain-logic"]
-    },
-    "debt-feature-list": {
-      "tags": ["domain:debt", "type:feature"]
-    },
-    "debt-shell": {
-      "tags": ["domain:debt", "type:shell"]
-    },
-    "debt-feature-add-debt": {
-      "tags": ["domain:debt", "type:feature"]
-    },
-    "debt-feature-preview": {
-      "tags": ["domain:debt", "type:feature"]
-    },
-    "debt-feature-edit": {
-      "tags": ["domain:debt", "type:feature"]
     },
     "movie-database-domain": {
       "tags": ["domain:movie-database", "type:domain-logic"]
