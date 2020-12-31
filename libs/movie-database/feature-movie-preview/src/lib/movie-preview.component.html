@@ -1,39 +1,46 @@
-<div class="card movie-card">
-  <div class="container">
-    <div class="movie-header">
-      <img
-        [src]="movie.thumbnailUrl"
-        [alt]="'Movie thumbnail'"
-        class="movie-thumbnail"
-      />
-      <div>
-        <h1>{{ movie.title }}</h1>
+<ng-container *ngIf="!loading; else loader">
+  <ng-container *ngIf="movie$ | async as movie">
+    <div class="card movie-card">
+      <div class="container">
+        <div class="movie-header">
+          <img
+            [src]="movie.thumbnailUrl"
+            [alt]="'Movie thumbnail'"
+            class="movie-thumbnail"
+          />
+          <div>
+            <h1>{{ movie.title }}</h1>
+            <div class="movie-detail">
+              <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+            </div>
+          </div>
+        </div>
         <div class="movie-detail">
-          <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+          <h2>Opis:</h2>
+          <p>{{ movie.description }}</p>
         </div>
       </div>
     </div>
-    <div class="movie-detail">
-      <h2>Opis:</h2>
-      <p>{{ movie.description }}</p>
-    </div>
-  </div>
-</div>
 
-<div class="card movie-card">
-  <div class="container">
-    <div class="movie-cast">
-      <h2>Obsada</h2>
-      <p class="movie-cast-list">
-        <movie-database-cast-member
-          [castMember]="actor"
-          *ngFor="let actor of movie.cast"
-          class="movie-cast-member"
-        ></movie-database-cast-member>
-      </p>
+    <div class="card movie-card">
+      <div class="container">
+        <div class="movie-cast">
+          <h2>Obsada</h2>
+          <p class="movie-cast-list">
+            <movie-database-cast-member
+              [castMember]="actor"
+              *ngFor="let actor of movie.actors"
+              class="movie-cast-member"
+            ></movie-database-cast-member>
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<a [routerLink]="['edit']">
-  <tin-edit-button></tin-edit-button>
-</a>
+    <a [routerLink]="['edit']">
+      <tin-edit-button></tin-edit-button>
+    </a>
+  </ng-container>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

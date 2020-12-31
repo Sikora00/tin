@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Movie } from '../domain/entities/movie';
-import { MovieId } from '../domain/value-objects/movie-id.value-object';
-import { Dictionary } from '@ngrx/entity';
 import { delay } from 'rxjs/operators';
+import { Movie } from '../../domain/entities/movie';
+import { MovieId } from '../../domain/value-objects/movie-id.value-object';
 
 @Injectable({ providedIn: 'root' })
-export class MovieDataService {
-  private readonly entities: Dictionary<Movie> = {
+export class MovieHttpService {
+  private readonly entities: Record<MovieId, Movie> = {
     1: {
       id: 1,
-      actors: [],
+      actors: [1],
       thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
       releaseDate: new Date(),
       title: 'Lorem ipsum',
@@ -35,21 +33,15 @@ export class MovieDataService {
     },
   };
 
-  constructor(private http: HttpClient) {}
-
   load(): Observable<Movie[]> {
-    // Uncomment if needed
-    /*
-        const url = '...';
-        const params = new HttpParams().set('param', 'value');
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-        return this.http.get<Film[]>(url, {params, headers});
-        */
-
     return of(Object.values(this.entities)).pipe(delay(2000));
   }
 
-  loadSinge(movieId: MovieId): Observable<Movie> {
-    return of(this.entities[movieId]).pipe(delay(2000));
+  loadSingle(id: MovieId): Observable<Movie> {
+    return of(this.entities[id]).pipe(delay(2000));
+  }
+
+  deleteMovie(movieId: MovieId): Observable<void> {
+    return of(null);
   }
 }

@@ -13,19 +13,23 @@ export class ValidationErrorComponent implements OnInit {
   controlName: string;
 
   errors$: Observable<string[]>;
-  formControl: AbstractControl;
+  @Input()
+  control: AbstractControl;
 
   readonly errorMessages = { required: 'validation.required' };
 
   constructor(private controlContainer: ControlContainer) {}
 
   ngOnInit() {
-    const form: FormGroup = this.controlContainer.control as FormGroup;
-    this.formControl = form.get(this.controlName);
-    this.errors$ = form.valueChanges.pipe(
+    if (!this.control) {
+      this.control = (this.controlContainer.control as FormGroup).get(
+        this.controlName
+      );
+    }
+    this.errors$ = this.control.valueChanges.pipe(
       startWith(''),
       map(() =>
-        Object.keys(this.formControl.errors || {}).map(
+        Object.keys(this.control.errors || {}).map(
           (key) => this.errorMessages[key] || key
         )
       )

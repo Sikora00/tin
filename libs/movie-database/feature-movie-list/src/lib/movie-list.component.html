@@ -1,8 +1,16 @@
-<div class="movie-list-container">
-  <div *ngFor="let movie of movieList$ | async" class="movie-card">
-    <movie-database-movie-card [movie]="movie"></movie-database-movie-card>
+<ng-container *ngIf="!loading; else loader">
+  <div class="movie-list-container">
+    <div *ngFor="let movie of movieList$ | async" class="movie-card">
+      <movie-database-movie-card
+        [movie]="movie"
+        (deleteMovie)="onDeleteMovie($event)"
+      ></movie-database-movie-card>
+    </div>
   </div>
-</div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>
 <a [routerLink]="['add']">
   <tin-add-button></tin-add-button>
 </a>

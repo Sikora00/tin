@@ -1,63 +1,93 @@
-<div class="add-movie-container">
-  <h1 class="add-debt-header">Zaktualizuj Film</h1>
-  <form class="add-debt-form">
-    <label>
-      <span>Tytuł</span>
-      <input class="input-full" [placeholder]="'Tytuł'" />
-    </label>
-    <label>
-      <span>Adres ikony</span>
-      <input
-        class="input-full"
-        [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
-      />
-    </label>
-    <label>
-      <span>Data produkcji</span>
-      <input type="date" class="input-full" />
-    </label>
-    <label>
-      <span>Opis</span>
-      <textarea class="input-full" [placeholder]="'Opis'"></textarea>
-    </label>
-    <h2>Obsada</h2>
-    <div class="add-movie-cast">
-      <div class="actor-container">
-        <label>
-          <span>Aktor</span>
-          <select class="input-full" id="actor">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select>
-        </label>
-        <label>
-          <span>Rola</span>
-          <input class="input-full" [placeholder]="'Rola'" />
-        </label>
-        <span class="remove-actor-button">&#8722;</span>
+<ng-container *ngIf="!loading; else loader">
+  <div class="add-movie-container">
+    <h1 class="add-movie-header">Dodaj Film</h1>
+    <form [formGroup]="form" class="add-debt-form">
+      <label>
+        <span>Tytuł</span>
+        <input
+          formControlName="title"
+          class="input-full"
+          [placeholder]="'Tytuł'"
+        />
+        <tin-validation-error [controlName]="'title'"></tin-validation-error>
+      </label>
+      <label>
+        <span>Adres ikony</span>
+        <input
+          formControlName="thumbnailUrl"
+          class="input-full"
+          [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
+        />
+        <tin-validation-error
+          [controlName]="'thumbnailUrl'"
+        ></tin-validation-error>
+      </label>
+      <label>
+        <span>Data produkcji</span>
+        <input formControlName="releaseDate" type="date" class="input-full" />
+        <tin-validation-error
+          [controlName]="'releaseDate'"
+        ></tin-validation-error>
+      </label>
+      <label>
+        <span>Opis</span>
+        <textarea
+          formControlName="description"
+          class="input-full"
+          [placeholder]="'Opis'"
+        ></textarea>
+        <tin-validation-error
+          [controlName]="'description'"
+        ></tin-validation-error>
+      </label>
+      <h2>Obsada</h2>
+      <div class="add-movie-cast">
+        <div
+          *ngFor="
+            let actorControl of form.controls.actors.controls;
+            index as actorIndex
+          "
+          class="actor-container"
+        >
+          <label>
+            <span>Aktor</span>
+            <select
+              [formControl]="actorControl.controls.actor"
+              class="input-full"
+            >
+              <option *ngFor="let actor of actors$ | async" [value]="actor.id">
+                {{ actor.name }} {{ actor.surname }}
+              </option>
+            </select>
+            <tin-validation-error
+              [control]="actorControl.controls.actor"
+            ></tin-validation-error>
+          </label>
+          <label>
+            <span>Rola</span>
+            <input
+              [formControl]="actorControl.controls.role"
+              class="input-full"
+              [placeholder]="'Rola'"
+            />
+            <tin-validation-error
+              [control]="actorControl.controls.role"
+            ></tin-validation-error>
+          </label>
+          <span
+            (click)="onClickRemoveActor(actorIndex)"
+            class="remove-actor-button"
+            >&#8722;</span
+          >
+        </div>
       </div>
-      <div class="actor-container">
-        <label>
-          <span>Aktor</span>
-          <select class="input-full" id="actor">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select>
-        </label>
-        <label>
-          <span>Rola</span>
-          <input class="input-full" [placeholder]="'Rola'" />
-        </label>
-        <span class="remove-actor-button">&#8722;</span>
-      </div>
-    </div>
-    <span class="add-actor-button">&#43;</span>
-    <a [routerLink]="['/debt']">
-      <button class="btn btn-full"><span>Zapisz</span></button>
-    </a>
-  </form>
-</div>
+      <span (click)="onClickAddActor()" class="add-actor-button">&#43;</span>
+      <button (click)="onSubmit()" class="btn btn-full">
+        <span>Zapisz</span>
+      </button>
+    </form>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

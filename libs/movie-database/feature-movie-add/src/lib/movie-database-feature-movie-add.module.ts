@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MovieDatabaseDomainModule } from '@tin/movie-database/domain';
 import { MovieAddComponent } from './movie-add.component';
 import { RouterModule } from '@angular/router';
+import { SharedUiModule } from '@tin/shared/ui';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    MovieDatabaseDomainModule,
     RouterModule.forChild([{ path: '', component: MovieAddComponent }]),
+    SharedUiModule,
+    ReactiveFormsModule,
   ],
   declarations: [MovieAddComponent],
   exports: [MovieAddComponent],

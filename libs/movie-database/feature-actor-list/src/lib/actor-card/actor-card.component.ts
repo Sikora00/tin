@@ -1,5 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Actor } from '@tin/movie-database/domain';
+import { ActorId } from '../../../../domain/src/lib/domain/value-objects/actor-id.value-object';
 
 @Component({
   selector: 'movie-database-actor-card',
@@ -10,4 +17,10 @@ import { Actor } from '@tin/movie-database/domain';
 export class ActorCardComponent {
   @Input()
   actor: Actor;
+  @Output()
+  deleteActor = new EventEmitter<ActorId>();
+
+  onDeleteActor(): void {
+    this.deleteActor.emit(this.actor.id);
+  }
 }

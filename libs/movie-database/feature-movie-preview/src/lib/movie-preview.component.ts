@@ -1,10 +1,17 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
-  Actor,
-  Movie,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {
+  MovieId,
   MoviePreview,
   MoviePreviewFacade,
+  MoviePreviewPresenter,
 } from '@tin/movie-database/domain';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'movie-database-movie-preview',
@@ -12,80 +19,30 @@ import {
   styleUrls: ['./movie-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'feature-host' },
+  providers: [MoviePreviewFacade],
 })
-export class MoviePreviewComponent {
-  movie: MoviePreview = {
-    id: 1,
-    thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-    releaseDate: new Date(),
-    title: 'Lorem ipsum',
-    description: 'Lorem ipsum dolor sit amet',
-    cast: [
-      {
-        role: 'Tadeusz Norek',
-        id: 1,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 2,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 3,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 3,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 3,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 3,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-      {
-        role: 'Tadeusz Norek',
-        id: 3,
-        actor: {
-          id: 1,
-          name: 'Artur Barciś',
-          thumbnailUrl: 'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg',
-        } as Actor,
-      },
-    ],
-  };
+export class MoviePreviewComponent implements OnInit, MoviePreviewPresenter {
+  movieId: MovieId = +this.activatedRoute.snapshot.paramMap.get('id');
+  movie$: Observable<MoviePreview>;
+  loading: boolean;
 
-  constructor(private moviePreviewFacade: MoviePreviewFacade) {}
+  constructor(
+    private moviePreviewFacade: MoviePreviewFacade,
+    private activatedRoute: ActivatedRoute,
+    private cdR: ChangeDetectorRef
+  ) {}
+
+  ngOnInit(): void {
+    this.moviePreviewFacade.init(this, this.movieId);
+  }
+
+  displayLoading(): void {
+    this.loading = true;
+  }
+
+  displayPreview(data: Observable<MoviePreview>): void {
+    this.movie$ = data;
+    this.loading = false;
+    this.cdR.markForCheck();
+  }
 }

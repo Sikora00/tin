@@ -1,7 +1,10 @@
 <ng-container *ngIf="!loading; else loader">
   <div class="actor-list-container">
     <div *ngFor="let actor of actorList$ | async" class="actor-card">
-      <movie-database-actor-card [actor]="actor"></movie-database-actor-card>
+      <movie-database-actor-card
+        [actor]="actor"
+        (deleteActor)="onDeleteActor($event)"
+      ></movie-database-actor-card>
     </div>
   </div>
 </ng-container>

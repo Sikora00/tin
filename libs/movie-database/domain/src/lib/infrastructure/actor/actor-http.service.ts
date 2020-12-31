@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Actor } from '../domain/entities/actor';
-import { ActorId } from '../domain/value-objects/actor-id.value-object';
+import { Actor, ActorId } from '@tin/movie-database/domain';
 import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class ActorDataService {
+export class ActorHttpService {
   private readonly entities = {
     1: {
       id: 1,
@@ -43,15 +42,11 @@ export class ActorDataService {
   constructor(private http: HttpClient) {}
 
   load(): Observable<Actor[]> {
-    // Uncomment if needed
-    /*
-        const url = '...';
-        const params = new HttpParams().set('param', 'value');
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-        return this.http.get<Actor[]>(url, {params, headers});
-        */
-
     return of(Object.values(this.entities)).pipe(delay(2000));
+  }
+
+  deleteActor(actorId: ActorId): Observable<void> {
+    return of(null);
   }
 
   loadSingle(id: ActorId): Observable<Actor> {

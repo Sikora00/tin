@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Movie } from '@tin/movie-database/domain';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { Movie, MovieId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-card',
@@ -10,4 +16,10 @@ import { Movie } from '@tin/movie-database/domain';
 export class MovieCardComponent {
   @Input()
   movie: Movie;
+  @Output()
+  deleteMovie = new EventEmitter<MovieId>();
+
+  onDelete(): void {
+    this.deleteMovie.emit(this.movie.id);
+  }
 }

@@ -1,5 +1,5 @@
 <div class="card actor-card">
-  <i class="remove-button gg-trash"></i>
+  <i (click)="onDeleteActor()" class="remove-button gg-trash"></i>
   <img
     [src]="actor.thumbnailUrl"
     [alt]="'Movie thumbnail'"

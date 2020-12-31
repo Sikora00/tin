@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFacade, loadUser } from '@tin/auth/domain';
+import { LoginFacade } from '@tin/auth/domain';
 
 @Component({
   selector: 'auth-login',
@@ -7,15 +7,7 @@ import { LoginFacade, loadUser } from '@tin/auth/domain';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  userList$ = this.loginFacade.userList$;
-
   constructor(private loginFacade: LoginFacade) {}
 
-  ngOnInit() {
-    this.load();
-  }
-
-  load(): void {
-    this.loginFacade.dispatch(loadUser());
-  }
+  ngOnInit() {}
 }

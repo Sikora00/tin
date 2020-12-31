@@ -7,7 +7,7 @@ export interface ActorState extends EntityState<Actor, number> {}
 @Injectable({
   providedIn: 'root',
 })
-@StoreConfig({ name: 'actors' })
+@StoreConfig({ name: 'actor' })
 export class ActorStore extends EntityStore<ActorState> {
   constructor() {
     super();

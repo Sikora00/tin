@@ -10,12 +10,12 @@ import { ActorId } from '../domain/value-objects/actor-id.value-object';
 import { Observable } from 'rxjs';
 import { ActorProps } from '../..';
 import { map } from 'rxjs/operators';
-import { ActorDataService } from '../infrastructure/actor.data.service';
+import { ActorDataService } from '../infrastructure/actor/actor.data.service';
 import { ActorStore } from '../+state/actor/actor.store';
 import { Router } from '@angular/router';
 import { ActorService } from './services/actor.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class ActorEditFacade {
   constructor(
     private actorService: ActorService,
