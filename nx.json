@@ -45,35 +45,38 @@
     "shared-ui": {
       "tags": ["domain:shared", "type:ui"]
     },
-    "movie-database-domain": {
+    "movie-database-client-application": {
       "tags": ["domain:movie-database", "type:domain-logic"]
     },
-    "movie-database-feature-actor-list": {
+    "movie-database-client-feature-actor-add": {
       "tags": ["domain:movie-database", "type:feature"]
     },
-    "movie-database-feature-movie-add": {
+    "movie-database-client-feature-actor-edit": {
       "tags": ["domain:movie-database", "type:feature"]
     },
-    "movie-database-feature-movie-edit": {
+    "movie-database-client-feature-actor-list": {
       "tags": ["domain:movie-database", "type:feature"]
     },
-    "movie-database-feature-movie-list": {
+    "movie-database-client-feature-actor-preview": {
       "tags": ["domain:movie-database", "type:feature"]
     },
-    "movie-database-feature-movie-preview": {
+    "movie-database-client-feature-movie-preview": {
       "tags": ["domain:movie-database", "type:feature"]
     },
-    "movie-database-shell": {
+    "movie-database-client-feature-movie-add": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-edit": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-list": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-shell": {
       "tags": ["domain:movie-database", "type:shell"]
     },
-    "movie-database-feature-actor-add": {
-      "tags": ["domain:movie-database", "type:feature"]
-    },
-    "movie-database-feature-actor-edit": {
-      "tags": ["domain:movie-database", "type:feature"]
-    },
-    "movie-database-feature-actor-preview": {
-      "tags": ["domain:movie-database", "type:feature"]
+    "movie-database-domain": {
+      "tags": ["domain:movie-database", "type:domain"]
     }
   }
 }

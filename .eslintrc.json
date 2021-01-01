@@ -49,10 +49,6 @@
                 "onlyDependOnLibsWithTags": ["domain:auth", "domain:shared"]
               },
               {
-                "sourceTag": "domain:debt",
-                "onlyDependOnLibsWithTags": ["domain:debt", "domain:shared"]
-              },
-              {
                 "sourceTag": "domain:movie-database",
                 "onlyDependOnLibsWithTags": [
                   "domain:movie-database",

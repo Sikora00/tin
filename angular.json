@@ -272,16 +272,330 @@
         }
       }
     },
-    "movie-database-domain": {
+    "movie-database-client-application": {
       "projectType": "library",
-      "root": "libs/movie-database/domain",
-      "sourceRoot": "libs/movie-database/domain/src",
+      "root": "libs/movie-database/client/application",
+      "sourceRoot": "libs/movie-database/client/application/src",
       "prefix": "movie-database",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/movie-database/domain/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/movie-database/client/application/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/application/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-actor-add": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-actor-add",
+      "sourceRoot": "libs/movie-database/client/feature-actor-add/src",
+      "prefix": "movie-database",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/client/feature-actor-add/tsconfig.lib.json",
+            "project": "libs/movie-database/client/feature-actor-add/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/client/feature-actor-add/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-actor-add/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-actor-add/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-actor-edit": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-actor-edit",
+      "sourceRoot": "libs/movie-database/client/feature-actor-edit/src",
+      "prefix": "movie-database",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/client/feature-actor-edit/tsconfig.lib.json",
+            "project": "libs/movie-database/client/feature-actor-edit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/client/feature-actor-edit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-actor-edit/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-actor-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-actor-list": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-actor-list",
+      "sourceRoot": "libs/movie-database/client/feature-actor-list/src",
+      "prefix": "movie-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-actor-list/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-actor-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-actor-preview": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-actor-preview",
+      "sourceRoot": "libs/movie-database/client/feature-actor-preview/src",
+      "prefix": "movie-database",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/movie-database/client/feature-actor-preview/tsconfig.lib.json",
+            "project": "libs/movie-database/client/feature-actor-preview/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/movie-database/client/feature-actor-preview/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-actor-preview/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-actor-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-movie-preview": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-movie-preview",
+      "sourceRoot": "libs/movie-database/client/feature-movie-preview/src",
+      "prefix": "movie-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-movie-preview/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-movie-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-movie-add": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-movie-add",
+      "sourceRoot": "libs/movie-database/client/feature-movie-add/src",
+      "prefix": "movie-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-movie-add/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-movie-add/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-movie-edit": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-movie-edit",
+      "sourceRoot": "libs/movie-database/client/feature-movie-edit/src",
+      "prefix": "movie-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-movie-edit/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-movie-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-movie-list": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-movie-list",
+      "sourceRoot": "libs/movie-database/client/feature-movie-list/src",
+      "prefix": "movie-database",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-movie-list/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-movie-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-shell": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/shell",
+      "sourceRoot": "libs/movie-database/client/shell/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/movie-database/client/shell/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-domain": {
+      "root": "libs/movie-database/domain",
+      "sourceRoot": "libs/movie-database/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/movie-database/domain/**/*.ts"]
           }
         },
         "test": {
@@ -290,297 +604,6 @@
             "jestConfig": "libs/movie-database/domain/jest.config.js",
             "passWithNoTests": true
           }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-actor-list": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-actor-list",
-      "sourceRoot": "libs/movie-database/feature-actor-list/src",
-      "prefix": "movie-database",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-actor-list/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-actor-list/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-movie-add": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-movie-add",
-      "sourceRoot": "libs/movie-database/feature-movie-add/src",
-      "prefix": "movie-database",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-movie-add/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-movie-add/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-movie-edit": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-movie-edit",
-      "sourceRoot": "libs/movie-database/feature-movie-edit/src",
-      "prefix": "movie-database",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-movie-edit/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-movie-edit/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-movie-list": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-movie-list",
-      "sourceRoot": "libs/movie-database/feature-movie-list/src",
-      "prefix": "movie-database",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-movie-list/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-movie-list/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-movie-preview": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-movie-preview",
-      "sourceRoot": "libs/movie-database/feature-movie-preview/src",
-      "prefix": "movie-database",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-movie-preview/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-movie-preview/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-shell": {
-      "projectType": "library",
-      "root": "libs/movie-database/shell",
-      "sourceRoot": "libs/movie-database/shell/src",
-      "prefix": "tin",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/movie-database/shell/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-actor-add": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-actor-add",
-      "sourceRoot": "libs/movie-database/feature-actor-add/src",
-      "prefix": "movie-database",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/movie-database/feature-actor-add/tsconfig.lib.json",
-            "project": "libs/movie-database/feature-actor-add/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/movie-database/feature-actor-add/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-actor-add/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-actor-add/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-actor-edit": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-actor-edit",
-      "sourceRoot": "libs/movie-database/feature-actor-edit/src",
-      "prefix": "movie-database",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/movie-database/feature-actor-edit/tsconfig.lib.json",
-            "project": "libs/movie-database/feature-actor-edit/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/movie-database/feature-actor-edit/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-actor-edit/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-actor-edit/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "movie-database-feature-actor-preview": {
-      "projectType": "library",
-      "root": "libs/movie-database/feature-actor-preview",
-      "sourceRoot": "libs/movie-database/feature-actor-preview/src",
-      "prefix": "movie-database",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:ng-packagr-lite",
-          "options": {
-            "tsConfig": "libs/movie-database/feature-actor-preview/tsconfig.lib.json",
-            "project": "libs/movie-database/feature-actor-preview/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/movie-database/feature-actor-preview/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/movie-database/feature-actor-preview/src/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/movie-database/feature-actor-preview/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
         }
       }
     }

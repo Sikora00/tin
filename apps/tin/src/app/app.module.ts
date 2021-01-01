@@ -14,8 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
       {
         path: 'movie-database',
         loadChildren: () =>
-          import('@tin/movie-database/shell').then(
-            (m) => m.MovieDatabaseShellModule
+          import('@tin/movie-database/client/shell').then(
+            (m) => m.MovieDatabaseClientShellModule
           ),
       },
       { path: '', pathMatch: 'full', redirectTo: 'login' },

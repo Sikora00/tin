@@ -20,32 +20,37 @@
       "@tin/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
       "@tin/auth/shell": ["libs/auth/shell/src/index.ts"],
       "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"],
-      "@tin/movie-database/feature-actor-list": [
-        "libs/movie-database/feature-actor-list/src/index.ts"
+      "@tin/movie-database/client/application": [
+        "libs/movie-database/client/application/src/index.ts"
       ],
-      "@tin/movie-database/feature-movie-add": [
-        "libs/movie-database/feature-movie-add/src/index.ts"
+      "@tin/movie-database/client/feature-actor-add": [
+        "libs/movie-database/client/feature-actor-add/src/index.ts"
       ],
-      "@tin/movie-database/feature-movie-edit": [
-        "libs/movie-database/feature-movie-edit/src/index.ts"
+      "@tin/movie-database/client/feature-actor-edit": [
+        "libs/movie-database/client/feature-actor-edit/src/index.ts"
       ],
-      "@tin/movie-database/feature-movie-list": [
-        "libs/movie-database/feature-movie-list/src/index.ts"
+      "@tin/movie-database/client/feature-actor-list": [
+        "libs/movie-database/client/feature-actor-list/src/index.ts"
       ],
-      "@tin/movie-database/feature-movie-preview": [
-        "libs/movie-database/feature-movie-preview/src/index.ts"
+      "@tin/movie-database/client/feature-actor-preview": [
+        "libs/movie-database/client/feature-actor-preview/src/index.ts"
       ],
-      "@tin/movie-database/shell": ["libs/movie-database/shell/src/index.ts"],
-      "@tin/movie-database/feature-actor-add": [
-        "libs/movie-database/feature-actor-add/src/index.ts"
+      "@tin/movie-database/client/feature-movie-preview": [
+        "libs/movie-database/client/feature-movie-preview/src/index.ts"
       ],
-      "@tin/movie-database/feature-actor-edit": [
-        "libs/movie-database/feature-actor-edit/src/index.ts"
+      "@tin/movie-database/client/feature-movie-add": [
+        "libs/movie-database/client/feature-movie-add/src/index.ts"
       ],
-      "@tin/movie-database/feature-actor-preview": [
-        "libs/movie-database/feature-actor-preview/src/index.ts"
-      ]
+      "@tin/movie-database/client/feature-movie-edit": [
+        "libs/movie-database/client/feature-movie-edit/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-movie-list": [
+        "libs/movie-database/client/feature-movie-list/src/index.ts"
+      ],
+      "@tin/movie-database/client/shell": [
+        "libs/movie-database/client/shell/src/index.ts"
+      ],
+      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
