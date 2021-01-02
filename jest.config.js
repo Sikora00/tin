@@ -24,5 +24,8 @@ module.exports = {
     '<rootDir>/libs/movie-database/feature-actor-add',
     '<rootDir>/libs/movie-database/feature-actor-edit',
     '<rootDir>/libs/movie-database/feature-actor-preview',
+    '<rootDir>/libs/movie-database/server/ui-rest',
+    '<rootDir>/libs/movie-database/server/infrastructure-typeorm',
+    '<rootDir>/libs/movie-database/server/domain',
   ],
 };

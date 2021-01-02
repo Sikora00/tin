@@ -606,6 +606,71 @@
           }
         }
       }
+    },
+    "movie-database-server-ui-rest": {
+      "root": "libs/movie-database/server/ui-rest",
+      "sourceRoot": "libs/movie-database/server/ui-rest/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/movie-database/server/ui-rest/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/server/ui-rest/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "movie-database-server-infrastructure-typeorm": {
+      "root": "libs/movie-database/server/infrastructure-typeorm",
+      "sourceRoot": "libs/movie-database/server/infrastructure-typeorm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/server/infrastructure-typeorm/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/server/infrastructure-typeorm/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "movie-database-server-domain": {
+      "root": "libs/movie-database/server/domain",
+      "sourceRoot": "libs/movie-database/server/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/movie-database/server/domain/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/server/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

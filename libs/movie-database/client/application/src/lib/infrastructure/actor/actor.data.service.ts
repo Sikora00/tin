@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { ActorHttpService } from './actor-http.service';
 import { ActorStateManagerService } from './actor-state-manager.service';
-import {Actor, ActorId} from "@tin/movie-database/domain";
+import { Actor, ActorId } from '@tin/movie-database/domain';
 
 @Injectable({ providedIn: 'root' })
 export class ActorDataService {

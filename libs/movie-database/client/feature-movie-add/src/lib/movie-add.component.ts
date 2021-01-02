@@ -10,7 +10,7 @@ import {
   MovieAddPresenterInterface,
 } from '@tin/movie-database/client/application';
 import { Observable } from 'rxjs';
-import {Actor} from "@tin/movie-database/domain";
+import { Actor } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-add',

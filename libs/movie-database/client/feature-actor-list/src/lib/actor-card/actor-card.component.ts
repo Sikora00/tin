@@ -5,7 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import {Actor, ActorId} from "@tin/movie-database/domain";
+import { Actor, ActorId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-actor-card',

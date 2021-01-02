@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Movie } from '@tin/movie-database/domain';
-import { MovieId } from '@tin/movie-database/domain';
-import { switchMap, tap } from 'rxjs/operators';
-import { AddMoviePayload } from '../../application/movie-add/add-movie.payload';
-import { EditMoviePayload } from '../../application/movie-edit/edit-movie.payload';
+import {
+  AddMovieWriteModel,
+  EditMovieWriteModel,
+  Movie,
+  MovieId,
+  MovieWithActorsReadModel,
+} from '@tin/movie-database/domain';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { MovieHttpService } from './movie-http.service';
 import { MovieStateManagerService } from './movie-state-manager.service';
+import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 
 @Injectable({ providedIn: 'root' })
 export class MovieDataService {
   constructor(
     private movieHttpService: MovieHttpService,
-    private movieStateManagerService: MovieStateManagerService
-  ) {}
+    private movieStateManagerService: MovieStateManagerService,
+    private castMemberStateManagerService: CastMemberStore
+  ) {
+    this.rememberResponse = this.rememberResponse.bind(this);
+  }
 
   load(): Observable<Movie[]> {
-    return this.movieHttpService.load();
+    return this.movieHttpService
+      .get<MovieWithActorsReadModel[]>({ skipWrite: true })
+      .pipe(this.rememberResponse);
   }
 
   getSingleOnce(movieId: MovieId): Observable<Movie> {
@@ -24,9 +33,10 @@ export class MovieDataService {
       switchMap((maybeMovie) => {
         if (!maybeMovie) {
           return this.movieHttpService
-            .loadSingle(movieId)
+            .get<MovieWithActorsReadModel>(movieId, { skipWrite: true })
             .pipe(
-              tap((movie) => this.movieStateManagerService.remember([movie]))
+              this.rememberResponse,
+              map((movies) => movies[0])
             );
         }
         return of(maybeMovie);
@@ -34,17 +44,44 @@ export class MovieDataService {
     );
   }
 
-  addMovie(value: AddMoviePayload): Observable<Movie> {
-    return this.movieStateManagerService.addMovie(value); //@ToDo add http
-  }
-
-  editMovie(payload: EditMoviePayload): Observable<Movie> {
-    return this.movieStateManagerService.editMovie(payload); //@ToDo add http
-  }
-
-  deleteMovie(movieId: MovieId): Observable<void> {
+  addMovie(value: AddMovieWriteModel): Observable<Movie> {
     return this.movieHttpService
-      .deleteMovie(movieId)
+      .add<MovieWithActorsReadModel>(value as any)
+      .pipe(
+        map((response) => this.movieHttpService.normalize(response)),
+        map(({ movie, actors }) => ({
+          actors,
+          movie: Object.values(movie)[0],
+        })),
+        tap(({ movie, actors }) => {
+          this.movieStateManagerService.addMovie(movie, Object.values(actors));
+        }),
+        map(({ movie }) => movie)
+      );
+  }
+
+  editMovie(payload: EditMovieWriteModel): Observable<Movie> {
+    return this.movieHttpService
+      .add<Movie>((payload as unknown) as Movie)
+      .pipe(tap((movie) => this.movieStateManagerService.editMovie(payload))); //@ToDo add http
+  }
+
+  deleteMovie(movieId: MovieId): Observable<unknown> {
+    return this.movieHttpService
+      .delete(movieId)
       .pipe(tap(() => this.movieStateManagerService.deleteMovie(movieId)));
+  }
+
+  private rememberResponse(
+    response$: Observable<MovieWithActorsReadModel | MovieWithActorsReadModel[]>
+  ): Observable<Movie[]> {
+    return response$.pipe(
+      map((res) => this.movieHttpService.normalize(res)),
+      tap((entities) => {
+        this.movieStateManagerService.remember(Object.values(entities.movie));
+        this.castMemberStateManagerService.add(Object.values(entities.actors));
+      }),
+      map((entities) => Object.values(entities.movie))
+    );
   }
 }

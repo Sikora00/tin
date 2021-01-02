@@ -5,12 +5,12 @@ import {
   OnInit,
 } from '@angular/core';
 import {
+  MovieDeleteFacade,
   MovieListFacade,
   MovieListPresenter,
-  MovieDeleteFacade
 } from '@tin/movie-database/client/application';
 import { Observable } from 'rxjs';
-import {Movie, MovieId} from "@tin/movie-database/domain";
+import { Movie, MovieId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-list',

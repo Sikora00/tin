@@ -5,8 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Movie, MovieProps } from '@tin/movie-database/domain';
-import { CastMember } from '@tin/movie-database/domain';
+import { CastMember, Movie, MovieProps } from '@tin/movie-database/domain';
 import { formatDate } from '@angular/common';
 
 export interface EditMovieForm extends FormGroup {

@@ -19,9 +19,7 @@ export class MovieService {
     if (this.query.hasEntity(movieId)) {
       movie = of(this.query.getEntity(movieId));
     } else {
-      movie = this.dataService
-        .getSingleOnce(movieId)
-        .pipe(tap((m) => this.store.add(m)));
+      movie = this.dataService.getSingleOnce(movieId);
     }
 
     return movie.pipe(tap(() => this.store.setActive(movieId)));

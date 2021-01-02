@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {
+  ActorDeleteFacade,
   ActorListFacade,
   ActorListPresenter,
-  ActorDeleteFacade
 } from '@tin/movie-database/client/application';
-import {Actor, ActorId} from '@tin/movie-database/domain';
+import { Actor, ActorId } from '@tin/movie-database/domain';
 import { Observable } from 'rxjs';
 
 @Component({

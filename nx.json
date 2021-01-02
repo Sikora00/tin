@@ -77,6 +77,15 @@
     },
     "movie-database-domain": {
       "tags": ["domain:movie-database", "type:domain"]
+    },
+    "movie-database-server-ui-rest": {
+      "tags": ["domain:movie-database", "type:ui"]
+    },
+    "movie-database-server-infrastructure-typeorm": {
+      "tags": ["domain:movie-database", "type:infrastructure"]
+    },
+    "movie-database-server-domain": {
+      "tags": ["domain:movie-database", "type:domain"]
     }
   }
 }

@@ -4,10 +4,12 @@ import { MovieStore } from '../../+state/movie/movie.store';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 import { ActorStore } from '../../+state/actor/actor.store';
 import { Observable, of } from 'rxjs';
-import { MovieId } from '@tin/movie-database/domain';
-import { Movie } from '@tin/movie-database/domain';
-import { AddMoviePayload } from '../../application/movie-add/add-movie.payload';
-import { EditMoviePayload } from '../../application/movie-edit/edit-movie.payload';
+import {
+  CastMember,
+  EditMovieWriteModel,
+  Movie,
+  MovieId,
+} from '@tin/movie-database/domain';
 import { CastMemberQuery } from '../../+state/cast-member/cast-member.query';
 
 @Injectable({ providedIn: 'root' })
@@ -24,32 +26,21 @@ export class MovieStateManagerService {
     return of(this.movieQuery.getEntity(movieId));
   }
 
-  addMovie(value: AddMoviePayload): Observable<Movie> {
-    const movieId = this.movieStore.getValue().ids.length + 1;
-    const castMembers = value.actors.map((castMember) => ({
-      ...castMember,
-      movie: movieId,
-      id: Math.floor(Math.random() * (9999 - 1000)) + 1000,
-    }));
-    const movie = {
-      ...value,
-      id: movieId,
-      actors: castMembers.map((c) => c.id),
-    };
-    this.movieStore.add(movie);
-    this.castMemberStore.add(castMembers);
+  addMovie(movie: Movie, actors: CastMember[]): Observable<Movie> {
+    this.movieStore.add(movie as Movie);
+    this.castMemberStore.add(actors as CastMember[]);
     this.actorStore.update(
-      (entity) => !!castMembers.find((c) => c.actor === entity.id),
+      (entity) => !!actors.find((c) => c.actor === entity.id),
       (entity) => ({
         movies: entity.movies.concat([
-          castMembers.find((c) => c.actor === entity.id).id,
+          actors.find((c) => c.actor === entity.id).id,
         ]),
       })
     );
-    return of(movie);
+    return of(movie as Movie);
   }
 
-  editMovie(payload: EditMoviePayload): Observable<Movie> {
+  editMovie(payload: EditMovieWriteModel): Observable<Movie> {
     const oldMovie = this.movieQuery.getEntity(payload.id);
     this.castMemberStore.remove(oldMovie.actors);
     const castMembers = payload.actors.map((castMember) => ({

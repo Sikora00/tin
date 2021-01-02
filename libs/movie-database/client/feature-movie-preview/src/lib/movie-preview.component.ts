@@ -11,7 +11,7 @@ import {
   MoviePreviewPresenter,
 } from '@tin/movie-database/client/application';
 import { Observable } from 'rxjs';
-import {MovieId} from "@tin/movie-database/domain";
+import { MovieId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-preview',

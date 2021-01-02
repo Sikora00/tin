@@ -50,7 +50,16 @@
       "@tin/movie-database/client/shell": [
         "libs/movie-database/client/shell/src/index.ts"
       ],
-      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"]
+      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"],
+      "@tin/movie-database/server/ui-rest": [
+        "libs/movie-database/server/ui-rest/src/index.ts"
+      ],
+      "@tin/movie-database/server/infrastructure-typeorm": [
+        "libs/movie-database/server/infrastructure-typeorm/src/index.ts"
+      ],
+      "@tin/movie-database/server/domain": [
+        "libs/movie-database/server/domain/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Movie } from '@tin/movie-database/domain';
+import { ActorId, Movie } from '@tin/movie-database/domain';
 import { Observable } from 'rxjs';
 import { LoadActorPreviewDataService } from './load-actor-preview-data/load-actor-preview-data.service';
-import { ActorId } from '@tin/movie-database/domain';
 import { ActorPreviewQuery } from './actor-preview.query';
 
 export interface ActorPreview {

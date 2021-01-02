@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import {ActorId, ActorProps} from '@tin/movie-database/domain';
+import { ActorId, ActorProps } from '@tin/movie-database/domain';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ActorDataService } from '../infrastructure/actor/actor.data.service';

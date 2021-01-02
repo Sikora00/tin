@@ -11,7 +11,7 @@ import {
 } from '@tin/movie-database/client/application';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import {Actor, MovieId} from "@tin/movie-database/domain";
+import { Actor, MovieId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-movie-edit',
