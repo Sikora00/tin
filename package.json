@@ -46,6 +46,8 @@
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/typeorm": "^7.1.5",
     "@nrwl/angular": "10.4.4",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
     "normalizr": "^3.6.1",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",

@@ -1,8 +1,6 @@
 @import 'colors';
 
-:host {
-  align-items: center;
-}
+
 
 .add-movie-container {
   height: 100%;
@@ -11,7 +9,7 @@
   flex-direction: column;
 }
 
-.add-movie-form {
+.add-edit__form {
   display: flex;
   flex-direction: column;
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MoviePreviewActor } from '@tin/movie-database/client/application';
+import {CastMemberWithActorReadModel} from "@tin/movie-database/domain";
 
 @Component({
   selector: 'movie-database-cast-member',
@@ -8,5 +8,5 @@ import { MoviePreviewActor } from '@tin/movie-database/client/application';
 })
 export class CastMemberComponent {
   @Input()
-  castMember: MoviePreviewActor;
+  castMember: CastMemberWithActorReadModel;
 }

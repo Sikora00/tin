@@ -18,7 +18,7 @@ import { Actor, MovieId } from '@tin/movie-database/domain';
   templateUrl: './movie-edit.component.html',
   styleUrls: ['./movie-edit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [MovieEditFacade],
 })
 export class MovieEditComponent implements OnInit, MovieEditPresenterInterface {

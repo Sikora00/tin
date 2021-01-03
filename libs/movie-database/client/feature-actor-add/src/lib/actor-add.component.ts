@@ -9,7 +9,7 @@ import {
   selector: 'movie-database-actor-add',
   templateUrl: './actor-add.component.html',
   styleUrls: ['./actor-add.component.scss'],
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [ActorAddFacade],
 })
 export class ActorAddComponent implements OnInit, ActorAddPresenterInterface {

@@ -1,6 +1,6 @@
 <ng-container *ngIf="!loading; else loader">
-  <div class="movie-list-container">
-    <div data-test="movie-list__movies-container" class="movie-card">
+  <div class="list__container">
+    <div data-test="movie-list__movies-container" class="list__item-card">
       <movie-database-movie-card
         [movie]="movie"
         (deleteMovie)="onDeleteMovie($event)"

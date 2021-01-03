@@ -14,3 +14,5 @@ export * from './lib/application/actor-add/actor-add.facade';
 export * from './lib/application/actor-edit.facade';
 export * from './lib/application/actor-delete.facade';
 export * from './lib/application/actor-preview/actor-preview.facade';
+export * from './lib/application/serial/serial-delete.facade'
+export * from './lib/application/serial/serial-list.facade'

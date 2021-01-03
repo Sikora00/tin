@@ -671,6 +671,116 @@
           }
         }
       }
+    },
+    "movie-database-client-feature-serial-preview": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-serial-preview",
+      "sourceRoot": "libs/movie-database/client/feature-serial-preview/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-serial-preview/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-serial-preview/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-serial-list": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-serial-list",
+      "sourceRoot": "libs/movie-database/client/feature-serial-list/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-serial-list/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-serial-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-ui": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/ui",
+      "sourceRoot": "libs/movie-database/client/ui/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/movie-database/client/ui/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-serial-feature-add-edit": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/serial/feature-add-edit",
+      "sourceRoot": "libs/movie-database/client/serial/feature-add-edit/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/serial/feature-add-edit/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/serial/feature-add-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

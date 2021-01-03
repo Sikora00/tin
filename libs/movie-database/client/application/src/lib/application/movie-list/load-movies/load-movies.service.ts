@@ -7,13 +7,11 @@ import { MovieStore } from '../../../+state/movie/movie.store';
 export class LoadMoviesService {
   constructor(
     private dataService: MovieDataService,
-    private store: MovieStore
   ) {}
 
   execute(): Promise<any> {
     return this.dataService
       .load()
-      .pipe(tap((movies) => this.store.add(movies)))
       .toPromise();
   }
 }

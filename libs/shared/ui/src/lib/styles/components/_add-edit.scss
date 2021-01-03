@@ -1,0 +1,43 @@
+.add-edit__container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-edit__header {
+  color: $secondary;
+}
+
+.add-edit__form {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-top: 1rem;
+  }
+}
+
+.add-edit__association-item {
+  display: flex;
+  margin-right: -1rem;
+
+  > * {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .add-edit__association-item-remove-button {
+    flex: 0;
+    font-size: 4rem;
+    margin-left: 1rem;
+    padding-top: 2rem;
+    cursor: pointer;
+  }
+}
+
+.add-edit__association-item-add-button {
+  font-size: 4rem;
+  margin: 0 1rem 0 1rem;
+  cursor: pointer;
+}

@@ -1,15 +1,15 @@
-<div class="card actor-card">
-  <i (click)="onDeleteActor()" class="remove-button gg-trash"></i>
+<div class="card list__list-item">
+  <i (click)="onDeleteActor()" class="list__list-item-remove-button gg-trash"></i>
   <img
     [src]="actor.thumbnailUrl"
-    [alt]="'Movie thumbnail'"
-    class="actor-thumbnail"
+    [alt]="'Actor thumbnail'"
+    class="list__list-item__thumbnail"
   />
   <div class="container">
     <a [routerLink]="[actor.id]">
       <h3>{{ actor.name }} {{ actor.surname }}</h3>
     </a>
-    <div class="actor-detail">
+    <div class="list__list-item-detail">
       <strong>Biografia:</strong> {{ actor.biography }}
     </div>
   </div>

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {
   ActorId,
-  AddMovieWriteModel,
+  MovieAddWriteModel,
   CastMember,
-  EditMovieWriteModel,
+  MovieEditWriteModel,
   Movie,
   MovieId,
   MovieWithActorsReadModel,
@@ -46,7 +46,7 @@ export class MovieDataService {
     );
   }
 
-  addMovie(value: AddMovieWriteModel): Observable<Movie> {
+  addMovie(value: MovieAddWriteModel): Observable<Movie> {
     return this.movieHttpService
       .add<MovieWithActorsReadModel>(value as any, { skipWrite: true })
       .pipe(
@@ -62,7 +62,7 @@ export class MovieDataService {
       );
   }
 
-  editMovie(id: MovieId, payload: EditMovieWriteModel): Observable<Movie> {
+  editMovie(id: MovieId, payload: MovieEditWriteModel): Observable<Movie> {
     let actors: Record<ActorId, CastMember>;
     return this.movieHttpService
       .update<Movie>(id, (payload as unknown) as Movie, {

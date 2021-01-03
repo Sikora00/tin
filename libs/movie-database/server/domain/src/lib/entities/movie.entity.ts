@@ -1,7 +1,7 @@
 import {
-  AddMovieWriteModel,
+  MovieAddWriteModel,
   CastMemberId,
-  EditMovieWriteModel,
+  MovieEditWriteModel,
   Movie,
   MovieId,
 } from '@tin/movie-database/domain';
@@ -14,7 +14,7 @@ export class MovieEntity implements Movie {
   thumbnailUrl: string;
   title: string;
 
-  static create(payload: AddMovieWriteModel): Movie {
+  static create(payload: MovieAddWriteModel): Movie {
     const movie = new MovieEntity();
     movie.title = payload.title;
     movie.description = payload.description;
@@ -23,7 +23,7 @@ export class MovieEntity implements Movie {
     return movie;
   }
 
-  update(payload: EditMovieWriteModel): void {
+  update(payload: MovieEditWriteModel): void {
     this.title = payload.title;
     this.description = payload.description;
     this.releaseDate = payload.releaseDate;

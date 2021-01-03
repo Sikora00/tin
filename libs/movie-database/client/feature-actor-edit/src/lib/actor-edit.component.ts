@@ -16,7 +16,7 @@ import { ActorId } from '@tin/movie-database/domain';
   selector: 'movie-database-actor-edit',
   templateUrl: './actor-edit.component.html',
   styleUrls: ['./actor-edit.component.scss'],
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [ActorEditFacade],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

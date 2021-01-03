@@ -6,8 +6,8 @@ import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/sch
 import {
   ActorId,
   ActorWithMoviesReadModel,
-  AddActorWriteModel,
-  EditActorWriteModel,
+  ActorAddWriteModel,
+  ActorEditWriteModel,
   MovieId,
 } from '@tin/movie-database/domain';
 import { ActorSchema } from '../../../../infrastructure-typeorm/src/lib/schema/actor.schema';
@@ -23,7 +23,7 @@ export class ActorService {
     private castMemberRepository: Repository<CastMemberEntity>
   ) {}
 
-  async create(payload: AddActorWriteModel): Promise<ActorWithMoviesReadModel> {
+  async create(payload: ActorAddWriteModel): Promise<ActorWithMoviesReadModel> {
     const actor = await this.actorRepository.save(ActorEntity.create(payload));
     return this.findOne(actor.id);
   }
@@ -40,7 +40,7 @@ export class ActorService {
 
   async update(
     id: ActorId,
-    updatePayload: EditActorWriteModel
+    updatePayload: ActorEditWriteModel
   ): Promise<ActorWithMoviesReadModel> {
     const actor = await this.actorRepository.findOneOrFail(id);
     actor.update(updatePayload);

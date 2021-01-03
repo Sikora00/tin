@@ -7,8 +7,8 @@ import {
   Actor,
   ActorId,
   ActorWithMoviesReadModel,
-  AddActorWriteModel,
-  EditActorWriteModel,
+  ActorAddWriteModel,
+  ActorEditWriteModel,
 } from '@tin/movie-database/domain';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 
@@ -63,7 +63,7 @@ export class ActorDataService {
     );
   }
 
-  addActor(payload: AddActorWriteModel): Observable<Actor> {
+  addActor(payload: ActorAddWriteModel): Observable<Actor> {
     return this.actorHttpService.add<Actor>(payload as any).pipe(
       tap((actor) => {
         this.actorStateManagerService.addActor(actor);
@@ -71,7 +71,7 @@ export class ActorDataService {
     );
   }
 
-  editActor(id: ActorId, payload: EditActorWriteModel): Observable<Actor> {
+  editActor(id: ActorId, payload: ActorEditWriteModel): Observable<Actor> {
     return this.actorHttpService.update<Actor>(
       id,
       (payload as unknown) as Actor,

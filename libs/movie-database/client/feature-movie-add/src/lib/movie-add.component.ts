@@ -17,7 +17,7 @@ import { Actor } from '@tin/movie-database/domain';
   templateUrl: './movie-add.component.html',
   styleUrls: ['./movie-add.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [MovieAddFacade],
 })
 export class MovieAddComponent implements OnInit, MovieAddPresenterInterface {

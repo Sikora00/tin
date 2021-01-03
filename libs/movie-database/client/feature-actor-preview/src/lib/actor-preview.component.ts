@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
   selector: 'movie-database-actor-preview',
   templateUrl: './actor-preview.component.html',
   styleUrls: ['./actor-preview.component.scss'],
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [ActorPreviewFacade],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
