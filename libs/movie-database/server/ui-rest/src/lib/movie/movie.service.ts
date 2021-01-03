@@ -54,7 +54,7 @@ export class MovieService {
   }
 
   async update(id: MovieId, updateMovieDto: UpdateMovieDto) {
-    const movie = await this.movieRepository.findOneOrFail();
+    const movie = await this.movieRepository.findOneOrFail(id);
     movie.update(updateMovieDto);
     await this.movieRepository.save(movie);
 

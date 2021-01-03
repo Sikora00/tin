@@ -30,9 +30,9 @@ export class ActorEditFacade {
     presenter.displayForm(await this.getActorForm(actorId).toPromise());
   }
 
-  onFormSubmit(id: ActorId, value: ActorProps): void {
-    this.actorStore.updateActive(value);
-    this.router.navigate(['movie-database', 'actor', id]);
+  async onFormSubmit(id: ActorId, value: ActorProps): Promise<void> {
+    await this.dataService.editActor(id, value).toPromise();
+    await this.router.navigate(['movie-database', 'actor', id]);
   }
 
   private getActorForm(actorId: ActorId): Observable<EditActorForm> {

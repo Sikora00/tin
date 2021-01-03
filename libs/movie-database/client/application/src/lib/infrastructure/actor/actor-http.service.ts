@@ -1,55 +1,43 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { Actor, ActorId } from '@tin/movie-database/domain';
-import { delay } from 'rxjs/operators';
+import {
+  Actor,
+  ActorId,
+  ActorWithMoviesReadModel,
+  CastMember,
+  CastMemberId,
+} from '@tin/movie-database/domain';
+import { NgEntityService } from '@datorama/akita-ng-entity-service';
+import { normalize, schema } from 'normalizr';
+import { ActorState, ActorStore } from '../../+state/actor/actor.store';
 
 @Injectable({ providedIn: 'root' })
-export class ActorHttpService {
-  private readonly entities = {
-    1: {
-      id: 1,
-      name: 'Leonardo',
-      surname: 'DiCaprio',
-      description: 'Lorem ipsum dolor sit amet',
-      biography:
-        'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-      thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
-      movies: [1],
-    },
-    2: {
-      id: 2,
-      name: 'At vero eos',
-      surname: 'DiCaprio',
-      description: 'At vero eos et accusam et justo duo dolores',
-      biography:
-        'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-      thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
-      movies: [],
-    },
-    3: {
-      id: 3,
-      name: 'Duis autem',
-      surname: 'DiCaprio',
-      description: 'Duis autem vel eum iriure dolor in hendrerit',
-      biography:
-        'Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.',
-      thumbnailUrl: 'https://fwcdn.pl/ppo/00/30/30/449647.2.jpg',
-      movies: [],
-    },
-  };
+export class ActorHttpService extends NgEntityService<ActorState> {
+  private readonly castMemberSchema = new schema.Entity('movies');
+  private readonly actorSchema = new schema.Entity('actor', {
+    movies: [this.castMemberSchema],
+  });
 
-  constructor(private http: HttpClient) {}
-
-  load(): Observable<Actor[]> {
-    return of(Object.values(this.entities)).pipe(delay(2000));
+  constructor(protected store: ActorStore) {
+    super(store);
   }
 
-  deleteActor(actorId: ActorId): Observable<void> {
-    return of(null);
-  }
-
-  loadSingle(id: ActorId): Observable<Actor> {
-    return of(this.entities[id]).pipe(delay(2000));
+  normalize(
+    response: ActorWithMoviesReadModel | ActorWithMoviesReadModel[]
+  ): {
+    actor: Record<ActorId, Actor>;
+    movies: Record<CastMemberId, CastMember>;
+  } {
+    const schema = Array.isArray(response)
+      ? [this.actorSchema]
+      : this.actorSchema;
+    const { entities } = normalize<
+      Actor,
+      {
+        actor: Record<ActorId, Actor>;
+        movies: Record<CastMemberId, CastMember>;
+      }
+    >(response, schema);
+    const { movies = {}, actor } = entities;
+    return { movies, actor };
   }
 }

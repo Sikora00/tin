@@ -22,6 +22,12 @@ export const CastMemberSchema = new EntitySchema<CastMemberEntity>({
     },
   },
   relations: {
+    actorAssociation: {
+      type: 'many-to-one',
+      target: 'ActorEntity',
+      onDelete: 'CASCADE',
+      joinColumn: { name: 'actor', referencedColumnName: 'id' },
+    },
     movieAssociation: {
       type: 'many-to-one',
       target: 'MovieEntity',

@@ -8,6 +8,7 @@ import {
 export class CastMemberEntity implements CastMember {
   id: CastMemberId;
   actor: ActorId;
+  actorAssociation: ActorId;
   movie: MovieId;
   movieAssociation: MovieId;
   role: string;

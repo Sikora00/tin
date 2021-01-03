@@ -6,15 +6,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActorProps } from '@tin/movie-database/domain';
-import { AddActorPayload } from './add-actor/add-actor.payload';
-import { AddActorService } from './add-actor/add-actor.service';
+import { ActorDataService } from '../../infrastructure/actor/actor.data.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ActorAddFacade {
   private presenter: ActorAddPresenterInterface;
   constructor(
     private fb: FormBuilder,
-    private addActorHandler: AddActorService
+    private actorDataService: ActorDataService,
+    private router: Router
   ) {}
 
   init(presenter: ActorAddPresenterInterface): void {
@@ -24,10 +25,10 @@ export class ActorAddFacade {
 
   async onFormSubmit(form: AddActorForm): Promise<void> {
     if (form.valid) {
-      const { name, surname, biography, thumbnailUrl } = form.value;
-      return this.addActorHandler.execute(
-        new AddActorPayload(name, surname, thumbnailUrl, biography)
-      );
+      const actor = await this.actorDataService
+        .addActor(form.value)
+        .toPromise();
+      await this.router.navigate(['movie-database', 'actor', actor.id]);
     } else {
       form.markAllAsTouched();
       form.updateValueAndValidity();

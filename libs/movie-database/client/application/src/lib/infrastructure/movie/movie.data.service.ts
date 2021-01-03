@@ -46,7 +46,7 @@ export class MovieDataService {
 
   addMovie(value: AddMovieWriteModel): Observable<Movie> {
     return this.movieHttpService
-      .add<MovieWithActorsReadModel>(value as any)
+      .add<MovieWithActorsReadModel>(value as any, { skipWrite: true })
       .pipe(
         map((response) => this.movieHttpService.normalize(response)),
         map(({ movie, actors }) => ({
@@ -62,7 +62,7 @@ export class MovieDataService {
 
   editMovie(payload: EditMovieWriteModel): Observable<Movie> {
     return this.movieHttpService
-      .add<Movie>((payload as unknown) as Movie)
+      .update<Movie>(payload.id, (payload as unknown) as Movie)
       .pipe(tap((movie) => this.movieStateManagerService.editMovie(payload))); //@ToDo add http
   }
 
