@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   selector: 'movie-database-actor-list',
   templateUrl: './actor-list.component.html',
   styleUrls: ['./actor-list.component.scss'],
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [ActorListFacade, ActorDeleteFacade],
 })
 export class ActorListComponent implements OnInit, ActorListPresenter {

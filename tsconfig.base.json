@@ -59,6 +59,18 @@
       ],
       "@tin/movie-database/server/domain": [
         "libs/movie-database/server/domain/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-serial-preview": [
+        "libs/movie-database/client/feature-serial-preview/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-serial-list": [
+        "libs/movie-database/client/feature-serial-list/src/index.ts"
+      ],
+      "@tin/movie-database/client/ui": [
+        "libs/movie-database/client/ui/src/index.ts"
+      ],
+      "@tin/movie-database/client/serial/feature-add-edit": [
+        "libs/movie-database/client/serial/feature-add-edit/src/index.ts"
       ]
     }
   },

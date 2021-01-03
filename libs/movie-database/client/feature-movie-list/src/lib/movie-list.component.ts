@@ -17,7 +17,7 @@ import { Movie, MovieId } from '@tin/movie-database/domain';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [MovieListFacade, MovieDeleteFacade],
 })
 export class MovieListComponent implements OnInit, MovieListPresenter {

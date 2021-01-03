@@ -18,7 +18,7 @@ import { MovieId } from '@tin/movie-database/domain';
   templateUrl: './movie-preview.component.html',
   styleUrls: ['./movie-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'feature-host' },
+  host: { class: 'feature-movie-database' },
   providers: [MoviePreviewFacade],
 })
 export class MoviePreviewComponent implements OnInit, MoviePreviewPresenter {

@@ -7,17 +7,19 @@ import {
   Actor,
   ActorId,
   ActorWithMoviesReadModel,
-  AddActorWriteModel,
-  EditActorWriteModel,
+  ActorAddWriteModel,
+  ActorEditWriteModel,
 } from '@tin/movie-database/domain';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
+import { SerialCastMemberStore } from '../../+state/serial-cast-member/serial-cast-member.store';
 
 @Injectable({ providedIn: 'root' })
 export class ActorDataService {
   constructor(
     private actorHttpService: ActorHttpService,
     private actorStateManagerService: ActorStateManagerService,
-    private castMemberStateManagerService: CastMemberStore
+    private castMemberStateManagerService: CastMemberStore,
+    private serialCastMemberStateManagerService: SerialCastMemberStore
   ) {
     this.rememberResponse = this.rememberResponse.bind(this);
   }
@@ -36,7 +38,7 @@ export class ActorDataService {
             .get<ActorWithMoviesReadModel>(id, { skipWrite: true })
             .pipe(
               this.rememberResponse,
-              map((movies) => movies[0])
+              map((actors) => actors[0])
             );
         }
         return of(maybeActor);
@@ -58,12 +60,15 @@ export class ActorDataService {
       tap((entities) => {
         this.actorStateManagerService.remember(Object.values(entities.actor));
         this.castMemberStateManagerService.add(Object.values(entities.movies));
+        this.serialCastMemberStateManagerService.add(
+          Object.values(entities.serials)
+        );
       }),
       map((entities) => Object.values(entities.actor))
     );
   }
 
-  addActor(payload: AddActorWriteModel): Observable<Actor> {
+  addActor(payload: ActorAddWriteModel): Observable<Actor> {
     return this.actorHttpService.add<Actor>(payload as any).pipe(
       tap((actor) => {
         this.actorStateManagerService.addActor(actor);
@@ -71,7 +76,7 @@ export class ActorDataService {
     );
   }
 
-  editActor(id: ActorId, payload: EditActorWriteModel): Observable<Actor> {
+  editActor(id: ActorId, payload: ActorEditWriteModel): Observable<Actor> {
     return this.actorHttpService.update<Actor>(
       id,
       (payload as unknown) as Actor,

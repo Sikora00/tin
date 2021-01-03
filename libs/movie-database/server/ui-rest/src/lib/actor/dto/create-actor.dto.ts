@@ -1,7 +1,7 @@
-import { AddActorWriteModel } from '@tin/movie-database/domain';
+import { ActorAddWriteModel } from '@tin/movie-database/domain';
 import { IsNotEmpty, IsString } from 'class-validator';
 
-export class CreateActorDto implements AddActorWriteModel {
+export class CreateActorDto implements ActorAddWriteModel {
   @IsNotEmpty()
   @IsString()
   biography: string;

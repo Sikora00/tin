@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
-import { CastMemberId } from '@tin/movie-database/domain';
+import { Observable, of } from 'rxjs';
+import { CastMember, CastMemberId } from '@tin/movie-database/domain';
 import { CastMemberQuery } from '../+state/cast-member/cast-member.query';
 
 @Injectable({ providedIn: 'root' })
@@ -11,7 +11,7 @@ export class CastMemberDataService {
     private castMemberQuery: CastMemberQuery
   ) {}
 
-  loadSingle(castMemberId: CastMemberId) {
+  loadSingle(castMemberId: CastMemberId): Observable<CastMember> {
     if (this.castMemberQuery.hasEntity(castMemberId)) {
       return of(this.castMemberQuery.getEntity(castMemberId));
     }

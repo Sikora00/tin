@@ -27,5 +27,10 @@ module.exports = {
     '<rootDir>/libs/movie-database/server/ui-rest',
     '<rootDir>/libs/movie-database/server/infrastructure-typeorm',
     '<rootDir>/libs/movie-database/server/domain',
+    '<rootDir>/libs/movie-database/client/feature-serial-add',
+    '<rootDir>/libs/movie-database/client/feature-serial-edit',
+    '<rootDir>/libs/movie-database/client/feature-serial-preview',
+    '<rootDir>/libs/movie-database/client/feature-serial-list',
+    '<rootDir>/libs/movie-database/client/ui',
   ],
 };

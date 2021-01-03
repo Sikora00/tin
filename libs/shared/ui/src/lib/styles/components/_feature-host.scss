@@ -4,3 +4,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.feature-movie-database {
+  @extend .feature-host;
+  align-items: center;
+}

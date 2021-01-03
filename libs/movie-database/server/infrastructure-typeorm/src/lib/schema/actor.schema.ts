@@ -26,5 +26,12 @@ export const ActorSchema = new EntitySchema<ActorEntity>({
       joinColumn: { name: 'id', referencedColumnName: 'actor' },
       inverseSide: 'actorAssociation',
     },
+
+    serials: {
+      type: 'one-to-many',
+      target: 'SerialCastMemberEntity',
+      joinColumn: { name: 'id', referencedColumnName: 'actor' },
+      inverseSide: 'actorAssociation',
+    },
   },
 });

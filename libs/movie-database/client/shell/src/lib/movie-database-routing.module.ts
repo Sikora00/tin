@@ -80,6 +80,42 @@ const routes: Route[] = [
         ],
       },
       {
+        path: 'serial',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('@tin/movie-database/client/feature-serial-list').then(
+                (m) => m.MovieDatabaseClientFeatureSerialListModule
+              ),
+          },
+          {
+            path: 'add',
+            pathMatch: 'full',
+            loadChildren: () =>
+              import('@tin/movie-database/client/serial/feature-add-edit').then(
+                (m) => m.MovieDatabaseClientSerialFeatureAddEditModule
+              ),
+          },
+          {
+            path: ':id',
+            pathMatch: 'full',
+            loadChildren: () =>
+              import('@tin/movie-database/client/feature-serial-preview').then(
+                (m) => m.MovieDatabaseClientFeatureSerialPreviewModule
+              ),
+          },
+          {
+            path: ':id/edit',
+            pathMatch: 'full',
+            loadChildren: () =>
+              import('@tin/movie-database/client/serial/feature-add-edit').then(
+                (m) => m.MovieDatabaseClientSerialFeatureAddEditModule
+              ),
+          },
+        ],
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'movie',

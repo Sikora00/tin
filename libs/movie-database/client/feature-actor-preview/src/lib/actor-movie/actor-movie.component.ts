@@ -13,4 +13,6 @@ export interface ActorMovie {
 export class ActorMovieComponent {
   @Input()
   actorMovie: ActorMovie;
+  @Input()
+  associationFields = 'movie';
 }

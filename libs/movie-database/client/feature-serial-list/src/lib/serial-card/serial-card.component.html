@@ -1,0 +1,19 @@
+<div class="card list__list-item">
+  <i (click)="onDelete()" class="list__list-item-remove-button gg-trash"></i>
+  <img
+    [src]="serial.thumbnailUrl"
+    [alt]="'Movie thumbnail'"
+    class="list__list-item__thumbnail"
+  />
+  <div class="container">
+    <a [routerLink]="[serial.id]">
+      <h3>{{ serial.title }}</h3>
+    </a>
+    <div class="list__list-item-detail">
+      <strong>Data produkcji:</strong> {{ serial.releaseDate | date }}
+    </div>
+    <div class="list__list-item-detail">
+      <strong>Opis:</strong> {{ serial.description }}
+    </div>
+  </div>
+</div>

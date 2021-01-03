@@ -1,20 +1,21 @@
 import {
   Actor,
   ActorId,
-  AddActorWriteModel,
+  ActorAddWriteModel,
   CastMemberId,
-  EditActorWriteModel,
+  ActorEditWriteModel,
 } from '@tin/movie-database/domain';
 
 export class ActorEntity implements Actor {
   biography: string;
   thumbnailUrl: string;
   movies: CastMemberId[];
+  serials: CastMemberId[];
   name: string;
   surname: string;
   id: ActorId;
 
-  static create(payload: AddActorWriteModel): Actor {
+  static create(payload: ActorAddWriteModel): Actor {
     const actor = new ActorEntity();
     actor.biography = payload.biography;
     actor.name = payload.name;
@@ -23,7 +24,7 @@ export class ActorEntity implements Actor {
     return actor;
   }
 
-  update(payload: EditActorWriteModel): void {
+  update(payload: ActorEditWriteModel): void {
     this.biography = payload.biography;
     this.name = payload.name;
     this.surname = payload.surname;

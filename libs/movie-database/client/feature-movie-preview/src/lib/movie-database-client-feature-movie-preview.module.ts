@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { MoviePreviewComponent } from './movie-preview.component';
 import { RouterModule } from '@angular/router';
 import { SharedUiModule } from '@tin/shared/ui';
-import { CastMemberComponent } from './cast-member/cast-member.component';
+import {MovieDatabaseClientUiModule} from "@tin/movie-database/client/ui";
 
 @NgModule({
   imports: [
     CommonModule,
     SharedUiModule,
+    MovieDatabaseClientUiModule,
     RouterModule.forChild([{ path: '', component: MoviePreviewComponent }]),
   ],
-  declarations: [MoviePreviewComponent, CastMemberComponent],
+  declarations: [MoviePreviewComponent],
   exports: [MoviePreviewComponent],
 })
 export class MovieDatabaseClientFeatureMoviePreviewModule {}

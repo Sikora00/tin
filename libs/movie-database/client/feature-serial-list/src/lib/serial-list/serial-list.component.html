@@ -1,0 +1,17 @@
+<ng-container *ngIf="!loading; else loader">
+  <div class="list__container">
+    <div class="list__item-card">
+      <movie-database-serial-card
+        [serial]="serial"
+        (deleteSerial)="onDeleteSerial($event)"
+        *ngFor="let serial of serialList$ | async"
+      ></movie-database-serial-card>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>
+<a [routerLink]="['add']">
+  <tin-add-button></tin-add-button>
+</a>

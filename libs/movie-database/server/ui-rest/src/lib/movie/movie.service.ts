@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import {
-  AddMovieWriteModel,
+  MovieAddWriteModel,
   Movie,
   MovieId,
   MovieWithActorsReadModel,
@@ -26,7 +26,7 @@ export class MovieService {
   ) {}
 
   async create(
-    addMovieWriteModel: AddMovieWriteModel
+    addMovieWriteModel: MovieAddWriteModel
   ): Promise<MovieWithActorsReadModel> {
     const queryRunner = this.connection.createQueryRunner();
 

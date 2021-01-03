@@ -1,0 +1,33 @@
+.preview__data-container {
+  width: 50%;
+  margin-bottom: 2rem;
+}
+
+.preview__detail {
+  margin-bottom: 1rem;
+}
+
+.preview__thumbnail {
+  margin: 0 2rem 2rem 0;
+  max-width: 40%;
+}
+
+.preview-header {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.preview__association-items {
+  max-height: 40rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.preview__association-item {
+  margin-right: 2rem;
+  text-align: center;
+}
+

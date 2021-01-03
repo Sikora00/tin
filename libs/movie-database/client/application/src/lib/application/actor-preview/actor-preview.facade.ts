@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActorId, Movie } from '@tin/movie-database/domain';
+import { ActorId, Movie, Serial } from '@tin/movie-database/domain';
 import { Observable } from 'rxjs';
 import { LoadActorPreviewDataService } from './load-actor-preview-data/load-actor-preview-data.service';
 import { ActorPreviewQuery } from './actor-preview.query';
@@ -10,7 +10,8 @@ export interface ActorPreview {
   surname: string;
   thumbnailUrl: string;
   biography: string;
-  movies: { id: number; movie: Omit<Movie, 'castMemberIds'> }[];
+  movies: { id: number; movie: Omit<Movie, 'actors'> }[];
+  serials: { id: number; serial: Omit<Serial, 'actors'> }[];
 }
 
 @Injectable()

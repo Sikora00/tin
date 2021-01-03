@@ -1,36 +1,48 @@
 <ng-container *ngIf="!loading; else loader">
   <ng-container *ngIf="actor$ | async as actor">
-    <div class="card actor-card">
+    <div class="card preview__data-container">
       <div class="container">
-        <div class="actor-header">
+        <div class="preview-header">
           <img
             [src]="actor.thumbnailUrl"
             [alt]="'Movie thumbnail'"
-            class="actor-thumbnail"
+            class="preview__thumbnail"
           />
           <div>
             <h1>{{ actor.name }} {{ actor.surname }}</h1>
           </div>
         </div>
-        <div class="actor-detail">
+        <div class="preview__detail">
           <h2>Biografia:</h2>
           <p>{{ actor.biography }}</p>
         </div>
       </div>
     </div>
 
-    <div class="card actor-card">
+    <div class="card preview__data-container">
       <div class="container">
-        <div class="actor-cast">
-          <h2>Filmy</h2>
-          <p class="actor-cast-list">
-            <movie-database-actor-movie
-              [actorMovie]="movie"
-              *ngFor="let movie of actor.movies"
-              class="actor-cast-member"
-            ></movie-database-actor-movie>
-          </p>
-        </div>
+        <h2>Filmy</h2>
+        <p class="preview__association-items">
+          <movie-database-actor-movie
+            [actorMovie]="movie"
+            *ngFor="let movie of actor.movies"
+            class="preview__association-item"
+          ></movie-database-actor-movie>
+        </p>
+      </div>
+    </div>
+
+    <div class="card preview__data-container">
+      <div class="container">
+        <h2>Seriale</h2>
+        <p class="preview__association-items">
+          <movie-database-actor-movie
+            [actorMovie]="movie"
+            [associationFields]="'serial'"
+            *ngFor="let movie of actor.serials"
+            class="preview__association-item"
+          ></movie-database-actor-movie>
+        </p>
       </div>
     </div>
     <a [routerLink]="['edit']">

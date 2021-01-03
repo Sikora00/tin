@@ -1,7 +1,7 @@
 <ng-container *ngIf="!loading; else loader">
-  <div class="add-movie-container">
-    <h1 class="add-movie-header">Dodaj Film</h1>
-    <form [formGroup]="form" class="add-debt-form">
+  <div class="add-edit__container">
+    <h1 class="add-edit__header">Dodaj Film</h1>
+    <form [formGroup]="form" class="add-edit__form">
       <label>
         <span>Tytuł</span>
         <input
@@ -48,14 +48,13 @@
           [controlName]="'description'"
         ></tin-validation-error>
       </label>
-      <h2>Obsada</h2>
-      <div class="add-movie-cast">
+        <h2>Obsada</h2>
         <div
           *ngFor="
             let actorControl of form.controls.actors.controls;
             index as actorIndex
           "
-          class="actor-container"
+          class="add-edit__association-item"
         >
           <label>
             <span>Aktor</span>
@@ -89,15 +88,14 @@
             [attr.data-test]="
               'movie-add__actor-' + actorIndex + '-remove-button'
             "
-            class="remove-actor-button"
+            class="add-edit__association-item-remove-button"
             >&#8722;</span
           >
         </div>
-      </div>
       <span
         (click)="onClickAddActor()"
         data-test="movie-add__add-actor-button"
-        class="add-actor-button"
+        class="add-edit__association-item-add-button"
         >&#43;</span
       >
       <button

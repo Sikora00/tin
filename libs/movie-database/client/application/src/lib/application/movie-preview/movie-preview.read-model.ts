@@ -1,9 +1,5 @@
-import {Actor, CastMember, Movie, MovieRelations} from '@tin/movie-database/domain';
-
-export interface MoviePreviewActor extends Omit<CastMember, 'movie' | 'actor'> {
-  actor: Actor;
-}
+import {CastMemberWithActorReadModel, Movie, MovieRelations} from '@tin/movie-database/domain';
 
 export interface MoviePreview extends Omit<Movie, keyof MovieRelations> {
-  actors: MoviePreviewActor[];
+  actors: CastMemberWithActorReadModel[];
 }
