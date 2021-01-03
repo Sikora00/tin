@@ -1,6 +1,8 @@
 import { EntitySchema } from 'typeorm';
-import { MovieEntity } from '@tin/movie-database/server/domain';
-import { CastMemberEntity } from '@tin/movie-database/server/domain';
+import {
+  CastMemberEntity,
+  MovieEntity,
+} from '@tin/movie-database/server/domain';
 
 export const CastMemberSchema = new EntitySchema<CastMemberEntity>({
   name: 'CastMemberEntity',

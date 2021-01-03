@@ -6,13 +6,9 @@ import { ActorStateManagerService } from './actor-state-manager.service';
 import {
   Actor,
   ActorId,
-  ActorProps,
   ActorWithMoviesReadModel,
   AddActorWriteModel,
-  AddMovieWriteModel,
   EditActorWriteModel,
-  Movie,
-  MovieWithActorsReadModel,
 } from '@tin/movie-database/domain';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 

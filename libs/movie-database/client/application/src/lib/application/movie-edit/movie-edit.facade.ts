@@ -55,9 +55,8 @@ export class MovieEditFacade {
   async onSubmit(form: EditMovieForm, movieId: MovieId): Promise<void> {
     if (form.valid) {
       await this.movieDataService
-        .editMovie({
+        .editMovie(movieId, {
           ...form.value,
-          id: movieId,
           actors: form.value.actors.map((actorValue) => ({
             ...actorValue,
             actor: +actorValue.actor,

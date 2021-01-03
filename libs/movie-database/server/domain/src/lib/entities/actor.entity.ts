@@ -2,12 +2,8 @@ import {
   Actor,
   ActorId,
   AddActorWriteModel,
-  AddMovieWriteModel,
   CastMemberId,
   EditActorWriteModel,
-  EditMovieWriteModel,
-  Movie,
-  MovieId,
 } from '@tin/movie-database/domain';
 
 export class ActorEntity implements Actor {

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import {
+  ActorId,
   AddMovieWriteModel,
+  CastMember,
   EditMovieWriteModel,
   Movie,
   MovieId,
@@ -60,10 +62,21 @@ export class MovieDataService {
       );
   }
 
-  editMovie(payload: EditMovieWriteModel): Observable<Movie> {
+  editMovie(id: MovieId, payload: EditMovieWriteModel): Observable<Movie> {
+    let actors: Record<ActorId, CastMember>;
     return this.movieHttpService
-      .update<Movie>(payload.id, (payload as unknown) as Movie)
-      .pipe(tap((movie) => this.movieStateManagerService.editMovie(payload))); //@ToDo add http
+      .update<Movie>(id, (payload as unknown) as Movie, {
+        mapResponseFn: (res) => {
+          const data = this.movieHttpService.normalize(res);
+          actors = data.actors;
+          return data.movie[id];
+        },
+      })
+      .pipe(
+        tap((movie) =>
+          this.movieStateManagerService.editMovie(movie, Object.values(actors))
+        )
+      );
   }
 
   deleteMovie(movieId: MovieId): Observable<unknown> {

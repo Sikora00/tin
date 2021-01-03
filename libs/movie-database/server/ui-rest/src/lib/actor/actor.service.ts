@@ -4,7 +4,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CastMemberEntity } from '@tin/movie-database/server/domain';
 import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
 import {
-  Actor,
   ActorId,
   ActorWithMoviesReadModel,
   AddActorWriteModel,

@@ -4,7 +4,7 @@ import { ActorQuery } from '../../+state/actor/actor.query';
 import { CastMemberQuery } from '../../+state/cast-member/cast-member.query';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 import { MovieStore } from '../../+state/movie/movie.store';
-import { Actor, ActorId, CastMember } from '@tin/movie-database/domain';
+import { Actor, ActorId } from '@tin/movie-database/domain';
 import { Observable, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })

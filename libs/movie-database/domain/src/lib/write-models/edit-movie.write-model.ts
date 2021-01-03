@@ -1,5 +1,5 @@
-import { ActorId, Movie } from '@tin/movie-database/domain';
+import { ActorId, MovieProps } from '@tin/movie-database/domain';
 
-export interface EditMovieWriteModel extends Omit<Movie, 'actors'> {
+export interface EditMovieWriteModel extends MovieProps {
   actors: { actor: ActorId; role: string }[];
 }

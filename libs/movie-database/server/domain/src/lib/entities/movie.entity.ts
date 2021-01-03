@@ -1,6 +1,7 @@
 import {
   AddMovieWriteModel,
-  CastMemberId, EditMovieWriteModel,
+  CastMemberId,
+  EditMovieWriteModel,
   Movie,
   MovieId,
 } from '@tin/movie-database/domain';

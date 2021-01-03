@@ -4,12 +4,7 @@ import { MovieStore } from '../../+state/movie/movie.store';
 import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 import { ActorStore } from '../../+state/actor/actor.store';
 import { Observable, of } from 'rxjs';
-import {
-  CastMember,
-  EditMovieWriteModel,
-  Movie,
-  MovieId,
-} from '@tin/movie-database/domain';
+import { CastMember, Movie, MovieId } from '@tin/movie-database/domain';
 import { CastMemberQuery } from '../../+state/cast-member/cast-member.query';
 
 @Injectable({ providedIn: 'root' })
@@ -40,19 +35,9 @@ export class MovieStateManagerService {
     return of(movie as Movie);
   }
 
-  editMovie(payload: EditMovieWriteModel): Observable<Movie> {
-    const oldMovie = this.movieQuery.getEntity(payload.id);
+  editMovie(movie: Movie, castMembers: CastMember[]): void {
+    const oldMovie = this.movieQuery.getEntity(movie.id);
     this.castMemberStore.remove(oldMovie.actors);
-    const castMembers = payload.actors.map((castMember) => ({
-      ...castMember,
-      movie: payload.id,
-      id: Math.floor(Math.random() * (9999 - 1000)) + 1000,
-    }));
-    const newMovie = {
-      ...payload,
-      actors: castMembers.map((castMember) => castMember.id),
-    };
-    this.movieStore.update(payload.id, newMovie);
     this.castMemberStore.add(castMembers);
     this.actorStore.update(
       (entity) =>
@@ -66,7 +51,6 @@ export class MovieStateManagerService {
           ),
       })
     );
-    return of(newMovie);
   }
 
   remember(movies: Movie[]): void {
