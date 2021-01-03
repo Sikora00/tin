@@ -6,6 +6,7 @@
         <span>Tytuł</span>
         <input
           formControlName="title"
+          data-test="movie-add__title-input"
           class="input-full"
           [placeholder]="'Tytuł'"
         />
@@ -15,6 +16,7 @@
         <span>Adres ikony</span>
         <input
           formControlName="thumbnailUrl"
+          data-test="movie-add__thumbnailUrl-input"
           class="input-full"
           [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
         />
@@ -24,7 +26,12 @@
       </label>
       <label>
         <span>Data produkcji</span>
-        <input formControlName="releaseDate" type="date" class="input-full" />
+        <input
+          formControlName="releaseDate"
+          data-test="movie-add__releaseDate-input"
+          type="date"
+          class="input-full"
+        />
         <tin-validation-error
           [controlName]="'releaseDate'"
         ></tin-validation-error>
@@ -33,6 +40,7 @@
         <span>Opis</span>
         <textarea
           formControlName="description"
+          data-test="movie-add__description-input"
           class="input-full"
           [placeholder]="'Opis'"
         ></textarea>
@@ -53,6 +61,7 @@
             <span>Aktor</span>
             <select
               [formControl]="actorControl.controls.actor"
+              [attr.data-test]="'movie-add__actor-' + actorIndex + '-input'"
               class="input-full"
             >
               <option *ngFor="let actor of actors$ | async" [value]="actor.id">
@@ -67,6 +76,7 @@
             <span>Rola</span>
             <input
               [formControl]="actorControl.controls.role"
+              [attr.data-test]="'movie-add__role-' + actorIndex + '-input'"
               class="input-full"
               [placeholder]="'Rola'"
             />
@@ -76,13 +86,25 @@
           </label>
           <span
             (click)="onClickRemoveActor(actorIndex)"
+            [attr.data-test]="
+              'movie-add__actor-' + actorIndex + '-remove-button'
+            "
             class="remove-actor-button"
             >&#8722;</span
           >
         </div>
       </div>
-      <span (click)="onClickAddActor()" class="add-actor-button">&#43;</span>
-      <button (click)="onSubmit()" class="btn btn-full">
+      <span
+        (click)="onClickAddActor()"
+        data-test="movie-add__add-actor-button"
+        class="add-actor-button"
+        >&#43;</span
+      >
+      <button
+        (click)="onSubmit()"
+        data-test="movie-add__save-button"
+        class="btn btn-full"
+      >
         <span>Zapisz</span>
       </button>
     </form>

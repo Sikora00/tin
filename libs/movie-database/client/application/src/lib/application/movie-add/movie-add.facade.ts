@@ -36,7 +36,7 @@ export class MovieAddFacade {
 
   async onSubmit(form: AddMovieForm): Promise<void> {
     if (form.valid) {
-      await this.movieDataService
+      const movie = await this.movieDataService
         .addMovie({
           ...form.value,
           actors: form.value.actors.map((actorValue) => ({
@@ -46,7 +46,7 @@ export class MovieAddFacade {
         })
         .toPromise()
         .then();
-      await this.router.navigate(['movie-database', 'movie']);
+      await this.router.navigate(['movie-database', 'movie', movie.id]);
     } else {
       form.markAllAsTouched();
       form.updateValueAndValidity();

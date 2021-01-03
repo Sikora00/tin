@@ -1,9 +1,10 @@
 <ng-container *ngIf="!loading; else loader">
   <div class="movie-list-container">
-    <div *ngFor="let movie of movieList$ | async" class="movie-card">
+    <div data-test="movie-list__movies-container" class="movie-card">
       <movie-database-movie-card
         [movie]="movie"
         (deleteMovie)="onDeleteMovie($event)"
+        *ngFor="let movie of movieList$ | async"
       ></movie-database-movie-card>
     </div>
   </div>
@@ -12,5 +13,5 @@
   <tin-loading></tin-loading>
 </ng-template>
 <a [routerLink]="['add']">
-  <tin-add-button></tin-add-button>
+  <tin-add-button data-test="movie-list__add-movie-button"></tin-add-button>
 </a>

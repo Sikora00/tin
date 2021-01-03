@@ -1,13 +1,22 @@
-import { getGreeting } from '../support/app.po';
+import { shouldRedirectAfterLogin } from '../tests/login';
+import { testEmptyMoviesList, testGoToAddMovie } from '../tests/movie-list';
+import { testAddMovie } from '../tests/movie-add';
 
 describe('tin', () => {
-  beforeEach(() => cy.visit('/'));
+  it('should redirect to login from /', () => {
+    cy.visit('/');
+    cy.location('pathname').should('eq', '/login');
+  });
+  describe('login', () => {
+    it('should redirect after login', shouldRedirectAfterLogin);
+  });
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  describe('movie list', () => {
+    it('should be empty', testEmptyMoviesList);
+    it('should go to add movie', testGoToAddMovie);
+  });
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to tin!');
+  describe('add movie', () => {
+    it('should add movie', testAddMovie);
   });
 });

@@ -30,11 +30,13 @@ export class ActorService {
   }
 
   findAll(): Promise<ActorWithMoviesReadModel[]> {
-    return this.actorRepository.find({ relations: ['movies'] });
+    return this.actorRepository.find({ relations: ['movies'] }) as any;
   }
 
   async findOne(id: ActorId): Promise<ActorWithMoviesReadModel> {
-    return this.actorRepository.findOneOrFail(id, { relations: ['movies'] });
+    return this.actorRepository.findOneOrFail(id, {
+      relations: ['movies'],
+    }) as any;
   }
 
   async update(

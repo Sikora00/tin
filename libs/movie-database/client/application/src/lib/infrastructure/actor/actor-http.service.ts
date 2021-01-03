@@ -37,7 +37,7 @@ export class ActorHttpService extends NgEntityService<ActorState> {
         movies: Record<CastMemberId, CastMember>;
       }
     >(response, schema);
-    const { movies = {}, actor } = entities;
+    const { movies = {}, actor = {} } = entities;
     return { movies, actor };
   }
 }
