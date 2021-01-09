@@ -1,0 +1,15 @@
+<img
+  class="cast-member-thumbnail"
+  [src]="actorMovie[associationFields].thumbnailUrl"
+/>
+<p>
+  <a
+    [routerLink]="[
+      '/movie-database',
+      associationFields,
+      actorMovie[associationFields].id
+    ]"
+    ><strong>{{ actorMovie[associationFields].title }}</strong></a
+  >
+</p>
+<p>{{ actorMovie.role }}</p>

@@ -1,0 +1,29 @@
+@import 'colors';
+
+.edit-actor-container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-actor-form {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin-top: 1rem;
+  }
+}
+
+.edit-actor-header {
+  color: $secondary;
+}
+
+.actor-container {
+  margin-bottom: 2rem;
+}
+
+.edit-actor-cast {
+  margin-bottom: -2rem;
+}

@@ -1,0 +1,17 @@
+@import 'colors';
+
+:host {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.edit-button {
+  background-color: $secondary;
+  font-size: 4rem;
+  color: $black;
+}
+
+.edit-button:hover {
+  background-color: $secondary-dark;
+}

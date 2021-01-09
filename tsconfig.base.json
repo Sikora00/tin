@@ -16,14 +16,65 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tin/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@tin/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@tin/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
       "@tin/auth/shell": ["libs/auth/shell/src/index.ts"],
       "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
-      "@tin/debt/domain": ["libs/debt/domain/src/index.ts"],
-      "@tin/debt/feature-list": ["libs/debt/feature-list/src/index.ts"],
-      "@tin/debt/shell": ["libs/debt/shell/src/index.ts"]
+      "@tin/movie-database/client/application": [
+        "libs/movie-database/client/application/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-actor-add": [
+        "libs/movie-database/client/feature-actor-add/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-actor-edit": [
+        "libs/movie-database/client/feature-actor-edit/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-actor-list": [
+        "libs/movie-database/client/feature-actor-list/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-actor-preview": [
+        "libs/movie-database/client/feature-actor-preview/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-movie-preview": [
+        "libs/movie-database/client/feature-movie-preview/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-movie-add": [
+        "libs/movie-database/client/feature-movie-add/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-movie-edit": [
+        "libs/movie-database/client/feature-movie-edit/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-movie-list": [
+        "libs/movie-database/client/feature-movie-list/src/index.ts"
+      ],
+      "@tin/movie-database/client/shell": [
+        "libs/movie-database/client/shell/src/index.ts"
+      ],
+      "@tin/movie-database/domain": ["libs/movie-database/domain/src/index.ts"],
+      "@tin/movie-database/server/ui-rest": [
+        "libs/movie-database/server/ui-rest/src/index.ts"
+      ],
+      "@tin/movie-database/server/infrastructure-typeorm": [
+        "libs/movie-database/server/infrastructure-typeorm/src/index.ts"
+      ],
+      "@tin/movie-database/server/domain": [
+        "libs/movie-database/server/domain/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-serial-preview": [
+        "libs/movie-database/client/feature-serial-preview/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-serial-list": [
+        "libs/movie-database/client/feature-serial-list/src/index.ts"
+      ],
+      "@tin/movie-database/client/ui": [
+        "libs/movie-database/client/ui/src/index.ts"
+      ],
+      "@tin/movie-database/client/serial/feature-add-edit": [
+        "libs/movie-database/client/serial/feature-add-edit/src/index.ts"
+      ],
+      "@tin/movie-database/server/application": [
+        "libs/movie-database/server/application/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

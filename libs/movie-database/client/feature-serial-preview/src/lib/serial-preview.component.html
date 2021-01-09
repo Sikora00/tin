@@ -1,0 +1,46 @@
+<ng-container *ngIf="!loading; else loader">
+  <ng-container *ngIf="serial$ | async as serial">
+    <div class="card preview__data-container">
+      <div class="container">
+        <div class="preview-header">
+          <img
+            [src]="serial.thumbnailUrl"
+            [alt]="'Movie thumbnail'"
+            class="preview__thumbnail"
+          />
+          <div>
+            <h1>{{ serial.title }}</h1>
+            <div class="preview__detail">
+              <strong>Liczba odcinków</strong> {{ serial.episodesCount }}
+            </div>
+          </div>
+        </div>
+        <div class="preview__detail">
+          <h2>Opis:</h2>
+          <p>{{ serial.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card preview__data-container">
+      <div class="container">
+        <div class="movie-cast">
+          <h2>Obsada</h2>
+          <p class="preview__association-items">
+            <movie-database-cast-member
+              [castMember]="actor"
+              *ngFor="let actor of serial.actors"
+              class="preview__association-item"
+            ></movie-database-cast-member>
+          </p>
+        </div>
+      </div>
+    </div>
+    <a [routerLink]="['edit']">
+      <tin-edit-button></tin-edit-button>
+    </a>
+  </ng-container>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

@@ -1,0 +1,19 @@
+<div class="card list__list-item">
+  <i (click)="onDelete()" class="list__list-item-remove-button gg-trash"></i>
+  <img
+    [src]="movie.thumbnailUrl"
+    [alt]="'Movie thumbnail'"
+    class="list__list-item__thumbnail"
+  />
+  <div class="container">
+    <a [routerLink]="[movie.id]">
+      <h3>{{ movie.title }}</h3>
+    </a>
+    <div class="list__list-item-detail">
+      <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+    </div>
+    <div class="list__list-item-detail list__list-item-description">
+      <strong>Opis:</strong> {{ movie.description }}
+    </div>
+  </div>
+</div>

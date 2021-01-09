@@ -1,0 +1,16 @@
+@import 'colors';
+:host {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+}
+
+.add-button {
+  background-color: $secondary;
+  font-size: 4rem;
+  color: $black;
+}
+
+.add-button:hover {
+  background-color: $secondary-dark;
+}

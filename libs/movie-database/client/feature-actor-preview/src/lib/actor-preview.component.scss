@@ -1,0 +1,29 @@
+.actor-card {
+  width: 50%;
+  margin-bottom: 2rem;
+}
+
+.actor-cast-list {
+  max-height: 40rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actor-cast-member {
+  margin-right: 2rem;
+}
+
+.actor-thumbnail {
+  max-width: 40%;
+  margin: 0 2rem 2rem 0;
+}
+.actor-basic-info {
+}
+
+.actor-header {
+  margin-top: 2rem;
+  display: flex;
+}

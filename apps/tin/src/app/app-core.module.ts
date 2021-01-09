@@ -1,16 +1,13 @@
-import { NgModule } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-import { EffectsModule } from '@ngrx/effects';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
 
+registerLocaleData(localePl);
 @NgModule({
-  imports: [
-    EffectsModule.forRoot(),
-    StoreModule.forRoot({}),
-    BrowserModule,
-    HttpClientModule,
-  ],
+  imports: [AkitaNgDevtools.forRoot(), BrowserModule, HttpClientModule],
+  providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }],
 })
 export class AppCoreModule {}

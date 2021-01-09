@@ -1,0 +1,55 @@
+<ng-container *ngIf="!loading; else loader">
+  <div class="edit-actor-container">
+    <h1 class="edit-actor-header">Zaktualizuj Aktora</h1>
+    <form [formGroup]="form" class="edit-debt-form">
+      <label>
+        <span>Imię</span>
+        <input
+          formControlName="name"
+          class="input-full"
+          [placeholder]="'Imię'"
+        />
+        <tin-validation-error [controlName]="'name'"></tin-validation-error>
+      </label>
+      <label>
+        <span>Nazwisko</span>
+        <input
+          formControlName="surname"
+          class="input-full"
+          [placeholder]="'Nazwisko'"
+        />
+        <tin-validation-error [controlName]="'surname'"></tin-validation-error>
+      </label>
+      <label>
+        <span>Adres ikony</span>
+        <input
+          formControlName="thumbnailUrl"
+          class="input-full"
+          [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
+        />
+        <tin-validation-error
+          [controlName]="'thumbnailUrl'"
+        ></tin-validation-error>
+      </label>
+      <label>
+        <span>Biografia</span>
+        <textarea
+          formControlName="biography"
+          class="input-full"
+          [placeholder]="'biografia'"
+        ></textarea>
+        <tin-validation-error
+          [controlName]="'biography'"
+        ></tin-validation-error>
+      </label>
+      <a>
+        <button (click)="onSubmit()" class="btn btn-full">
+          <span>Zapisz</span>
+        </button>
+      </a>
+    </form>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

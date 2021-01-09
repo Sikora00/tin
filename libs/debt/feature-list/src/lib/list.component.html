@@ -1,9 +1,0 @@
-<h1>List długów</h1>
-
-<div class="debt-list-container">
-  <debt-dept-card
-    class="debt-card"
-    *ngFor="let debt of debtList$ | async"
-    [debt]="debt"
-  ></debt-dept-card>
-</div>

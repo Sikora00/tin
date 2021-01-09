@@ -1,0 +1,17 @@
+<ng-container *ngIf="!loading; else loader">
+  <div class="actor-list-container">
+    <div *ngFor="let actor of actorList$ | async" class="actor-card">
+      <movie-database-actor-card
+        [actor]="actor"
+        (deleteActor)="onDeleteActor($event)"
+      ></movie-database-actor-card>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>
+
+<a [routerLink]="['add']">
+  <tin-add-button></tin-add-button>
+</a>

@@ -1,0 +1,102 @@
+<ng-container *ngIf="!loading; else loader">
+  <div class="add-edit__container">
+    <h1 class="add-edit__header">
+      {{ editMode ? 'Zaktualizuj Serial' : 'Dodaj Serial' }}
+    </h1>
+    <form [formGroup]="form" class="add-edit__form">
+      <label>
+        <span>Tytuł</span>
+        <input
+          formControlName="title"
+          class="input-full"
+          [placeholder]="'Tytuł'"
+        />
+        <tin-validation-error [controlName]="'title'"></tin-validation-error>
+      </label>
+      <label>
+        <span>Adres ikony</span>
+        <input
+          formControlName="thumbnailUrl"
+          class="input-full"
+          [placeholder]="'https://fwcdn.pl/fpo/08/62/862/7517878.6.jpg'"
+        />
+        <tin-validation-error
+          [controlName]="'thumbnailUrl'"
+        ></tin-validation-error>
+      </label>
+      <label>
+        <span>Liczba odcinkóœ</span>
+        <input
+          formControlName="episodesCount"
+          class="input-full"
+          type="number"
+          placeholder="20"
+        />
+        <tin-validation-error
+          [controlName]="'episodesCount'"
+        ></tin-validation-error>
+      </label>
+      <label>
+        <span>Opis</span>
+        <textarea
+          formControlName="description"
+          class="input-full"
+          [placeholder]="'Opis'"
+        ></textarea>
+        <tin-validation-error
+          [controlName]="'description'"
+        ></tin-validation-error>
+      </label>
+      <h2>Obsada</h2>
+      <div
+        *ngFor="
+          let actorControl of form.controls.actors.controls;
+          index as actorIndex
+        "
+        class="add-edit__association-item"
+      >
+        <label>
+          <span>Aktor</span>
+          <select
+            [formControl]="actorControl.controls.actor"
+            class="input-full"
+          >
+            <option *ngFor="let actor of actors$ | async" [value]="actor.id">
+              {{ actor.name }} {{ actor.surname }}
+            </option>
+          </select>
+          <tin-validation-error
+            [control]="actorControl.controls.actor"
+          ></tin-validation-error>
+        </label>
+        <label>
+          <span>Rola</span>
+          <input
+            [formControl]="actorControl.controls.role"
+            class="input-full"
+            [placeholder]="'Rola'"
+          />
+          <tin-validation-error
+            [control]="actorControl.controls.role"
+          ></tin-validation-error>
+        </label>
+        <span
+          (click)="onClickRemoveActor(actorIndex)"
+          class="add-edit__association-item-remove-button"
+          >&#8722;</span
+        >
+      </div>
+      <span
+        (click)="onClickAddActor()"
+        class="add-edit__association-item-add-button"
+        >&#43;</span
+      >
+      <button (click)="onSubmit()" class="btn btn-full">
+        <span>Zapisz</span>
+      </button>
+    </form>
+  </div>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

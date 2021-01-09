@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MovieDatabaseServerUiRestModule } from '@tin/movie-database/server/ui-rest';
+import { AppCoreModule } from './app-core.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [AppCoreModule, MovieDatabaseServerUiRestModule],
 })
 export class AppModule {}

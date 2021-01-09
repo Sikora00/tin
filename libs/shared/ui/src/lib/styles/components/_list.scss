@@ -1,0 +1,42 @@
+.list__container {
+  width: 50%;
+}
+
+.list__item-card {
+  margin-bottom: 1rem;
+}
+
+.list__list-item {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 2rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.list__list-item__thumbnail {
+  height: 20rem;
+  max-width: 14rem;
+}
+
+.list__list-item-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list__list-item-detail {
+  margin-bottom: 1rem;
+}
+
+.list__list-item-remove-button {
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}

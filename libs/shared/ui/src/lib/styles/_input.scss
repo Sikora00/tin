@@ -1,13 +1,19 @@
 @import 'colors.scss';
 
+textarea,
+select,
 input {
-  background-color: $background-secondary;
+  background-color: $primary-light;
   border: 1px #000;
   color: $font-color;
   border-style: none none solid none;
   line-height: 3rem;
   outline: none;
   padding: 0.5rem;
+}
+
+select {
+  height: 4rem;
 }
 
 input,

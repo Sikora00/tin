@@ -1,0 +1,46 @@
+<ng-container *ngIf="!loading; else loader">
+  <ng-container *ngIf="movie$ | async as movie">
+    <div class="card preview__data-container">
+      <div class="container">
+        <div class="preview-header">
+          <img
+            [src]="movie.thumbnailUrl"
+            [alt]="'Movie thumbnail'"
+            class="preview__thumbnail"
+          />
+          <div>
+            <h1>{{ movie.title }}</h1>
+            <div class="preview__detail">
+              <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+            </div>
+          </div>
+        </div>
+        <div class="preview__detail">
+          <h2>Opis:</h2>
+          <p>{{ movie.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card preview__data-container">
+      <div class="container">
+        <div>
+          <h2>Obsada</h2>
+          <p class="preview__association-items">
+            <movie-database-cast-member
+              [castMember]="actor"
+              *ngFor="let actor of movie.actors"
+              class="preview__association-item"
+            ></movie-database-cast-member>
+          </p>
+        </div>
+      </div>
+    </div>
+    <a [routerLink]="['edit']">
+      <tin-edit-button></tin-edit-button>
+    </a>
+  </ng-container>
+</ng-container>
+<ng-template #loader>
+  <tin-loading></tin-loading>
+</ng-template>

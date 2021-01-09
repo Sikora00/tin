@@ -33,9 +33,6 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
-      "tags": []
-    },
     "auth-domain": {
       "tags": ["domain:auth", "type:domain-logic"]
     },
@@ -48,14 +45,62 @@
     "shared-ui": {
       "tags": ["domain:shared", "type:ui"]
     },
-    "debt-domain": {
-      "tags": ["domain:debt", "type:domain-logic"]
+    "movie-database-client-application": {
+      "tags": ["domain:movie-database", "type:domain-logic"]
     },
-    "debt-feature-list": {
-      "tags": ["domain:debt", "type:feature"]
+    "movie-database-client-feature-actor-add": {
+      "tags": ["domain:movie-database", "type:feature"]
     },
-    "debt-shell": {
-      "tags": ["domain:debt", "type:shell"]
+    "movie-database-client-feature-actor-edit": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-actor-list": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-actor-preview": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-preview": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-add": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-edit": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-feature-movie-list": {
+      "tags": ["domain:movie-database", "type:feature"]
+    },
+    "movie-database-client-shell": {
+      "tags": ["domain:movie-database", "type:shell"]
+    },
+    "movie-database-domain": {
+      "tags": ["domain:movie-database", "type:domain"]
+    },
+    "movie-database-server-ui-rest": {
+      "tags": ["domain:movie-database", "type:ui"]
+    },
+    "movie-database-server-infrastructure-typeorm": {
+      "tags": ["domain:movie-database", "type:infrastructure"]
+    },
+    "movie-database-server-domain": {
+      "tags": ["domain:movie-database", "type:domain"]
+    },
+    "movie-database-client-feature-serial-preview": {
+      "tags": []
+    },
+    "movie-database-client-feature-serial-list": {
+      "tags": []
+    },
+    "movie-database-client-ui": {
+      "tags": []
+    },
+    "movie-database-client-serial-feature-add-edit": {
+      "tags": []
+    },
+    "movie-database-server-application": {
+      "tags": []
     }
   }
 }
