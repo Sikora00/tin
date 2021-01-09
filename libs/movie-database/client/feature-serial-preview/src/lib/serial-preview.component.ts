@@ -1,10 +1,15 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Observable} from 'rxjs';
-import {SerialId} from '@tin/movie-database/domain';
-import {SerialPreviewPresenter} from "../../../application/src/lib/application/serial/serial-preview/serial-preview-presenter.interface";
-import {SerialPreviewReadModel} from "../../../application/src/lib/application/serial/serial-preview/serial-preview.read-model";
-import {SerialPreviewFacade} from "../../../application/src/lib/application/serial/serial-preview/serial-preview.facade";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { SerialId } from '@tin/movie-database/domain';
+import { SerialPreviewPresenter } from '../../../application/src/lib/application/serial/serial-preview/serial-preview-presenter.interface';
+import { SerialPreviewReadModel } from '../../../application/src/lib/application/serial/serial-preview/serial-preview.read-model';
+import { SerialPreviewFacade } from '../../../application/src/lib/application/serial/serial-preview/serial-preview.facade';
 
 @Component({
   selector: 'movie-database-movie-preview',

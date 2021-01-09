@@ -1,5 +1,13 @@
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
-import { SerialService } from './serial.service';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Put,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { SerialService } from '../../../../application/src/lib/serial.service';
 import { CreateSerialDto } from './dto/create-serial.dto';
 import { UpdateSerialDto } from './dto/update-serial.dto';
 

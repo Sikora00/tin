@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {LoadSerialPreviewDataService} from './load-serial-preview-data.service';
-import {SerialPreviewQuery} from './serial-preview.query';
-import {MovieId} from '@tin/movie-database/domain';
-import {SerialPreviewPresenter} from "./serial-preview-presenter.interface";
+import { Injectable } from '@angular/core';
+import { LoadSerialPreviewDataService } from './load-serial-preview-data.service';
+import { SerialPreviewQuery } from './serial-preview.query';
+import { MovieId } from '@tin/movie-database/domain';
+import { SerialPreviewPresenter } from './serial-preview-presenter.interface';
 
 @Injectable()
 export class SerialPreviewFacade {

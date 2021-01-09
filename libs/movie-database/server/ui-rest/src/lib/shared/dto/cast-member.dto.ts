@@ -1,7 +1,7 @@
-import {ActorId, CastMemberWriteModel} from '@tin/movie-database/domain';
-import {IsDefined, IsNotEmpty, IsNumber, IsString} from 'class-validator';
+import { ActorId, CastMemberWriteModel } from '@tin/movie-database/domain';
+import { IsDefined, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
-export class CastMemberDto implements CastMemberWriteModel{
+export class CastMemberDto implements CastMemberWriteModel {
   @IsNotEmpty()
   @IsNumber()
   @IsDefined()
@@ -9,5 +9,5 @@ export class CastMemberDto implements CastMemberWriteModel{
 
   @IsNotEmpty()
   @IsString()
-  role: string
+  role: string;
 }

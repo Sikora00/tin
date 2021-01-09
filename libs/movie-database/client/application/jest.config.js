@@ -14,7 +14,8 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/movie-database/client/application',
+  coverageDirectory:
+    '../../../../coverage/libs/movie-database/client/application',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

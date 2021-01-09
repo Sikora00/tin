@@ -71,6 +71,9 @@
       ],
       "@tin/movie-database/client/serial/feature-add-edit": [
         "libs/movie-database/client/serial/feature-add-edit/src/index.ts"
+      ],
+      "@tin/movie-database/server/application": [
+        "libs/movie-database/server/application/src/index.ts"
       ]
     }
   },

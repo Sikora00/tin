@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UpdateMovieDto } from './dto/update-movie.dto';
+import { UpdateMovieDto } from '../../../ui-rest/src/lib/movie/dto/update-movie.dto';
 import {
   MovieAddWriteModel,
   Movie,
@@ -7,13 +7,13 @@ import {
   MovieWithActorsReadModel,
 } from '@tin/movie-database/domain';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MovieSchema } from '../../../../infrastructure-typeorm/src/lib/schema/movie.schema';
+import { MovieSchema } from '../../../infrastructure-typeorm/src/lib/schema/movie.schema';
 import { Connection, Repository } from 'typeorm';
 import {
   CastMemberEntity,
   MovieEntity,
 } from '@tin/movie-database/server/domain';
-import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
+import { CastMemberSchema } from '../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
 
 @Injectable()
 export class MovieService {

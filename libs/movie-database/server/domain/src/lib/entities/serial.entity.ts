@@ -1,11 +1,16 @@
-import {CastMemberId, Serial, SerialAddWriteModel, SerialEditWriteModel, SerialId,} from '@tin/movie-database/domain';
+import {
+  CastMemberId,
+  Serial,
+  SerialAddWriteModel,
+  SerialEditWriteModel,
+  SerialId,
+} from '@tin/movie-database/domain';
 
 export class SerialEntity implements Serial {
   actors: CastMemberId[];
   description: string;
   episodesCount: number;
   id: SerialId;
-  releaseDate: Date;
   thumbnailUrl: string;
   title: string;
 
@@ -14,7 +19,6 @@ export class SerialEntity implements Serial {
     serial.title = payload.title;
     serial.description = payload.description;
     serial.episodesCount = payload.episodesCount;
-    serial.releaseDate = payload.releaseDate;
     serial.thumbnailUrl = payload.thumbnailUrl;
     return serial;
   }
@@ -23,7 +27,6 @@ export class SerialEntity implements Serial {
     this.title = payload.title;
     this.description = payload.description;
     this.episodesCount = payload.episodesCount;
-    this.releaseDate = payload.releaseDate;
     this.thumbnailUrl = payload.thumbnailUrl;
   }
 }

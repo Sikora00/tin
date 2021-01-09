@@ -1,5 +1,11 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output,} from '@angular/core';
-import {Serial, SerialId} from '@tin/movie-database/domain';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
+import { Serial, SerialId } from '@tin/movie-database/domain';
 
 @Component({
   selector: 'movie-database-serial-card',

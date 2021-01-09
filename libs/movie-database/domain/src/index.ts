@@ -16,4 +16,4 @@ export * from './lib/write-models/cast-member.write-model';
 export * from './lib/write-models/movie-add.write-model';
 export * from './lib/write-models/movie-edit.write-model';
 export * from './lib/write-models/serial-add.write-model';
-export * from './lib/write-models/serial-edit.write-model'
+export * from './lib/write-models/serial-edit.write-model';

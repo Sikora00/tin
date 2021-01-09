@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="card preview__data-container">
+    <div *ngIf="actor.movies.length" class="card preview__data-container">
       <div class="container">
         <h2>Filmy</h2>
         <p class="preview__association-items">
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="card preview__data-container">
+    <div *ngIf="actor.serials.length" class="card preview__data-container">
       <div class="container">
         <h2>Seriale</h2>
         <p class="preview__association-items">

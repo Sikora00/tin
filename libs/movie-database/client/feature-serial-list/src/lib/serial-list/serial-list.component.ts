@@ -1,7 +1,16 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
-import {Serial, SerialId} from "@tin/movie-database/domain";
-import {SerialDeleteFacade, SerialListFacade, SerialListPresenter} from "@tin/movie-database/client/application";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { Observable } from 'rxjs';
+import { Serial, SerialId } from '@tin/movie-database/domain';
+import {
+  SerialDeleteFacade,
+  SerialListFacade,
+  SerialListPresenter,
+} from '@tin/movie-database/client/application';
 
 @Component({
   selector: 'tin-serial-list',
@@ -9,7 +18,7 @@ import {SerialDeleteFacade, SerialListFacade, SerialListPresenter} from "@tin/mo
   styleUrls: ['./serial-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'feature-movie-database' },
-  providers: [SerialDeleteFacade, SerialListFacade]
+  providers: [SerialDeleteFacade, SerialListFacade],
 })
 export class SerialListComponent implements OnInit, SerialListPresenter {
   serialList$: Observable<Serial[]>;
@@ -36,6 +45,6 @@ export class SerialListComponent implements OnInit, SerialListPresenter {
   }
 
   onDeleteSerial(id: SerialId): void {
-    this.deleteFacade.deleteSerial(id)
+    this.deleteFacade.deleteSerial(id);
   }
 }

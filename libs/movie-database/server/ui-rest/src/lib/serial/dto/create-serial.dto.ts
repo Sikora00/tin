@@ -1,11 +1,17 @@
-import {SerialAddWriteModel} from "@tin/movie-database/domain";
-import {IsArray, IsNotEmpty, IsNumber, IsString, ValidateNested} from "class-validator";
-import {Type} from "class-transformer";
-import {CastMemberDto} from "../../shared/dto/cast-member.dto";
+import { SerialAddWriteModel } from '@tin/movie-database/domain';
+import {
+  IsArray,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+  ValidateNested,
+} from 'class-validator';
+import { Type } from 'class-transformer';
+import { CastMemberDto } from '../../shared/dto/cast-member.dto';
 
 export class CreateSerialDto implements SerialAddWriteModel {
   @IsArray()
-  @ValidateNested({each: true, always: true})
+  @ValidateNested({ each: true, always: true })
   @Type(() => CastMemberDto)
   actors: CastMemberDto[];
 
@@ -15,7 +21,7 @@ export class CreateSerialDto implements SerialAddWriteModel {
 
   @IsNotEmpty()
   @IsNumber()
-  episodesCount: number
+  episodesCount: number;
 
   @IsNotEmpty()
   @IsString()

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Connection, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CastMemberEntity } from '@tin/movie-database/server/domain';
-import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
+import { CastMemberSchema } from '../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
 import {
   ActorId,
   ActorWithMoviesReadModel,
@@ -10,8 +10,8 @@ import {
   ActorEditWriteModel,
   MovieId,
 } from '@tin/movie-database/domain';
-import { ActorSchema } from '../../../../infrastructure-typeorm/src/lib/schema/actor.schema';
-import { ActorEntity } from '../../../../domain/src/lib/entities/actor.entity';
+import { ActorSchema } from '../../../infrastructure-typeorm/src/lib/schema/actor.schema';
+import { ActorEntity } from '../../../domain/src/lib/entities/actor.entity';
 
 @Injectable()
 export class ActorService {
@@ -29,7 +29,9 @@ export class ActorService {
   }
 
   findAll(): Promise<ActorWithMoviesReadModel[]> {
-    return this.actorRepository.find({ relations: ['movies'] }) as any;
+    return this.actorRepository.find({
+      relations: ['movies', 'serials'],
+    }) as any;
   }
 
   async findOne(id: ActorId): Promise<ActorWithMoviesReadModel> {

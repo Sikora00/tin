@@ -22,6 +22,14 @@
   max-width: 14rem;
 }
 
+.list__list-item-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .list__list-item-detail {
   margin-bottom: 1rem;
 }

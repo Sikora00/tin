@@ -32,5 +32,6 @@ module.exports = {
     '<rootDir>/libs/movie-database/client/feature-serial-preview',
     '<rootDir>/libs/movie-database/client/feature-serial-list',
     '<rootDir>/libs/movie-database/client/ui',
+    '<rootDir>/libs/movie-database/server/application',
   ],
 };

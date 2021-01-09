@@ -1,12 +1,18 @@
-import {Injectable} from '@angular/core';
-import {ActorQuery} from '../../+state/actor/actor.query';
-import {CastMemberQuery} from '../../+state/cast-member/cast-member.query';
-import {MovieQuery} from '../../+state/movie/movie.query';
-import {combineQueries} from '@datorama/akita';
-import {Observable} from 'rxjs';
-import {filter, map} from 'rxjs/operators';
-import {MoviePreview} from './movie-preview.read-model';
-import {Actor, ActorId, CastMember, CastMemberId, Movie} from '@tin/movie-database/domain';
+import { Injectable } from '@angular/core';
+import { ActorQuery } from '../../+state/actor/actor.query';
+import { CastMemberQuery } from '../../+state/cast-member/cast-member.query';
+import { MovieQuery } from '../../+state/movie/movie.query';
+import { combineQueries } from '@datorama/akita';
+import { Observable } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { MoviePreview } from './movie-preview.read-model';
+import {
+  Actor,
+  ActorId,
+  CastMember,
+  CastMemberId,
+  Movie,
+} from '@tin/movie-database/domain';
 
 @Injectable({ providedIn: 'root' })
 export class MoviePreviewQuery {

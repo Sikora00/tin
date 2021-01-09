@@ -1,23 +1,23 @@
 <ng-container *ngIf="!loading; else loader">
-  <ng-container *ngIf="serial$ | async as movie">
+  <ng-container *ngIf="serial$ | async as serial">
     <div class="card preview__data-container">
       <div class="container">
         <div class="preview-header">
           <img
-            [src]="movie.thumbnailUrl"
+            [src]="serial.thumbnailUrl"
             [alt]="'Movie thumbnail'"
             class="preview__thumbnail"
           />
           <div>
-            <h1>{{ movie.title }}</h1>
+            <h1>{{ serial.title }}</h1>
             <div class="preview__detail">
-              <strong>Data produkcji:</strong> {{ movie.releaseDate | date }}
+              <strong>Liczba odcinków</strong> {{ serial.episodesCount }}
             </div>
           </div>
         </div>
         <div class="preview__detail">
           <h2>Opis:</h2>
-          <p>{{ movie.description }}</p>
+          <p>{{ serial.description }}</p>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
           <p class="preview__association-items">
             <movie-database-cast-member
               [castMember]="actor"
-              *ngFor="let actor of movie.actors"
+              *ngFor="let actor of serial.actors"
               class="preview__association-item"
             ></movie-database-cast-member>
           </p>

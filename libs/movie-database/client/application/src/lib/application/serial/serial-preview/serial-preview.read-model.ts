@@ -1,5 +1,10 @@
-import {CastMemberWithActorReadModel, Movie, MovieRelations, SerialRelations} from '@tin/movie-database/domain';
+import {
+  CastMemberWithActorReadModel,
+  Serial,
+  SerialRelations,
+} from '@tin/movie-database/domain';
 
-export interface SerialPreviewReadModel extends Omit<Movie, keyof SerialRelations> {
+export interface SerialPreviewReadModel
+  extends Omit<Serial, keyof SerialRelations> {
   actors: CastMemberWithActorReadModel[];
 }

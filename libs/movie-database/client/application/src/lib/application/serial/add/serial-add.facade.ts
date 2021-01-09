@@ -1,11 +1,14 @@
-import {Injectable} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
-import {SerialAddPresenterInterface} from './serial-add-presenter.interface';
-import {createAddSerialForm, SerialAddEditForm} from '../add-edit/serial-add-edit.form';
-import {Router} from '@angular/router';
-import {SerialDataService} from "../../../infrastructure/serial/serial.data.service";
-import {ActorDataService} from "../../../infrastructure/actor/actor.data.service";
-import {SerialAddEditFacade} from "../add-edit/serial-add-edit.facade";
+import { Injectable } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { SerialAddPresenterInterface } from './serial-add-presenter.interface';
+import {
+  createAddSerialForm,
+  SerialAddEditForm,
+} from '../add-edit/serial-add-edit.form';
+import { Router } from '@angular/router';
+import { SerialDataService } from '../../../infrastructure/serial/serial.data.service';
+import { ActorDataService } from '../../../infrastructure/actor/actor.data.service';
+import { SerialAddEditFacade } from '../add-edit/serial-add-edit.facade';
 
 @Injectable()
 export class SerialAddFacade extends SerialAddEditFacade {
@@ -15,7 +18,7 @@ export class SerialAddFacade extends SerialAddEditFacade {
     private serialDataService: SerialDataService,
     private router: Router
   ) {
-    super(fb)
+    super(fb);
   }
 
   async init(presenter: SerialAddPresenterInterface): Promise<void> {

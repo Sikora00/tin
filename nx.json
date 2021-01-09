@@ -98,6 +98,9 @@
     },
     "movie-database-client-serial-feature-add-edit": {
       "tags": []
+    },
+    "movie-database-server-application": {
+      "tags": []
     }
   }
 }

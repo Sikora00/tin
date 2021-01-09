@@ -8,9 +8,8 @@ describe('SerialAddEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SerialAddEditComponent ]
-    })
-    .compileComponents();
+      declarations: [SerialAddEditComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

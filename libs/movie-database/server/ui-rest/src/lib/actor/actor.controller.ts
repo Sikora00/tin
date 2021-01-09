@@ -7,7 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { ActorService } from './actor.service';
+import { ActorService } from '../../../../application/src/lib/actor.service';
 import { CreateActorDto } from './dto/create-actor.dto';
 import { UpdateActorDto } from './dto/update-actor.dto';
 

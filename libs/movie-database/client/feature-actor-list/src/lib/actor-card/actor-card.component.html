@@ -1,5 +1,8 @@
 <div class="card list__list-item">
-  <i (click)="onDeleteActor()" class="list__list-item-remove-button gg-trash"></i>
+  <i
+    (click)="onDeleteActor()"
+    class="list__list-item-remove-button gg-trash"
+  ></i>
   <img
     [src]="actor.thumbnailUrl"
     [alt]="'Actor thumbnail'"
@@ -9,7 +12,7 @@
     <a [routerLink]="[actor.id]">
       <h3>{{ actor.name }} {{ actor.surname }}</h3>
     </a>
-    <div class="list__list-item-detail">
+    <div class="list__list-item-detail list__list-item-description">
       <strong>Biografia:</strong> {{ actor.biography }}
     </div>
   </div>

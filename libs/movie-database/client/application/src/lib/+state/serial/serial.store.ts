@@ -1,5 +1,5 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
-import {Movie, Serial} from '@tin/movie-database/domain';
+import { Movie, Serial } from '@tin/movie-database/domain';
 import { Injectable } from '@angular/core';
 
 export interface SerialState extends EntityState<Serial, number> {}

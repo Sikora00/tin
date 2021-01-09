@@ -13,8 +13,8 @@ export const SerialSchema = new EntitySchema<SerialEntity>({
       generated: true,
       type: 'int',
     },
-    releaseDate: {
-      type: Date,
+    episodesCount: {
+      type: Number,
     },
     thumbnailUrl: { type: String },
     title: { type: String },

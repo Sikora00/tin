@@ -1,11 +1,8 @@
-import {FormBuilder, Validators} from '@angular/forms';
-import {SerialAddEditForm} from '../add-edit/serial-add-edit.form';
+import { FormBuilder, Validators } from '@angular/forms';
+import { SerialAddEditForm } from '../add-edit/serial-add-edit.form';
 
 export abstract class SerialAddEditFacade {
-  constructor(
-    protected fb: FormBuilder,
-  ) {}
-
+  constructor(protected fb: FormBuilder) {}
 
   addActor(form: SerialAddEditForm): void {
     form.controls.actors.push(

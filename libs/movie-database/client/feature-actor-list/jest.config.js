@@ -14,7 +14,8 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/movie-database/client/feature-actor-list',
+  coverageDirectory:
+    '../../../../coverage/libs/movie-database/client/feature-actor-list',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

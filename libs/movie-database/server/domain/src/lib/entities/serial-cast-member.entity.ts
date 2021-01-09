@@ -1,7 +1,9 @@
 import {
   ActorId,
   CastMemberId,
-  MovieId, SerialCastMember, SerialId,
+  MovieId,
+  SerialCastMember,
+  SerialId,
 } from '@tin/movie-database/domain';
 
 export class SerialCastMemberEntity implements SerialCastMember {

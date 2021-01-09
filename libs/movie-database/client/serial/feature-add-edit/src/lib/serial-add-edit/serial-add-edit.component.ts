@@ -1,11 +1,16 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
-import {Actor, SerialId} from "@tin/movie-database/domain";
-import {SerialAddEditForm} from "../../../../../application/src/lib/application/serial/add-edit/serial-add-edit.form";
-import {SerialAddPresenterInterface} from "../../../../../application/src/lib/application/serial/add/serial-add-presenter.interface";
-import {SerialAddFacade} from "../../../../../application/src/lib/application/serial/add/serial-add.facade";
-import {ActivatedRoute} from "@angular/router";
-import {SerialEditFacade} from "../../../../../application/src/lib/application/serial/edit/serial-edit.facade";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
+import { Observable } from 'rxjs';
+import { Actor, SerialId } from '@tin/movie-database/domain';
+import { SerialAddEditForm } from '../../../../../application/src/lib/application/serial/add-edit/serial-add-edit.form';
+import { SerialAddPresenterInterface } from '../../../../../application/src/lib/application/serial/add/serial-add-presenter.interface';
+import { SerialAddFacade } from '../../../../../application/src/lib/application/serial/add/serial-add.facade';
+import { ActivatedRoute } from '@angular/router';
+import { SerialEditFacade } from '../../../../../application/src/lib/application/serial/edit/serial-edit.facade';
 
 @Component({
   selector: 'tin-serial-add-edit',
@@ -13,14 +18,17 @@ import {SerialEditFacade} from "../../../../../application/src/lib/application/s
   styleUrls: ['./serial-add-edit.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { class: 'feature-movie-database' },
-  providers: [SerialAddFacade, SerialEditFacade]
+  providers: [SerialAddFacade, SerialEditFacade],
 })
-export class SerialAddEditComponent implements OnInit, SerialAddPresenterInterface {
+export class SerialAddEditComponent
+  implements OnInit, SerialAddPresenterInterface {
   actors$: Observable<Actor[]>;
   facade: SerialAddFacade | SerialEditFacade;
   form: SerialAddEditForm;
   loading: boolean;
-  serialId: SerialId | null = this.activatedRoute.snapshot.paramMap.get('id') ? +this.activatedRoute.snapshot.paramMap.get('id') : null;
+  serialId: SerialId | null = this.activatedRoute.snapshot.paramMap.get('id')
+    ? +this.activatedRoute.snapshot.paramMap.get('id')
+    : null;
   editMode: boolean;
 
   constructor(
@@ -29,8 +37,8 @@ export class SerialAddEditComponent implements OnInit, SerialAddPresenterInterfa
     editFacade: SerialEditFacade,
     private cdR: ChangeDetectorRef
   ) {
-    this.editMode =  !!this.serialId
-    this.facade = this.editMode ? editFacade : addFacade
+    this.editMode = !!this.serialId;
+    this.facade = this.editMode ? editFacade : addFacade;
   }
 
   displayForm(form: SerialAddEditForm, actors: Observable<Actor[]>): void {

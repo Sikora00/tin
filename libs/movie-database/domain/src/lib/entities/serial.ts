@@ -3,7 +3,6 @@ import { SerialId } from '../value-objects/serial-id.value-object';
 
 export interface SerialProps {
   description: string;
-  releaseDate: Date;
   thumbnailUrl: string;
   episodesCount: number;
   title: string;

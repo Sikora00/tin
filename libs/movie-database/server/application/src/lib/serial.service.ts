@@ -1,10 +1,18 @@
 import { Injectable } from '@nestjs/common';
-import { UpdateSerialDto } from './dto/update-serial.dto';
-import {Connection, Repository} from "typeorm";
-import {InjectRepository} from "@nestjs/typeorm";
-import {SerialCastMemberEntity, SerialEntity } from '@tin/movie-database/server/domain';
+import { UpdateSerialDto } from '../../../ui-rest/src/lib/serial/dto/update-serial.dto';
+import { Connection, Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import {
+  SerialCastMemberEntity,
+  SerialEntity,
+} from '@tin/movie-database/server/domain';
 import { SerialSchema } from 'libs/movie-database/server/infrastructure-typeorm/src/lib/schema/serial.schema';
-import {Serial, SerialAddWriteModel, SerialId, SerialWithActorsReadModel} from '@tin/movie-database/domain';
+import {
+  Serial,
+  SerialAddWriteModel,
+  SerialId,
+  SerialWithActorsReadModel,
+} from '@tin/movie-database/domain';
 import { SerialCastMemberSchema } from 'libs/movie-database/server/infrastructure-typeorm/src/lib/schema/serial-cast-member.schema';
 
 @Injectable()

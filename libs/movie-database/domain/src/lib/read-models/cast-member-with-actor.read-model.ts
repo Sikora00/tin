@@ -1,5 +1,6 @@
-import {Actor, BaseCastMember} from "@tin/movie-database/domain";
+import { Actor, BaseCastMember } from '@tin/movie-database/domain';
 
-export interface CastMemberWithActorReadModel extends Omit<BaseCastMember, 'actor'> {
+export interface CastMemberWithActorReadModel
+  extends Omit<BaseCastMember, 'actor'> {
   actor: Actor;
 }

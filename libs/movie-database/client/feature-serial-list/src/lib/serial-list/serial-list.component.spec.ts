@@ -8,9 +8,8 @@ describe('SerialListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SerialListComponent ]
-    })
-    .compileComponents();
+      declarations: [SerialListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

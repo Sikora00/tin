@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import {SerialPreviewReadModel} from "./serial-preview.read-model";
+import { SerialPreviewReadModel } from './serial-preview.read-model';
 
 export interface SerialPreviewPresenter {
   displayLoading(): void;

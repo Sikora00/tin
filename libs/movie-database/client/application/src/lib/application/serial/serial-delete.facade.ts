@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {SerialId} from '@tin/movie-database/domain';
-import {SerialDataService} from "../../infrastructure/serial/serial.data.service";
+import { Injectable } from '@angular/core';
+import { SerialId } from '@tin/movie-database/domain';
+import { SerialDataService } from '../../infrastructure/serial/serial.data.service';
 
 @Injectable()
 export class SerialDeleteFacade {

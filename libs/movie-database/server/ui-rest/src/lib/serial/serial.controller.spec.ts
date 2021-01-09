@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { SerialController } from './serial.controller';
-import { SerialService } from './serial.service';
+import { SerialService } from '../../../../application/src/lib/serial.service';
 
 describe('SerialController', () => {
   let controller: SerialController;

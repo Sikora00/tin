@@ -48,50 +48,48 @@
           [controlName]="'description'"
         ></tin-validation-error>
       </label>
-        <h2>Obsada</h2>
-        <div
-          *ngFor="
-            let actorControl of form.controls.actors.controls;
-            index as actorIndex
-          "
-          class="add-edit__association-item"
-        >
-          <label>
-            <span>Aktor</span>
-            <select
-              [formControl]="actorControl.controls.actor"
-              [attr.data-test]="'movie-add__actor-' + actorIndex + '-input'"
-              class="input-full"
-            >
-              <option *ngFor="let actor of actors$ | async" [value]="actor.id">
-                {{ actor.name }} {{ actor.surname }}
-              </option>
-            </select>
-            <tin-validation-error
-              [control]="actorControl.controls.actor"
-            ></tin-validation-error>
-          </label>
-          <label>
-            <span>Rola</span>
-            <input
-              [formControl]="actorControl.controls.role"
-              [attr.data-test]="'movie-add__role-' + actorIndex + '-input'"
-              class="input-full"
-              [placeholder]="'Rola'"
-            />
-            <tin-validation-error
-              [control]="actorControl.controls.role"
-            ></tin-validation-error>
-          </label>
-          <span
-            (click)="onClickRemoveActor(actorIndex)"
-            [attr.data-test]="
-              'movie-add__actor-' + actorIndex + '-remove-button'
-            "
-            class="add-edit__association-item-remove-button"
-            >&#8722;</span
+      <h2>Obsada</h2>
+      <div
+        *ngFor="
+          let actorControl of form.controls.actors.controls;
+          index as actorIndex
+        "
+        class="add-edit__association-item"
+      >
+        <label>
+          <span>Aktor</span>
+          <select
+            [formControl]="actorControl.controls.actor"
+            [attr.data-test]="'movie-add__actor-' + actorIndex + '-input'"
+            class="input-full"
           >
-        </div>
+            <option *ngFor="let actor of actors$ | async" [value]="actor.id">
+              {{ actor.name }} {{ actor.surname }}
+            </option>
+          </select>
+          <tin-validation-error
+            [control]="actorControl.controls.actor"
+          ></tin-validation-error>
+        </label>
+        <label>
+          <span>Rola</span>
+          <input
+            [formControl]="actorControl.controls.role"
+            [attr.data-test]="'movie-add__role-' + actorIndex + '-input'"
+            class="input-full"
+            [placeholder]="'Rola'"
+          />
+          <tin-validation-error
+            [control]="actorControl.controls.role"
+          ></tin-validation-error>
+        </label>
+        <span
+          (click)="onClickRemoveActor(actorIndex)"
+          [attr.data-test]="'movie-add__actor-' + actorIndex + '-remove-button'"
+          class="add-edit__association-item-remove-button"
+          >&#8722;</span
+        >
+      </div>
       <span
         (click)="onClickAddActor()"
         data-test="movie-add__add-actor-button"
