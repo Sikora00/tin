@@ -5,31 +5,17 @@ import {
 } from '@tin/movie-database/server/domain';
 
 export const SerialCastMemberSchema = new EntitySchema<SerialCastMemberEntity>({
+  extends: 'BaseCastMemberEntity',
   name: 'SerialCastMemberEntity',
+  tableName: 'castMember',
   target: SerialCastMemberEntity,
   columns: {
-    role: {
-      type: String,
-    },
-    id: {
-      primary: true,
-      generated: true,
-      type: 'int',
-    },
-    actor: {
-      type: Number,
-    },
     serial: {
       type: Number,
+      nullable: true
     },
   },
   relations: {
-    actorAssociation: {
-      type: 'many-to-one',
-      target: 'ActorEntity',
-      onDelete: 'CASCADE',
-      joinColumn: { name: 'actor', referencedColumnName: 'id' },
-    },
     serialAssociation: {
       type: 'many-to-one',
       target: 'SerialEntity',

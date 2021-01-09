@@ -46,7 +46,7 @@ export class ActorDataService {
 
   deleteActor(actorId: ActorId): Observable<unknown> {
     return this.actorHttpService
-      .delete(actorId)
+      .delete(actorId, {skipWrite: true})
       .pipe(tap(() => this.actorStateManagerService.deleteActor(actorId)));
   }
 

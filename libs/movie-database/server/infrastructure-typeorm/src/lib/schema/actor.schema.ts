@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { ActorEntity } from '../../../../domain/src/lib/entities/actor.entity';
+import { ActorEntity } from '@tin/movie-database/server/domain';
 
 export const ActorSchema = new EntitySchema<ActorEntity>({
   name: 'ActorEntity',
@@ -23,6 +23,12 @@ export const ActorSchema = new EntitySchema<ActorEntity>({
     movies: {
       type: 'one-to-many',
       target: 'CastMemberEntity',
+      joinColumn: { name: 'id', referencedColumnName: 'actor' },
+      inverseSide: 'actorAssociation',
+    },
+    serials: {
+      type: 'one-to-many',
+      target: 'SerialCastMemberEntity',
       joinColumn: { name: 'id', referencedColumnName: 'actor' },
       inverseSide: 'actorAssociation',
     },

@@ -10,6 +10,7 @@ export interface ActorProps {
 
 export interface ActorRelations {
   movies: CastMemberId[];
+  serials: CastMemberId[];
 }
 export interface Actor extends ActorProps, ActorRelations {
   id: ActorId;

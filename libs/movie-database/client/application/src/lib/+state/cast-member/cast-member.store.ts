@@ -1,8 +1,8 @@
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
-import { CastMember } from '@tin/movie-database/domain';
+import {CastMember, SerialCastMember} from '@tin/movie-database/domain';
 import { Injectable } from '@angular/core';
 
-export interface CastMemberState extends EntityState<CastMember, number> {}
+export interface CastMemberState extends EntityState<CastMember | SerialCastMember, number> {}
 
 @Injectable({
   providedIn: 'root',

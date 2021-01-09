@@ -13,7 +13,8 @@ import {
   CastMemberEntity,
   MovieEntity,
 } from '@tin/movie-database/server/domain';
-import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
+import { BaseCastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/base-cast-member.schema';
+import {CastMemberSchema} from "../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema";
 
 @Injectable()
 export class MovieService {

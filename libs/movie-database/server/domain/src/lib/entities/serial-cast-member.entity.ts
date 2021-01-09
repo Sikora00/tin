@@ -1,16 +1,12 @@
 import {
   ActorId,
-  CastMemberId,
   MovieId, SerialCastMember, SerialId,
 } from '@tin/movie-database/domain';
+import {BaseCastMemberEntity} from "./base-cast-member.entity";
 
-export class SerialCastMemberEntity implements SerialCastMember {
-  id: CastMemberId;
-  actor: ActorId;
-  actorAssociation: ActorId;
+export class SerialCastMemberEntity extends BaseCastMemberEntity implements SerialCastMember {
   serial: MovieId;
   serialAssociation: MovieId;
-  role: string;
 
   static create(
     actor: ActorId,

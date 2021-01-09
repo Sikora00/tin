@@ -10,6 +10,7 @@ export class ActorEntity implements Actor {
   biography: string;
   thumbnailUrl: string;
   movies: CastMemberId[];
+  serials: CastMemberId[];
   name: string;
   surname: string;
   id: ActorId;

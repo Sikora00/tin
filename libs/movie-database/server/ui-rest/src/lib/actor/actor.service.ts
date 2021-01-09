@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Connection, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CastMemberEntity } from '@tin/movie-database/server/domain';
-import { CastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/cast-member.schema';
+import { BaseCastMemberSchema } from '../../../../infrastructure-typeorm/src/lib/schema/base-cast-member.schema';
 import {
   ActorId,
   ActorWithMoviesReadModel,
@@ -19,7 +19,7 @@ export class ActorService {
     private connection: Connection,
     @InjectRepository(ActorSchema)
     private actorRepository: Repository<ActorEntity>,
-    @InjectRepository(CastMemberSchema)
+    @InjectRepository(BaseCastMemberSchema)
     private castMemberRepository: Repository<CastMemberEntity>
   ) {}
 

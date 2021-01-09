@@ -6,6 +6,7 @@ import { CastMemberStore } from '../../+state/cast-member/cast-member.store';
 import { MovieStore } from '../../+state/movie/movie.store';
 import { Actor, ActorId } from '@tin/movie-database/domain';
 import { Observable, of } from 'rxjs';
+import {SerialStore} from "../../+state/serial/serial.store";
 
 @Injectable({ providedIn: 'root' })
 export class ActorStateManagerService {
@@ -14,7 +15,8 @@ export class ActorStateManagerService {
     private actorQuery: ActorQuery,
     private castMemberQuery: CastMemberQuery,
     private castMemberStore: CastMemberStore,
-    private movieStore: MovieStore
+    private movieStore: MovieStore,
+    private serialStore: SerialStore
   ) {}
 
   getEntityOnce(actorId: ActorId): Observable<Actor> {
@@ -27,7 +29,15 @@ export class ActorStateManagerService {
       .getAll()
       .filter((castMember) => actor.movies.includes(castMember.id));
     this.movieStore.update(
-      castMembers.map((castMember) => castMember.movie),
+      castMembers.filter(castMember => !!castMember.movie).map((castMember) => castMember.movie),
+      (entity) => ({
+        actors: entity.actors.filter(
+          (id) => !castMembers.map((castMember) => castMember.id).includes(id)
+        ),
+      })
+    );
+    this.serialStore.update(
+      castMembers.filter(castMember => !!castMember.serial).map((castMember) => castMember.serial),
       (entity) => ({
         actors: entity.actors.filter(
           (id) => !castMembers.map((castMember) => castMember.id).includes(id)

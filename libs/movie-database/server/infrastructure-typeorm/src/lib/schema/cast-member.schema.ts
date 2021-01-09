@@ -5,31 +5,17 @@ import {
 } from '@tin/movie-database/server/domain';
 
 export const CastMemberSchema = new EntitySchema<CastMemberEntity>({
+  extends: 'BaseCastMemberEntity',
   name: 'CastMemberEntity',
+  tableName: 'castMember',
   target: CastMemberEntity,
   columns: {
-    role: {
-      type: String,
-    },
-    id: {
-      primary: true,
-      generated: true,
-      type: 'int',
-    },
-    actor: {
-      type: Number,
-    },
     movie: {
       type: Number,
+      nullable: true
     },
   },
   relations: {
-    actorAssociation: {
-      type: 'many-to-one',
-      target: 'ActorEntity',
-      onDelete: 'CASCADE',
-      joinColumn: { name: 'actor', referencedColumnName: 'id' },
-    },
     movieAssociation: {
       type: 'many-to-one',
       target: 'MovieEntity',

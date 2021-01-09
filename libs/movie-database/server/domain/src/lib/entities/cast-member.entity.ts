@@ -4,14 +4,11 @@ import {
   CastMemberId,
   MovieId,
 } from '@tin/movie-database/domain';
+import {BaseCastMemberEntity} from "./base-cast-member.entity";
 
-export class CastMemberEntity implements CastMember {
-  id: CastMemberId;
-  actor: ActorId;
-  actorAssociation: ActorId;
+export class CastMemberEntity extends BaseCastMemberEntity implements CastMember {
   movie: MovieId;
   movieAssociation: MovieId;
-  role: string;
 
   static create(
     actor: ActorId,
