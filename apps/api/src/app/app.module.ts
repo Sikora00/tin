@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MovieDatabaseServerUiRestModule } from '@tin/movie-database/server/ui-rest';
 import { AppCoreModule } from './app-core.module';
+import {ServeStaticModule} from "@nestjs/serve-static";
+import {join} from "path";
 
 @Module({
-  imports: [AppCoreModule, MovieDatabaseServerUiRestModule],
+  imports: [    ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'tin')
+  }),AppCoreModule, MovieDatabaseServerUiRestModule],
 })
 export class AppModule {}
