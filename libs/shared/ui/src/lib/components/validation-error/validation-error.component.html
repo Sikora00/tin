@@ -1,3 +1,5 @@
 <ng-container *ngIf="control.touched || control.dirty">
-  <p *ngFor="let error of errors$ | async">{{ error }}</p>
+  <p class="validation-error" *ngFor="let error of errors$ | async">
+    {{ error }}
+  </p>
 </ng-container>

@@ -1,0 +1,45 @@
+@import 'colors';
+
+:host {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%);
+  min-width: 30rem;
+}
+
+.toast-container {
+  background-color: $primary-dark;
+  animation: fadein 0.5s;
+}
+
+.toast {
+  padding: 1rem;
+}
+
+.toast-type-1 {
+  color: $error;
+}
+
+.toast-message {
+  text-align: center;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -168,84 +168,6 @@
         }
       }
     },
-    "auth-domain": {
-      "projectType": "library",
-      "root": "libs/auth/domain",
-      "sourceRoot": "libs/auth/domain/src",
-      "prefix": "auth",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/auth/domain/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/auth/domain/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "auth-feature-login": {
-      "projectType": "library",
-      "root": "libs/auth/feature-login",
-      "sourceRoot": "libs/auth/feature-login/src",
-      "prefix": "auth",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/auth/feature-login/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/auth/feature-login/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "auth-shell": {
-      "projectType": "library",
-      "root": "libs/auth/shell",
-      "sourceRoot": "libs/auth/shell/src",
-      "prefix": "tin",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/auth/shell/src/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/auth/shell/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "shared-ui": {
       "projectType": "library",
       "root": "libs/shared/ui",
@@ -802,6 +724,330 @@
             "jestConfig": "libs/movie-database/server/application/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "auth-client-feature-login": {
+      "projectType": "library",
+      "root": "libs/auth/client/feature-login",
+      "sourceRoot": "libs/auth/client/feature-login/src",
+      "prefix": "auth",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/client/feature-login/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/feature-login/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-client-feature-register": {
+      "projectType": "library",
+      "root": "libs/auth/client/feature-register",
+      "sourceRoot": "libs/auth/client/feature-register/src",
+      "prefix": "auth",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/client/feature-register/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/feature-register/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-client-shell": {
+      "projectType": "library",
+      "root": "libs/auth/client/shell",
+      "sourceRoot": "libs/auth/client/shell/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/client/shell/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-client-application": {
+      "projectType": "library",
+      "root": "libs/auth/client/application",
+      "sourceRoot": "libs/auth/client/application/src",
+      "prefix": "auth",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/client/application/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/application/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-domain": {
+      "root": "libs/auth/domain",
+      "sourceRoot": "libs/auth/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/domain/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-server-ui-rest": {
+      "root": "libs/auth/server/ui-rest",
+      "sourceRoot": "libs/auth/server/ui-rest/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/server/ui-rest/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/server/ui-rest/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-server-domain": {
+      "root": "libs/auth/server/domain",
+      "sourceRoot": "libs/auth/server/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/server/domain/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/server/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-server-infrastructure-typeorm": {
+      "root": "libs/auth/server/infrastructure-typeorm",
+      "sourceRoot": "libs/auth/server/infrastructure-typeorm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/server/infrastructure-typeorm/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/server/infrastructure-typeorm/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-client-ui": {
+      "projectType": "library",
+      "root": "libs/auth/client/ui",
+      "sourceRoot": "libs/auth/client/ui/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/client/ui/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "tin-client-main-feature": {
+      "projectType": "library",
+      "root": "libs/tin/client/main-feature",
+      "sourceRoot": "libs/tin/client/main-feature/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/tin/client/main-feature/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/tin/client/main-feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-client-feature-navbar": {
+      "projectType": "library",
+      "root": "libs/auth/client/feature-navbar",
+      "sourceRoot": "libs/auth/client/feature-navbar/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/client/feature-navbar/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/client/feature-navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "movie-database-client-feature-navbar": {
+      "projectType": "library",
+      "root": "libs/movie-database/client/feature-navbar",
+      "sourceRoot": "libs/movie-database/client/feature-navbar/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/movie-database/client/feature-navbar/src/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/movie-database/client/feature-navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-snackbar": {
+      "projectType": "library",
+      "root": "libs/shared/ui-snackbar",
+      "sourceRoot": "libs/shared/ui-snackbar/src",
+      "prefix": "tin",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/ui-snackbar/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-snackbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

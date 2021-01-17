@@ -1,0 +1,29 @@
+<tin-auth-layout>
+  <h2 class="auth-header">Logowanie</h2>
+  <form [formGroup]="form" class="auth-form">
+    <label>
+      <span>Login</span>
+      <input
+        formControlName="login"
+        data-test="login__username-input"
+        class="input-full"
+        [placeholder]="'Login'"
+      />
+    </label>
+    <label>
+      <span>Hasło</span>
+      <input
+        formControlName="password"
+        data-test="login__password-input"
+        class="input-full"
+        [placeholder]="'Hasło'"
+      />
+    </label>
+  </form>
+  <button (click)="onSubmit()" class="auth__submit-button">
+    <span>Zaloguj</span>
+  </button>
+  <div class="auth__redirect-links">
+    <a [routerLink]="['/register']">Zarejestruj się</a>
+  </div>
+</tin-auth-layout>

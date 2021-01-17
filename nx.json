@@ -33,15 +33,6 @@
     "api": {
       "tags": []
     },
-    "auth-domain": {
-      "tags": ["domain:auth", "type:domain-logic"]
-    },
-    "auth-feature-login": {
-      "tags": ["domain:auth", "type:feature"]
-    },
-    "auth-shell": {
-      "tags": ["domain:auth", "type:shell"]
-    },
     "shared-ui": {
       "tags": ["domain:shared", "type:ui"]
     },
@@ -100,6 +91,45 @@
       "tags": []
     },
     "movie-database-server-application": {
+      "tags": []
+    },
+    "auth-client-feature-login": {
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "auth-client-feature-register": {
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "auth-client-shell": {
+      "tags": ["domain:auth", "type:shell"]
+    },
+    "auth-client-application": {
+      "tags": ["domain:auth", "type:domain-logic"]
+    },
+    "auth-domain": {
+      "tags": []
+    },
+    "auth-server-ui-rest": {
+      "tags": []
+    },
+    "auth-server-domain": {
+      "tags": []
+    },
+    "auth-server-infrastructure-typeorm": {
+      "tags": []
+    },
+    "auth-client-ui": {
+      "tags": []
+    },
+    "tin-client-main-feature": {
+      "tags": []
+    },
+    "auth-client-feature-navbar": {
+      "tags": []
+    },
+    "movie-database-client-feature-navbar": {
+      "tags": []
+    },
+    "shared-ui-snackbar": {
       "tags": []
     }
   }

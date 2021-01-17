@@ -1,0 +1,9 @@
+<ng-container *ngIf="notification$ | async as notification">
+  <div *ngIf="notification" class="toast-container">
+    <div class="toast" [ngClass]="'toast-type-' + notification.type">
+      <div class="toast-message">
+        {{ notification.message }}
+      </div>
+    </div>
+  </div>
+</ng-container>

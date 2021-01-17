@@ -1,0 +1,30 @@
+<tin-auth-layout>
+  <h2 class="auth-header">Rejestracja</h2>
+  <form [formGroup]="form" class="auth-form">
+    <label>
+      <span>Login</span>
+      <input
+        formControlName="login"
+        class="input-full"
+        [placeholder]="'Login'"
+      />
+      <tin-validation-error [controlName]="'login'"></tin-validation-error>
+    </label>
+    <label>
+      <span>Password</span>
+      <input
+        formControlName="password"
+        class="input-full"
+        [placeholder]="'Password'"
+      />
+      <tin-validation-error [controlName]="'password'"></tin-validation-error>
+    </label>
+    <p class="validation-error" *ngFor="let error of errors">{{ error }}</p>
+  </form>
+  <button (click)="onSubmit()" class="auth__submit-button">
+    <span>Zarejestruj</span>
+  </button>
+  <div class="auth__redirect-links">
+    <a [routerLink]="['/login']">Logowanie</a>
+  </div>
+</tin-auth-layout>

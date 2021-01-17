@@ -16,9 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tin/auth/domain": ["libs/auth/domain/src/index.ts"],
-      "@tin/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
-      "@tin/auth/shell": ["libs/auth/shell/src/index.ts"],
       "@tin/shared/ui": ["libs/shared/ui/src/index.ts"],
       "@tin/movie-database/client/application": [
         "libs/movie-database/client/application/src/index.ts"
@@ -74,7 +71,34 @@
       ],
       "@tin/movie-database/server/application": [
         "libs/movie-database/server/application/src/index.ts"
-      ]
+      ],
+      "@tin/auth/client/feature-login": [
+        "libs/auth/client/feature-login/src/index.ts"
+      ],
+      "@tin/auth/client/feature-register": [
+        "libs/auth/client/feature-register/src/index.ts"
+      ],
+      "@tin/auth/client/shell": ["libs/auth/client/shell/src/index.ts"],
+      "@tin/auth/client/application": [
+        "libs/auth/client/application/src/index.ts"
+      ],
+      "@tin/auth/domain": ["libs/auth/domain/src/index.ts"],
+      "@tin/auth/server/ui-rest": ["libs/auth/server/ui-rest/src/index.ts"],
+      "@tin/auth/server/domain": ["libs/auth/server/domain/src/index.ts"],
+      "@tin/auth/server/infrastructure-typeorm": [
+        "libs/auth/server/infrastructure-typeorm/src/index.ts"
+      ],
+      "@tin/auth/client/ui": ["libs/auth/client/ui/src/index.ts"],
+      "@tin/tin/client/main-feature": [
+        "libs/tin/client/main-feature/src/index.ts"
+      ],
+      "@tin/auth/client/feature-navbar": [
+        "libs/auth/client/feature-navbar/src/index.ts"
+      ],
+      "@tin/movie-database/client/feature-navbar": [
+        "libs/movie-database/client/feature-navbar/src/index.ts"
+      ],
+      "@tin/shared/ui-snackbar": ["libs/shared/ui-snackbar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
