@@ -12,6 +12,7 @@ import {
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Actor, MovieId } from '@tin/movie-database/domain';
+import { SnackbarService } from '@tin/shared/ui-snackbar';
 
 @Component({
   selector: 'movie-database-movie-edit',
@@ -30,7 +31,8 @@ export class MovieEditComponent implements OnInit, MovieEditPresenterInterface {
   constructor(
     private activatedRoute: ActivatedRoute,
     private facade: MovieEditFacade,
-    private cdR: ChangeDetectorRef
+    private cdR: ChangeDetectorRef,
+    private notificationService: SnackbarService
   ) {}
 
   displayForm(form: EditMovieForm, actors: Observable<Actor[]>): void {
@@ -57,6 +59,10 @@ export class MovieEditComponent implements OnInit, MovieEditPresenterInterface {
   }
 
   onSubmit(): void {
-    this.facade.onSubmit(this.form, this.movieId);
+    this.facade.onSubmit(this, this.form, this.movieId);
+  }
+
+  displayEditSuccessNotification(): void {
+    this.notificationService.displayNotification(`Zaktualizowano aktora`);
   }
 }

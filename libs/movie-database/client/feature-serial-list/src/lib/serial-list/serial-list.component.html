@@ -3,6 +3,7 @@
     <div class="list__item-card">
       <movie-database-serial-card
         [serial]="serial"
+        [showDeleteSerial]="showDeleteSerial"
         (deleteSerial)="onDeleteSerial($event)"
         *ngFor="let serial of serialList$ | async"
       ></movie-database-serial-card>
@@ -12,6 +13,6 @@
 <ng-template #loader>
   <tin-loading></tin-loading>
 </ng-template>
-<a [routerLink]="['add']">
+<a *ngIf="showAddSerial" [routerLink]="['add']">
   <tin-add-button></tin-add-button>
 </a>

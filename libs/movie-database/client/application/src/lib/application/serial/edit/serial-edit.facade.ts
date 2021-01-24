@@ -45,7 +45,11 @@ export class SerialEditFacade extends SerialAddEditFacade {
     );
   }
 
-  async onSubmit(form: SerialAddEditForm, serialId: SerialId): Promise<void> {
+  async onSubmit(
+    presenter: SerialEditPresenterInterface,
+    form: SerialAddEditForm,
+    serialId: SerialId
+  ): Promise<void> {
     if (form.valid) {
       await this.serialDataService
         .editSerial(serialId, {
@@ -57,6 +61,7 @@ export class SerialEditFacade extends SerialAddEditFacade {
         })
         .toPromise()
         .then();
+      presenter.displayEditSuccessNotification();
       await this.router.navigate(['movie-database', 'serial', serialId]);
     } else {
       form.markAllAsTouched();

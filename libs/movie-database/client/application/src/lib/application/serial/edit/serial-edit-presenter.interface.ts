@@ -5,4 +5,6 @@ import { SerialAddEditForm } from '../add-edit/serial-add-edit.form';
 export interface SerialEditPresenterInterface {
   displayLoading(): void;
   displayForm(form: SerialAddEditForm, actors: Observable<Actor[]>): void;
+
+  displayEditSuccessNotification(): void;
 }

@@ -34,7 +34,10 @@ export class MovieAddFacade {
     form.controls.actors.removeAt(index);
   }
 
-  async onSubmit(form: AddMovieForm): Promise<void> {
+  async onSubmit(
+    presenter: MovieAddPresenterInterface,
+    form: AddMovieForm
+  ): Promise<void> {
     if (form.valid) {
       const movie = await this.movieDataService
         .addMovie({
@@ -46,6 +49,7 @@ export class MovieAddFacade {
         })
         .toPromise()
         .then();
+      presenter.displayMovieAddedNotification();
       await this.router.navigate(['movie-database', 'movie', movie.id]);
     } else {
       form.markAllAsTouched();

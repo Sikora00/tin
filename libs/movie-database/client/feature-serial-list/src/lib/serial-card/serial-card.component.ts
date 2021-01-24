@@ -16,6 +16,8 @@ import { Serial, SerialId } from '@tin/movie-database/domain';
 export class SerialCardComponent {
   @Input()
   serial: Serial;
+  @Input()
+  showDeleteSerial = false;
   @Output()
   deleteSerial = new EventEmitter<SerialId>();
 

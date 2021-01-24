@@ -11,6 +11,7 @@ import {
 } from '@tin/movie-database/client/application';
 import { ActivatedRoute } from '@angular/router';
 import { ActorId } from '@tin/movie-database/domain';
+import { SnackbarService } from '@tin/shared/ui-snackbar';
 
 @Component({
   selector: 'movie-database-actor-edit',
@@ -27,7 +28,8 @@ export class ActorEditComponent implements OnInit, ActorEditPresenter {
   constructor(
     private actorEditFacade: ActorEditFacade,
     private activatedRoute: ActivatedRoute,
-    private cdR: ChangeDetectorRef
+    private cdR: ChangeDetectorRef,
+    private notificationService: SnackbarService
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +37,7 @@ export class ActorEditComponent implements OnInit, ActorEditPresenter {
   }
 
   onSubmit(): void {
-    this.actorEditFacade.onFormSubmit(this.actorId, this.form.value);
+    this.actorEditFacade.onFormSubmit(this, this.actorId, this.form.value);
   }
 
   displayForm(form: EditActorForm): void {
@@ -46,5 +48,9 @@ export class ActorEditComponent implements OnInit, ActorEditPresenter {
 
   displayLoading(): void {
     this.loading = true;
+  }
+
+  displayEditSuccessNotification(): void {
+    this.notificationService.displayNotification(`Zaktualizowano aktora`);
   }
 }

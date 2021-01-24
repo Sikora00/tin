@@ -23,11 +23,15 @@ export class ActorAddFacade {
     this.presenter.displayForm(this.getForm());
   }
 
-  async onFormSubmit(form: AddActorForm): Promise<void> {
+  async onFormSubmit(
+    presenter: ActorAddPresenterInterface,
+    form: AddActorForm
+  ): Promise<void> {
     if (form.valid) {
       const actor = await this.actorDataService
         .addActor(form.value)
         .toPromise();
+      presenter.displayActorAddedNotification();
       await this.router.navigate(['movie-database', 'actor', actor.id]);
     } else {
       form.markAllAsTouched();
@@ -55,4 +59,5 @@ export interface AddActorForm extends FormGroup {
 
 export interface ActorAddPresenterInterface {
   displayForm(form: AddActorForm): void;
+  displayActorAddedNotification(): void;
 }

@@ -30,8 +30,13 @@ export class ActorEditFacade {
     presenter.displayForm(await this.getActorForm(actorId).toPromise());
   }
 
-  async onFormSubmit(id: ActorId, value: ActorProps): Promise<void> {
+  async onFormSubmit(
+    presenter: ActorEditPresenter,
+    id: ActorId,
+    value: ActorProps
+  ): Promise<void> {
     await this.dataService.editActor(id, value).toPromise();
+    presenter.displayEditSuccessNotification();
     await this.router.navigate(['movie-database', 'actor', id]);
   }
 
@@ -54,6 +59,8 @@ export interface ActorEditPresenter {
   displayForm(form: EditActorForm): void;
 
   displayLoading(): void;
+
+  displayEditSuccessNotification(): void;
 }
 
 export interface EditActorForm extends FormGroup {

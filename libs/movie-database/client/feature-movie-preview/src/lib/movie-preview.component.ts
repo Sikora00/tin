@@ -25,6 +25,7 @@ export class MoviePreviewComponent implements OnInit, MoviePreviewPresenter {
   movieId: MovieId = +this.activatedRoute.snapshot.paramMap.get('id');
   movie$: Observable<MoviePreview>;
   loading: boolean;
+  showEdit = false;
 
   constructor(
     private moviePreviewFacade: MoviePreviewFacade,
@@ -43,6 +44,16 @@ export class MoviePreviewComponent implements OnInit, MoviePreviewPresenter {
   displayPreview(data: Observable<MoviePreview>): void {
     this.movie$ = data;
     this.loading = false;
+    this.cdR.markForCheck();
+  }
+
+  displayEditMovie(): void {
+    this.showEdit = true;
+    this.cdR.markForCheck();
+  }
+
+  hideEditMovie(): void {
+    this.showEdit = false;
     this.cdR.markForCheck();
   }
 }

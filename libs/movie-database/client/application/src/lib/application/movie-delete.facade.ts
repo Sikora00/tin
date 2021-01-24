@@ -6,7 +6,17 @@ import { MovieDataService } from '../infrastructure/movie/movie.data.service';
 export class MovieDeleteFacade {
   constructor(private movieDataService: MovieDataService) {}
 
-  async deleteMovie(movieId: MovieId): Promise<void> {
-    await this.movieDataService.deleteMovie(movieId).toPromise();
+  async deleteMovie(
+    presenter: MovieDeletePresenter,
+    movieId: MovieId
+  ): Promise<void> {
+    if (confirm('Jesteś pewien?')) {
+      await this.movieDataService.deleteMovie(movieId).toPromise();
+      presenter.displayMovieDeletedNotification();
+    }
   }
+}
+
+export interface MovieDeletePresenter {
+  displayMovieDeletedNotification(): void;
 }

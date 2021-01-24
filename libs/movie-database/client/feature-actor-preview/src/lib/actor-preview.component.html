@@ -45,7 +45,7 @@
         </p>
       </div>
     </div>
-    <a [routerLink]="['edit']">
+    <a *ngIf="showEdit" [routerLink]="['edit']">
       <tin-edit-button></tin-edit-button>
     </a>
   </ng-container>

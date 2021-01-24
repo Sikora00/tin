@@ -5,4 +5,8 @@ export interface MoviePreviewPresenter {
   displayLoading(): void;
 
   displayPreview(data: Observable<MoviePreview>): void;
+
+  displayEditMovie(): void;
+
+  hideEditMovie(): void;
 }

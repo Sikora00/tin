@@ -52,7 +52,11 @@ export class MovieEditFacade {
     form.controls.actors.removeAt(index);
   }
 
-  async onSubmit(form: EditMovieForm, movieId: MovieId): Promise<void> {
+  async onSubmit(
+    presenter: MovieEditPresenterInterface,
+    form: EditMovieForm,
+    movieId: MovieId
+  ): Promise<void> {
     if (form.valid) {
       await this.movieDataService
         .editMovie(movieId, {
@@ -64,6 +68,7 @@ export class MovieEditFacade {
         })
         .toPromise()
         .then();
+      presenter.displayEditSuccessNotification();
       await this.router.navigate(['movie-database', 'movie', movieId]);
     } else {
       form.markAllAsTouched();

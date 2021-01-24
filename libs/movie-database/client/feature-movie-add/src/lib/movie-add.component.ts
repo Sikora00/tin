@@ -11,6 +11,7 @@ import {
 } from '@tin/movie-database/client/application';
 import { Observable } from 'rxjs';
 import { Actor } from '@tin/movie-database/domain';
+import { SnackbarService } from '@tin/shared/ui-snackbar';
 
 @Component({
   selector: 'movie-database-movie-add',
@@ -26,8 +27,13 @@ export class MovieAddComponent implements OnInit, MovieAddPresenterInterface {
   loading: boolean;
   constructor(
     private movieAddFacade: MovieAddFacade,
-    private cdR: ChangeDetectorRef
+    private cdR: ChangeDetectorRef,
+    private notificationService: SnackbarService
   ) {}
+
+  displayMovieAddedNotification(): void {
+    this.notificationService.displayNotification(`Dodano film`);
+  }
 
   displayForm(form: AddMovieForm, actors: Observable<Actor[]>): void {
     this.form = form;
@@ -53,6 +59,6 @@ export class MovieAddComponent implements OnInit, MovieAddPresenterInterface {
   }
 
   onSubmit(): void {
-    this.movieAddFacade.onSubmit(this.form);
+    this.movieAddFacade.onSubmit(this, this.form);
   }
 }

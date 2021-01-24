@@ -25,10 +25,6 @@ export class CreateSerialDto implements SerialAddWriteModel {
 
   @IsNotEmpty()
   @IsString()
-  releaseDate: Date;
-
-  @IsNotEmpty()
-  @IsString()
   thumbnailUrl: string;
 
   @IsNotEmpty()

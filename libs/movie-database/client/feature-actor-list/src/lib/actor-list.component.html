@@ -3,6 +3,7 @@
     <div *ngFor="let actor of actorList$ | async" class="actor-card">
       <movie-database-actor-card
         [actor]="actor"
+        [showDeleteActor]="showDeleteActor"
         (deleteActor)="onDeleteActor($event)"
       ></movie-database-actor-card>
     </div>
@@ -12,6 +13,6 @@
   <tin-loading></tin-loading>
 </ng-template>
 
-<a [routerLink]="['add']">
+<a *ngIf="showAddActor" [routerLink]="['add']">
   <tin-add-button></tin-add-button>
 </a>

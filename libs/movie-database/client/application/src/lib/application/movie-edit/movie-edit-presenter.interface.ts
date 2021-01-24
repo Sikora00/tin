@@ -5,4 +5,6 @@ import { Actor } from '@tin/movie-database/domain';
 export interface MovieEditPresenterInterface {
   displayLoading(): void;
   displayForm(form: EditMovieForm, actors: Observable<Actor[]>): void;
+
+  displayEditSuccessNotification(): void;
 }

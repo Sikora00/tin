@@ -1,5 +1,9 @@
 <div class="card list__list-item">
-  <i (click)="onDelete()" class="list__list-item-remove-button gg-trash"></i>
+  <i
+    *ngIf="showDeleteSerial"
+    (click)="onDelete()"
+    class="list__list-item-remove-button gg-trash"
+  ></i>
   <img
     [src]="serial.thumbnailUrl"
     [alt]="'Movie thumbnail'"

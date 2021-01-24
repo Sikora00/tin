@@ -27,7 +27,10 @@ export class SerialAddFacade extends SerialAddEditFacade {
     presenter.displayForm(createAddSerialForm(this.fb), actors);
   }
 
-  async onSubmit(form: SerialAddEditForm): Promise<void> {
+  async onSubmit(
+    presenter: SerialAddPresenterInterface,
+    form: SerialAddEditForm
+  ): Promise<void> {
     if (form.valid) {
       const serial = await this.serialDataService
         .addSerial({
@@ -39,6 +42,7 @@ export class SerialAddFacade extends SerialAddEditFacade {
         })
         .toPromise()
         .then();
+      presenter.displaySerialAddedNotification();
       await this.router.navigate(['movie-database', 'serial', serial.id]);
     } else {
       form.markAllAsTouched();

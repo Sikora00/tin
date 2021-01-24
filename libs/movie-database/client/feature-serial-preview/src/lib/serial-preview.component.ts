@@ -23,6 +23,7 @@ export class SerialPreviewComponent implements OnInit, SerialPreviewPresenter {
   serialId: SerialId = +this.activatedRoute.snapshot.paramMap.get('id');
   serial$: Observable<SerialPreviewReadModel>;
   loading: boolean;
+  showEdit = false;
 
   constructor(
     private previewFacade: SerialPreviewFacade,
@@ -41,6 +42,16 @@ export class SerialPreviewComponent implements OnInit, SerialPreviewPresenter {
   displayPreview(data: Observable<SerialPreviewReadModel>): void {
     this.serial$ = data;
     this.loading = false;
+    this.cdR.markForCheck();
+  }
+
+  displayEditSerial(): void {
+    this.showEdit = true;
+    this.cdR.markForCheck();
+  }
+
+  hideEditSerial(): void {
+    this.showEdit = false;
     this.cdR.markForCheck();
   }
 }

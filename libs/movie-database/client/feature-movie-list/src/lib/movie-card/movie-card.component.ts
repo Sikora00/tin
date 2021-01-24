@@ -16,6 +16,8 @@ import { Movie, MovieId } from '@tin/movie-database/domain';
 export class MovieCardComponent {
   @Input()
   movie: Movie;
+  @Input()
+  showDeleteMovie = false;
   @Output()
   deleteMovie = new EventEmitter<MovieId>();
 

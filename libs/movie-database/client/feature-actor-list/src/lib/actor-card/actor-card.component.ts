@@ -16,6 +16,8 @@ import { Actor, ActorId } from '@tin/movie-database/domain';
 export class ActorCardComponent {
   @Input()
   actor: Actor;
+  @Input()
+  showDeleteActor = false;
   @Output()
   deleteActor = new EventEmitter<ActorId>();
 

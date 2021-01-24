@@ -5,4 +5,8 @@ export interface SerialPreviewPresenter {
   displayLoading(): void;
 
   displayPreview(data: Observable<SerialPreviewReadModel>): void;
+
+  displayEditSerial(): void;
+
+  hideEditSerial(): void;
 }

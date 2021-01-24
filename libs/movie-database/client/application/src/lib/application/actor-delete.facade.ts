@@ -6,7 +6,17 @@ import { ActorId } from '@tin/movie-database/domain';
 export class ActorDeleteFacade {
   constructor(private actorDataService: ActorDataService) {}
 
-  async deleteActor(actorId: ActorId): Promise<void> {
-    await this.actorDataService.deleteActor(actorId).toPromise();
+  async deleteActor(
+    presenter: ActorDeletePresenter,
+    actorId: ActorId
+  ): Promise<void> {
+    if (confirm('Jesteś pewien?')) {
+      await this.actorDataService.deleteActor(actorId).toPromise();
+      presenter.displayActorDeletedNotification();
+    }
   }
+}
+
+export interface ActorDeletePresenter {
+  displayActorDeletedNotification(): void;
 }

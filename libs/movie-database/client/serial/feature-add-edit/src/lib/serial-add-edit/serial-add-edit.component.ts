@@ -11,6 +11,8 @@ import { SerialAddPresenterInterface } from '../../../../../application/src/lib/
 import { SerialAddFacade } from '../../../../../application/src/lib/application/serial/add/serial-add.facade';
 import { ActivatedRoute } from '@angular/router';
 import { SerialEditFacade } from '../../../../../application/src/lib/application/serial/edit/serial-edit.facade';
+import { SerialEditPresenterInterface } from '../../../../../application/src/lib/application/serial/edit/serial-edit-presenter.interface';
+import { SnackbarService } from '@tin/shared/ui-snackbar';
 
 @Component({
   selector: 'tin-serial-add-edit',
@@ -21,7 +23,7 @@ import { SerialEditFacade } from '../../../../../application/src/lib/application
   providers: [SerialAddFacade, SerialEditFacade],
 })
 export class SerialAddEditComponent
-  implements OnInit, SerialAddPresenterInterface {
+  implements OnInit, SerialAddPresenterInterface, SerialEditPresenterInterface {
   actors$: Observable<Actor[]>;
   facade: SerialAddFacade | SerialEditFacade;
   form: SerialAddEditForm;
@@ -35,10 +37,15 @@ export class SerialAddEditComponent
     private activatedRoute: ActivatedRoute,
     addFacade: SerialAddFacade,
     editFacade: SerialEditFacade,
-    private cdR: ChangeDetectorRef
+    private cdR: ChangeDetectorRef,
+    private notificationService: SnackbarService
   ) {
     this.editMode = !!this.serialId;
     this.facade = this.editMode ? editFacade : addFacade;
+  }
+
+  displaySerialAddedNotification(): void {
+    this.notificationService.displayNotification(`Dodano serial`);
   }
 
   displayForm(form: SerialAddEditForm, actors: Observable<Actor[]>): void {
@@ -65,6 +72,10 @@ export class SerialAddEditComponent
   }
 
   onSubmit(): void {
-    this.facade.onSubmit(this.form, this.serialId);
+    this.facade.onSubmit(this, this.form, this.serialId);
+  }
+
+  displayEditSuccessNotification(): void {
+    this.notificationService.displayNotification(`Zaktualizowano serial`);
   }
 }

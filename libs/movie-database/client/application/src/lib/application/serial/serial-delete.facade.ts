@@ -6,7 +6,17 @@ import { SerialDataService } from '../../infrastructure/serial/serial.data.servi
 export class SerialDeleteFacade {
   constructor(private dataService: SerialDataService) {}
 
-  async deleteSerial(id: SerialId): Promise<void> {
-    await this.dataService.deleteSerial(id).toPromise();
+  async deleteSerial(
+    presenter: SerialDeletePresenter,
+    id: SerialId
+  ): Promise<void> {
+    if (confirm('Jesteś pewien?')) {
+      await this.dataService.deleteSerial(id).toPromise();
+      presenter.displaySerialDeletedNotification();
+    }
   }
+}
+
+export interface SerialDeletePresenter {
+  displaySerialDeletedNotification(): void;
 }

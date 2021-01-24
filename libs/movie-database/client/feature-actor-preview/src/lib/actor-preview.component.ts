@@ -24,6 +24,7 @@ export class ActorPreviewComponent
   implements OnInit, PreviewActorPresenterInterface {
   actor$: Observable<ActorPreview>;
   loading: boolean;
+  showEdit = false;
 
   constructor(
     private actorPreviewFacade: ActorPreviewFacade,
@@ -46,5 +47,15 @@ export class ActorPreviewComponent
 
   displayLoading(): void {
     this.loading = true;
+  }
+
+  displayEditActor(): void {
+    this.showEdit = true;
+    this.cdR.markForCheck();
+  }
+
+  hideEditActor(): void {
+    this.showEdit = false;
+    this.cdR.markForCheck();
   }
 }

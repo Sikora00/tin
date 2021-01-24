@@ -1,5 +1,6 @@
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { ResourceManagementGuard } from './resource-management.guard';
 
 const routes: Route[] = [
   {
@@ -15,6 +16,7 @@ const routes: Route[] = [
       {
         path: 'add',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/feature-movie-add').then(
             (m) => m.MovieDatabaseClientFeatureMovieAddModule
@@ -31,6 +33,7 @@ const routes: Route[] = [
       {
         path: ':id/edit',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/feature-movie-edit').then(
             (m) => m.MovieDatabaseClientFeatureMovieEditModule
@@ -51,6 +54,7 @@ const routes: Route[] = [
       {
         path: 'add',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/feature-actor-add').then(
             (m) => m.MovieDatabaseClientFeatureActorAddModule
@@ -67,6 +71,7 @@ const routes: Route[] = [
       {
         path: ':id/edit',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/feature-actor-edit').then(
             (m) => m.MovieDatabaseClientFeatureActorEditModule
@@ -87,6 +92,7 @@ const routes: Route[] = [
       {
         path: 'add',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/serial/feature-add-edit').then(
             (m) => m.MovieDatabaseClientSerialFeatureAddEditModule
@@ -103,6 +109,7 @@ const routes: Route[] = [
       {
         path: ':id/edit',
         pathMatch: 'full',
+        canActivate: [ResourceManagementGuard],
         loadChildren: () =>
           import('@tin/movie-database/client/serial/feature-add-edit').then(
             (m) => m.MovieDatabaseClientSerialFeatureAddEditModule
