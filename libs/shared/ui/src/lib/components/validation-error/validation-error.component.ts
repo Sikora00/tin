@@ -16,7 +16,7 @@ export class ValidationErrorComponent implements OnInit {
   @Input()
   control: AbstractControl;
 
-  readonly errorMessages = { required: 'validation.required' };
+  readonly errorMessages = { required: 'To pole jest wymagane', minlength: 'To pole wymaga więcej znaków' };
 
   constructor(private controlContainer: ControlContainer) {}
 

@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class AuthStateService {
   private _accessToken = new BehaviorSubject(null);
-  isUserLogged = this._accessToken.pipe(map(Boolean));
+  accessToken$ = this._accessToken.asObservable();
+  isUserLogged$ = this._accessToken.pipe(map(Boolean));
 
   constructor() {}
 

@@ -10,7 +10,8 @@ import { AuthStorageService } from './auth-storage.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthDataService {
-  isUserLogged$ = this.state.isUserLogged;
+  authToken$ = this.state.accessToken$;
+  isUserLogged$ = this.state.isUserLogged$;
   constructor(
     private http: AuthHttpService,
     private state: AuthStateService,
