@@ -1,14 +1,9 @@
 {
   "npmScope": "tin",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -17,25 +12,14 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "tin": {
-      "tags": []
-    },
-    "tin-e2e": {
-      "tags": [],
-      "implicitDependencies": ["tin"]
-    },
-    "api": {
-      "tags": []
-    },
-    "shared-ui": {
-      "tags": ["domain:shared", "type:ui"]
-    },
+    "tin": { "tags": [] },
+    "tin-e2e": { "tags": [], "implicitDependencies": ["tin"] },
+    "api": { "tags": [] },
+    "shared-ui": { "tags": ["domain:shared", "type:ui"] },
     "movie-database-client-application": {
       "tags": ["domain:movie-database", "type:domain-logic"]
     },
@@ -78,59 +62,38 @@
     "movie-database-server-domain": {
       "tags": ["domain:movie-database", "type:domain"]
     },
-    "movie-database-client-feature-serial-preview": {
-      "tags": []
-    },
-    "movie-database-client-feature-serial-list": {
-      "tags": []
-    },
-    "movie-database-client-ui": {
-      "tags": []
-    },
-    "movie-database-client-serial-feature-add-edit": {
-      "tags": []
-    },
-    "movie-database-server-application": {
-      "tags": []
-    },
-    "auth-client-feature-login": {
-      "tags": ["domain:auth", "type:feature"]
-    },
-    "auth-client-feature-register": {
-      "tags": ["domain:auth", "type:feature"]
-    },
-    "auth-client-shell": {
-      "tags": ["domain:auth", "type:shell"]
-    },
-    "auth-client-application": {
-      "tags": ["domain:auth", "type:domain-logic"]
-    },
-    "auth-domain": {
-      "tags": []
-    },
-    "auth-server-ui-rest": {
-      "tags": []
-    },
-    "auth-server-domain": {
-      "tags": []
-    },
-    "auth-server-infrastructure-typeorm": {
-      "tags": []
-    },
-    "auth-client-ui": {
-      "tags": []
-    },
-    "tin-client-main-feature": {
-      "tags": []
-    },
-    "auth-client-feature-navbar": {
-      "tags": []
-    },
-    "movie-database-client-feature-navbar": {
-      "tags": []
-    },
-    "shared-ui-snackbar": {
-      "tags": []
-    }
+    "movie-database-client-feature-serial-preview": { "tags": [] },
+    "movie-database-client-feature-serial-list": { "tags": [] },
+    "movie-database-client-ui": { "tags": [] },
+    "movie-database-client-serial-feature-add-edit": { "tags": [] },
+    "movie-database-server-application": { "tags": [] },
+    "auth-client-feature-login": { "tags": ["domain:auth", "type:feature"] },
+    "auth-client-feature-register": { "tags": ["domain:auth", "type:feature"] },
+    "auth-client-shell": { "tags": ["domain:auth", "type:shell"] },
+    "auth-client-application": { "tags": ["domain:auth", "type:domain-logic"] },
+    "auth-domain": { "tags": [] },
+    "auth-server-ui-rest": { "tags": [] },
+    "auth-server-domain": { "tags": [] },
+    "auth-server-infrastructure-typeorm": { "tags": [] },
+    "auth-client-ui": { "tags": [] },
+    "tin-client-main-feature": { "tags": [] },
+    "auth-client-feature-navbar": { "tags": [] },
+    "movie-database-client-feature-navbar": { "tags": [] },
+    "shared-ui-snackbar": { "tags": [] },
+    "xplat-core": { "tags": [] },
+    "xplat-features": { "tags": [] },
+    "xplat-scss": { "tags": [] },
+    "xplat-utils": { "tags": [] },
+    "xplat-web-core": { "tags": [] },
+    "xplat-web-features": { "tags": [] },
+    "xplat-web-scss": { "tags": [] },
+    "xplat-nativescript-scss": { "tags": [] },
+    "xplat-nativescript-utils": { "tags": [] },
+    "xplat-nativescript-core": { "tags": [] },
+    "xplat-nativescript-features": { "tags": [] },
+    "xplat-ionic-core": { "tags": [] },
+    "xplat-ionic-features": { "tags": [] },
+    "xplat-ionic-scss": { "tags": [] },
+    "xplat-electron-core": { "tags": [] }
   }
 }
