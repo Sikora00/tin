@@ -1458,10 +1458,91 @@
           }
         }
       }
+    },
+    "electron-desktop": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/electron-desktop",
+            "index": "apps/tin/src/index.html",
+            "main": "apps/tin/src/main.electron.ts",
+            "polyfills": "apps/tin/src/polyfills.ts",
+            "tsConfig": "apps/tin/tsconfig.electron.json",
+            "aot": true,
+            "assets": [
+              "apps/tin/src/favicon.ico",
+              "apps/tin/src/assets",
+              {
+                "glob": "**/*",
+                "input": "apps/electron-desktop/src/",
+                "ignore": ["**/*.ts"],
+                "output": ""
+              }
+            ],
+            "styles": ["apps/tin/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/ui/src/lib/styles"]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/tin/src/environments/environment.ts",
+                  "with": "apps/tin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "electron-desktop:build",
+            "proxyConfig": "apps/tin/proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "electron-desktop:build:production"
+            }
+          }
+        }
+      },
+      "root": "apps/tin",
+      "sourceRoot": "apps/tin/src",
+      "prefix": "tin"
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nstudio/xplat"
   },
   "schematics": {
     "@nrwl/angular": {
