@@ -17,21 +17,18 @@ import { SharedUiSnackbarModule } from '@tin/shared/ui-snackbar';
     TinClientMainFeatureModule,
     SharedUiSnackbarModule,
     RouterModule.forRoot([
-      {
+    {
         path: 'movie-database',
         component: TinMainLayoutComponent,
         children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('@tin/movie-database/client/shell').then(
-                (m) => m.MovieDatabaseClientShellModule
-              ),
-          },
+            {
+                path: '',
+                loadChildren: () => import('@tin/movie-database/client/shell').then((m) => m.MovieDatabaseClientShellModule),
+            },
         ],
-      },
-      { path: '', pathMatch: 'full', redirectTo: 'movie-database' },
-    ]),
+    },
+    { path: '', pathMatch: 'full', redirectTo: 'movie-database' },
+], { relativeLinkResolution: 'legacy' }),
     ReactiveFormsModule,
   ],
   providers: [
