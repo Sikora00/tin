@@ -21,10 +21,17 @@
             "polyfills": "apps/tin/src/polyfills.ts",
             "tsConfig": "apps/tin/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/tin/src/favicon.ico", "apps/tin/src/assets"],
-            "styles": ["apps/tin/src/styles.scss"],
+            "assets": [
+              "apps/tin/src/favicon.ico",
+              "apps/tin/src/assets"
+            ],
+            "styles": [
+              "apps/tin/src/styles.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/ui/src/lib/styles"]
+              "includePaths": [
+                "libs/shared/ui/src/lib/styles"
+              ]
             },
             "scripts": []
           },
@@ -57,7 +64,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,7 +101,9 @@
             "jestConfig": "apps/tin/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/tin"]
+          "outputs": [
+            "coverage/apps/tin"
+          ]
         }
       }
     },
@@ -117,7 +128,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/tin-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/tin-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -135,7 +148,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -150,7 +165,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@nrwl/node:execute",
@@ -161,7 +178,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -170,7 +189,9 @@
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/apps/api"]
+          "outputs": [
+            "coverage/apps/api"
+          ]
         }
       }
     },
@@ -195,7 +216,9 @@
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/shared/ui"]
+          "outputs": [
+            "coverage/libs/shared/ui"
+          ]
         }
       },
       "schematics": {
@@ -225,7 +248,9 @@
             "jestConfig": "libs/movie-database/client/application/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/application"]
+          "outputs": [
+            "coverage/libs/movie-database/client/application"
+          ]
         }
       },
       "schematics": {
@@ -267,7 +292,9 @@
             "jestConfig": "libs/movie-database/client/feature-actor-add/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-actor-add"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-actor-add"
+          ]
         }
       },
       "schematics": {
@@ -309,7 +336,9 @@
             "jestConfig": "libs/movie-database/client/feature-actor-edit/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-actor-edit"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-actor-edit"
+          ]
         }
       },
       "schematics": {
@@ -339,7 +368,9 @@
             "jestConfig": "libs/movie-database/client/feature-actor-list/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-actor-list"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-actor-list"
+          ]
         }
       },
       "schematics": {
@@ -445,7 +476,9 @@
             "jestConfig": "libs/movie-database/client/feature-movie-add/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-movie-add"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-movie-add"
+          ]
         }
       },
       "schematics": {
@@ -475,7 +508,9 @@
             "jestConfig": "libs/movie-database/client/feature-movie-edit/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-movie-edit"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-movie-edit"
+          ]
         }
       },
       "schematics": {
@@ -505,7 +540,9 @@
             "jestConfig": "libs/movie-database/client/feature-movie-list/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-movie-list"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-movie-list"
+          ]
         }
       },
       "schematics": {
@@ -535,7 +572,9 @@
             "jestConfig": "libs/movie-database/client/shell/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/shell"]
+          "outputs": [
+            "coverage/libs/movie-database/client/shell"
+          ]
         }
       },
       "schematics": {
@@ -553,7 +592,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/movie-database/domain/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/movie-database/domain/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -562,7 +603,9 @@
             "jestConfig": "libs/movie-database/domain/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/domain"]
+          "outputs": [
+            "coverage/libs/movie-database/domain"
+          ]
         }
       }
     },
@@ -575,7 +618,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/movie-database/server/ui-rest/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/movie-database/server/ui-rest/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -584,7 +629,9 @@
             "jestConfig": "libs/movie-database/server/ui-rest/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/server/ui-rest"]
+          "outputs": [
+            "coverage/libs/movie-database/server/ui-rest"
+          ]
         }
       }
     },
@@ -623,7 +670,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/movie-database/server/domain/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/movie-database/server/domain/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -632,7 +681,9 @@
             "jestConfig": "libs/movie-database/server/domain/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/server/domain"]
+          "outputs": [
+            "coverage/libs/movie-database/server/domain"
+          ]
         }
       }
     },
@@ -689,7 +740,9 @@
             "jestConfig": "libs/movie-database/client/feature-serial-list/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-serial-list"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-serial-list"
+          ]
         }
       },
       "schematics": {
@@ -719,7 +772,9 @@
             "jestConfig": "libs/movie-database/client/ui/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/ui"]
+          "outputs": [
+            "coverage/libs/movie-database/client/ui"
+          ]
         }
       },
       "schematics": {
@@ -780,7 +835,9 @@
             "jestConfig": "libs/movie-database/server/application/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/server/application"]
+          "outputs": [
+            "coverage/libs/movie-database/server/application"
+          ]
         }
       }
     },
@@ -805,7 +862,9 @@
             "jestConfig": "libs/auth/client/feature-login/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/feature-login"]
+          "outputs": [
+            "coverage/libs/auth/client/feature-login"
+          ]
         }
       },
       "schematics": {
@@ -835,7 +894,9 @@
             "jestConfig": "libs/auth/client/feature-register/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/feature-register"]
+          "outputs": [
+            "coverage/libs/auth/client/feature-register"
+          ]
         }
       },
       "schematics": {
@@ -865,7 +926,9 @@
             "jestConfig": "libs/auth/client/shell/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/shell"]
+          "outputs": [
+            "coverage/libs/auth/client/shell"
+          ]
         }
       },
       "schematics": {
@@ -895,7 +958,9 @@
             "jestConfig": "libs/auth/client/application/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/application"]
+          "outputs": [
+            "coverage/libs/auth/client/application"
+          ]
         }
       },
       "schematics": {
@@ -913,7 +978,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/auth/domain/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/auth/domain/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -922,7 +989,9 @@
             "jestConfig": "libs/auth/domain/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/domain"]
+          "outputs": [
+            "coverage/libs/auth/domain"
+          ]
         }
       }
     },
@@ -935,7 +1004,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/auth/server/ui-rest/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/auth/server/ui-rest/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -944,7 +1015,9 @@
             "jestConfig": "libs/auth/server/ui-rest/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/server/ui-rest"]
+          "outputs": [
+            "coverage/libs/auth/server/ui-rest"
+          ]
         }
       }
     },
@@ -957,7 +1030,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/auth/server/domain/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/auth/server/domain/**/*.ts"
+            ]
           }
         },
         "test": {
@@ -966,7 +1041,9 @@
             "jestConfig": "libs/auth/server/domain/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/server/domain"]
+          "outputs": [
+            "coverage/libs/auth/server/domain"
+          ]
         }
       }
     },
@@ -990,7 +1067,9 @@
             "jestConfig": "libs/auth/server/infrastructure-typeorm/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/server/infrastructure-typeorm"]
+          "outputs": [
+            "coverage/libs/auth/server/infrastructure-typeorm"
+          ]
         }
       }
     },
@@ -1015,7 +1094,9 @@
             "jestConfig": "libs/auth/client/ui/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/ui"]
+          "outputs": [
+            "coverage/libs/auth/client/ui"
+          ]
         }
       },
       "schematics": {
@@ -1045,7 +1126,9 @@
             "jestConfig": "libs/tin/client/main-feature/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/tin/client/main-feature"]
+          "outputs": [
+            "coverage/libs/tin/client/main-feature"
+          ]
         }
       },
       "schematics": {
@@ -1075,7 +1158,9 @@
             "jestConfig": "libs/auth/client/feature-navbar/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/auth/client/feature-navbar"]
+          "outputs": [
+            "coverage/libs/auth/client/feature-navbar"
+          ]
         }
       },
       "schematics": {
@@ -1105,7 +1190,9 @@
             "jestConfig": "libs/movie-database/client/feature-navbar/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/movie-database/client/feature-navbar"]
+          "outputs": [
+            "coverage/libs/movie-database/client/feature-navbar"
+          ]
         }
       },
       "schematics": {
@@ -1135,7 +1222,9 @@
             "jestConfig": "libs/shared/ui-snackbar/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/libs/shared/ui-snackbar"]
+          "outputs": [
+            "coverage/libs/shared/ui-snackbar"
+          ]
         }
       },
       "schematics": {
@@ -1152,12 +1241,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/core"],
+          "outputs": [
+            "coverage/libs/xplat/core"
+          ],
           "options": {
             "jestConfig": "libs/xplat/core/jest.config.js",
             "passWithNoTests": true
@@ -1173,12 +1266,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/features/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/features/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/features"],
+          "outputs": [
+            "coverage/libs/xplat/features"
+          ],
           "options": {
             "jestConfig": "libs/xplat/features/jest.config.js",
             "passWithNoTests": true
@@ -1194,12 +1291,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/scss/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/scss/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/scss"],
+          "outputs": [
+            "coverage/libs/xplat/scss"
+          ],
           "options": {
             "jestConfig": "libs/xplat/scss/jest.config.js",
             "passWithNoTests": true
@@ -1215,12 +1316,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/utils/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/utils/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/utils"],
+          "outputs": [
+            "coverage/libs/xplat/utils"
+          ],
           "options": {
             "jestConfig": "libs/xplat/utils/jest.config.js",
             "passWithNoTests": true
@@ -1236,12 +1341,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/web/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/web/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/web/core"],
+          "outputs": [
+            "coverage/libs/xplat/web/core"
+          ],
           "options": {
             "jestConfig": "libs/xplat/web/core/jest.config.js",
             "passWithNoTests": true
@@ -1257,12 +1366,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/web/features/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/web/features/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/web/features"],
+          "outputs": [
+            "coverage/libs/xplat/web/features"
+          ],
           "options": {
             "jestConfig": "libs/xplat/web/features/jest.config.js",
             "passWithNoTests": true
@@ -1278,12 +1391,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/web/scss/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/web/scss/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/web/scss"],
+          "outputs": [
+            "coverage/libs/xplat/web/scss"
+          ],
           "options": {
             "jestConfig": "libs/xplat/web/scss/jest.config.js",
             "passWithNoTests": true
@@ -1299,12 +1416,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/nativescript/scss/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/nativescript/scss/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/nativescript/scss"],
+          "outputs": [
+            "coverage/libs/xplat/nativescript/scss"
+          ],
           "options": {
             "jestConfig": "libs/xplat/nativescript/scss/jest.config.js",
             "passWithNoTests": true
@@ -1320,12 +1441,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/nativescript/utils/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/nativescript/utils/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/nativescript/utils"],
+          "outputs": [
+            "coverage/libs/xplat/nativescript/utils"
+          ],
           "options": {
             "jestConfig": "libs/xplat/nativescript/utils/jest.config.js",
             "passWithNoTests": true
@@ -1341,12 +1466,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/nativescript/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/nativescript/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/nativescript/core"],
+          "outputs": [
+            "coverage/libs/xplat/nativescript/core"
+          ],
           "options": {
             "jestConfig": "libs/xplat/nativescript/core/jest.config.js",
             "passWithNoTests": true
@@ -1362,12 +1491,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/nativescript/features/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/nativescript/features/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/nativescript/features"],
+          "outputs": [
+            "coverage/libs/xplat/nativescript/features"
+          ],
           "options": {
             "jestConfig": "libs/xplat/nativescript/features/jest.config.js",
             "passWithNoTests": true
@@ -1383,12 +1516,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/ionic/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/ionic/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/ionic/core"],
+          "outputs": [
+            "coverage/libs/xplat/ionic/core"
+          ],
           "options": {
             "jestConfig": "libs/xplat/ionic/core/jest.config.js",
             "passWithNoTests": true
@@ -1404,12 +1541,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/ionic/features/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/ionic/features/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/ionic/features"],
+          "outputs": [
+            "coverage/libs/xplat/ionic/features"
+          ],
           "options": {
             "jestConfig": "libs/xplat/ionic/features/jest.config.js",
             "passWithNoTests": true
@@ -1425,12 +1566,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/ionic/scss/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/ionic/scss/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/ionic/scss"],
+          "outputs": [
+            "coverage/libs/xplat/ionic/scss"
+          ],
           "options": {
             "jestConfig": "libs/xplat/ionic/scss/jest.config.js",
             "passWithNoTests": true
@@ -1446,12 +1591,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/xplat/electron/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/xplat/electron/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/xplat/electron/core"],
+          "outputs": [
+            "coverage/libs/xplat/electron/core"
+          ],
           "options": {
             "jestConfig": "libs/xplat/electron/core/jest.config.js",
             "passWithNoTests": true
@@ -1482,13 +1631,19 @@
               {
                 "glob": "**/*",
                 "input": "apps/electron-desktop/src/",
-                "ignore": ["**/*.ts"],
+                "ignore": [
+                  "**/*.ts"
+                ],
                 "output": ""
               }
             ],
-            "styles": ["apps/tin/src/styles.scss"],
+            "styles": [
+              "apps/tin/src/styles.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["libs/shared/ui/src/lib/styles"]
+              "includePaths": [
+                "libs/shared/ui/src/lib/styles"
+              ]
             },
             "scripts": []
           },
@@ -1521,7 +1676,9 @@
               ]
             }
           },
-          "outputs": ["{options.outputPath}"]
+          "outputs": [
+            "{options.outputPath}"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -1539,6 +1696,173 @@
       "root": "apps/tin",
       "sourceRoot": "apps/tin/src",
       "prefix": "tin"
+    },
+    "ionic-tin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "root": "apps/ionic-tin/",
+      "sourceRoot": "apps/ionic-tin/src",
+      "prefix": "tin",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "apps/ionic-tin/www",
+            "index": "apps/ionic-tin/src/index.html",
+            "main": "apps/ionic-tin/src/main.ts",
+            "polyfills": "apps/ionic-tin/src/polyfills.ts",
+            "tsConfig": "apps/ionic-tin/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "apps/ionic-tin/src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": [
+              {
+                "input": "apps/ionic-tin/src/theme/variables.scss"
+              },
+              {
+                "input": "apps/ionic-tin/src/global.scss"
+              },
+              {
+                "input": "libs/shared/ui/src/lib/styles/index.scss"
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/ui/src/lib/styles"
+              ]
+            },
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ionic-tin/src/environments/environment.ts",
+                  "with": "apps/ionic-tin/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "ci": {
+              "progress": false
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ionic-tin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ionic-tin:build:production"
+            },
+            "ci": {
+              "progress": false
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ionic-tin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/ionic-tin/src/test.ts",
+            "polyfills": "apps/ionic-tin/src/polyfills.ts",
+            "tsConfig": "apps/ionic-tin/tsconfig.spec.json",
+            "karmaConfig": "apps/ionic-tin/karma.conf.js",
+            "styles": [],
+            "scripts": [],
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "apps/ionic-tin/src/",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "apps/ionic-tin/src/assets",
+                "output": "/assets"
+              }
+            ]
+          },
+          "configurations": {
+            "ci": {
+              "progress": false,
+              "watch": false
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/ionic-tin/tsconfig.app.json",
+              "apps/ionic-tin/tsconfig.spec.json",
+              "apps/ionic-tin/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "ionic-tin:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ionic-tin:build:production"
+            }
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "ionic-tin:ionic-cordova-build",
+            "devServerTarget": "ionic-tin:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "ionic-tin:ionic-cordova-build:production",
+              "devServerTarget": "ionic-tin:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "cli": {

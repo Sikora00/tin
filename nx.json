@@ -179,6 +179,9 @@
     },
     "electron-desktop": {
       "tags": []
+    },
+    "ionic-tin": {
+      "tags": []
     }
   }
 }
